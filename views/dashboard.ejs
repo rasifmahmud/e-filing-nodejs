@@ -24,12 +24,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   -->
   <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
   <script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script>
-  tinymce.init({
-    selector: '#mytextarea'
-  });
-  </script>
+
+  
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -472,12 +470,13 @@ desired effect
       <!-- Your Page Content Here -->
       <div class="panel panel-primary">
         <div class="panel-heading">
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open</button>
           Panel with panel-default class
         </div>
         <div class="panel-body">
-          <h2>Large Modal</h2>
+          <h2 id="demo1">Large Modal</h2>
           <!-- Trigger the modal with a button -->
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+          
 
           <!-- Modal -->
           <div class="modal fade" id="myModal" role="dialog">
@@ -488,20 +487,31 @@ desired effect
                   <h4 class="modal-title">Modal Header</h4>
                 </div>
                 <div class="modal-body">
-                  <p>This is a large modal.</p>
-                  <h1>TinyMCE Quick Start Guide</h1>
-                  <textarea id="mytextarea" ></textarea>
-                  <p>Name: <input type="text"  ng-model="name"></p>
-                  <p>{{name}}</p>
+                  <form id="get-data-form" method="post">
+                    <textarea class="tinymce" id="texteditor"></textarea>
+                    <!-- <input type="submit" value="Get Data" > -->
+                  </form>
+                  
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <!-- <button type="button" class="btn btn-default" >Close</button> -->
+                  <input type="submit" value="Get Data" form="get-data-form" class="btn btn-success">
                 </div>
               </div>
             </div>
           </div>
+
+          <div id="data-container">
+            
+          </div>
+
         </div>
       </div>
+
+
+
+
+
 
     </section>
     <!-- /.content -->
@@ -725,6 +735,8 @@ desired effect
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
+<script type="text/javascript" src="js/init-tinymce.js"></script>
+<script type="text/javascript" src="js/getdata.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
