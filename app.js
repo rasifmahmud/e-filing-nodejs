@@ -18,6 +18,7 @@ app.set('view engine', 'ejs');
 // Configuring path for static folders
 app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
+app.use(express.static("node_modules/jquery/dist"));
 
 
 // using bodyparser middleware to add data or json from frontend on the request object
