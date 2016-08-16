@@ -14,4 +14,9 @@ module.exports = router;
 router.route('/')
     .get(function (req, res) {
         res.render('dashboard');
+    })
+    .post(function (req, res) {
+        console.log(req.body);
+        console.log(req.user);
+        res.sendStatus(200);
     });
