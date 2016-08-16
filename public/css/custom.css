@@ -1,0 +1,23 @@
+.modal-header{
+	background-color:#0099ff;
+}
+
+.modal-footer{
+	border-color: #0099ff;
+}
+/*
+.tinymce{
+	border-color: #0099ff;
+	font-size: 28px;
+}*/
+
+.panel {
+	min-height: 200px;
+	-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+div textarea { 
+	font-size: 18px; 
+}
