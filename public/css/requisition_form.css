@@ -1,0 +1,30 @@
+
+table {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+}
+th {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #337AB7;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+td {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    color: black;
+}
+#unit {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

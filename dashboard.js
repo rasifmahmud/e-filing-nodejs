@@ -13,10 +13,11 @@ module.exports = router;
 // routing to the dashboard
 router.route('/')
     .get(function (req, res) {
-        res.render('dashboard');
+        res.render('./bn_BD/dashboard');
     })
     .post(function (req, res) {
         console.log(req.body);
         console.log(req.user);
-        res.sendStatus(200);
+        res.json({text: req.body, user: req.user});
     });
+
