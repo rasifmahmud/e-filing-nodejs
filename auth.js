@@ -10,17 +10,17 @@ module.exports = router;
 
 // if user is already authenticated he is redirected to dashboard, else to login page
 router.get("/login", function (req, res) {
-    // if(req.app.get("env") === "development"){
-    //   var user = users[0];
-    //   if(req.query.user){
-    //     user = _.find(users, u => u.name === req.query.user)
-    //   }
-    //   req.logIn(user, function (err) {
-    //     if (err) { return next(err); }
-    //     return res.redirect('/');
-    //   });
-    //   return;
-    // }
+    if(req.app.get("env") === "development"){
+      var user = users[0];
+      if(req.query.user){
+        user = _.find(users, u => u.name === req.query.user)
+      }
+      req.logIn(user, function (err) {
+        if (err) { return next(err); }
+        return res.redirect('/');
+      });
+      return;
+    }
 
     if (req.isAuthenticated()) {
         res.redirect('/');

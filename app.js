@@ -4,6 +4,8 @@
 // Initial declaraization
 var  express = require('express');
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
 var bodyParser = require("body-parser");
 var passport = require("passport");
 require("./passport-init");
@@ -58,6 +60,54 @@ app.use(rootRouter);
 
 
 // Running the server on port 3000
-app.listen(3000, function () {
+server.listen(3000, function () {
     console.log("Server is running on port 3000");
+});
+
+// kono user connected hoilei jei ghotona ghotbe
+io.sockets.on('connection', function (socket) {
+    socket.on('notification', function (data,callback) {
+        console.log(data);
+        socket.broadcast.emit('broadcast', 'Amra notification peyechi');
+        callback("Shobaike notification pathai felsi");
+    });
+    // function updateNickNames() {
+    //     io.sockets.emit('usernames', Object.keys(users));
+    // }
+    // socket.on('send message', function (data,callback) {
+    //     var msg = data.trim();
+    //     if(msg.substr(0,3)==='/w '){
+    //         msg = msg.substr(3);
+    //         var index = msg.indexOf(" ");
+    //         if(index>=0){
+    //             var name = msg.substr(0,index);
+    //             msg = msg.substr(index+1);
+    //             if(name in users) {
+    //                 users[name].emit('new message', {msg: msg, nick: socket.nickname});
+    //             }
+    //             else{
+    //                 callback("Please Enter An Online UserName ");
+    //             }
+    //         }
+    //         else{
+    //             callback("Please Enter A Message");
+    //         }
+    //     }
+    //     else {
+    //         io.sockets.emit('new message', {msg: data, nick: socket.nickname});
+    //     }
+    // });
+    // socket.on('disconnect', function () {
+    //     if(!socket.nickname){
+    //         return;
+    //     }
+    //     else{
+    //         delete users[socket.nickname];
+    //         updateNickNames();
+    //     }
+    //
+    //
+    // });
+
+
 });

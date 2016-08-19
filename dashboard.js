@@ -20,4 +20,3 @@ router.route('/')
         console.log(req.user);
         res.json({text: req.body, user: req.user});
     });
-
