@@ -4,8 +4,13 @@
 // Initial declaraization
 var  express = require('express');
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
 var bodyParser = require("body-parser");
 var passport = require("passport");
+// exporting socketio to realtimejs for better maintenance
+module.exports = io ;
+require('./realtime');
 require("./passport-init");
 
 
@@ -53,11 +58,15 @@ app.use(function (req, res, next) {
 
 
 // Initial routing
-var rootRouter = require('./dashboard');
-app.use(rootRouter);
+var dashboardRouter = require('./dashboard_router');
+app.use(dashboardRouter);
+
+var apiRouter = require('./api_router');
+app.use('/api', apiRouter);
 
 
 // Running the server on port 3000
-app.listen(3000, function () {
+server.listen(3000, function () {
     console.log("Server is running on port 3000");
 });
+
