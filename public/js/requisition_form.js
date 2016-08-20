@@ -22,7 +22,7 @@ $(document).ready(function(){
             for(var j = 2; j < cellLength; j++){
 
                 // get your cell info here
-                var cellVal = requsitionFormTable.rows[i].cells[j].childNodes[1].innerHTML;   //oCells.item(j).childNodes[0].innerHTML;
+                var cellVal = requsitionFormTable.rows[i].cells[j].innerHTML;   //oCells.item(j).childNodes[0].innerHTML;
                 alert(j + " --> " + cellVal);
             }
         }
@@ -62,7 +62,8 @@ function addRow(tableID) {
     element2.style.border="none";
 
     cell3.style.height="100px";
-    cell3.appendChild(element2);
+    cell3.contentEditable=true;
+    //cell3.appendChild(element2);
 
     var cell4 = row.insertCell(3);
     var element3 = document.createElement("textarea");
@@ -72,8 +73,10 @@ function addRow(tableID) {
     element3.style.width="100%";
     element3.style.height="100%";
     element3.style.border="none";
+
     cell4.style.height="100px";
-    cell4.appendChild(element3);
+    cell4.contentEditable=true;
+    //cell4.appendChild(element3);
 
     var cell5 = row.insertCell(4);
     var element4 = document.createElement("textarea");
@@ -83,8 +86,10 @@ function addRow(tableID) {
     element4.style.width="100%";
     element4.style.height="100%";
     element4.style.border="none";
+
     cell5.style.height="100px";
-    cell5.appendChild(element4);
+    cell5.contentEditable=true;
+    //cell5.appendChild(element4);
 
     var cell6 = row.insertCell(5);
     var element5 = document.createElement("textarea");
@@ -94,8 +99,10 @@ function addRow(tableID) {
     element5.style.width="100%";
     element5.style.height="100%";
     element5.style.border="none";
+
     cell6.style.height="100px";
-    cell6.appendChild(element5);
+    cell6.contentEditable=true;
+    //cell6.appendChild(element5);
 
     var cell7 = row.insertCell(6);
     var element6 = document.createElement("textarea");
@@ -105,8 +112,10 @@ function addRow(tableID) {
     element6.style.width="100%";
     element6.style.height="100%";
     element6.style.border="none";
+
     cell7.style.height="100px";
-    cell7.appendChild(element6);
+    cell7.contentEditable=true;
+    //cell7.appendChild(element6);
 
     var cell8 = row.insertCell(7);
     var element7 = document.createElement("textarea");
@@ -116,8 +125,10 @@ function addRow(tableID) {
     element7.style.width="100%";
     element7.style.height="100%";
     element7.style.border="none";
+
     cell8.style.height="100px";
-    cell8.appendChild(element7);
+    cell8.contentEditable=true;
+    //cell8.appendChild(element7);
 
     var cell9 = row.insertCell(8);
     var element8 = document.createElement("textarea");
@@ -127,8 +138,10 @@ function addRow(tableID) {
     element8.style.width="100%";
     element8.style.height="100%";
     element8.style.border="none";
+
     cell9.style.height="100px";
-    cell9.appendChild(element8);
+    cell9.contentEditable=true;
+    //cell9.appendChild(element8);
 
 
   }
