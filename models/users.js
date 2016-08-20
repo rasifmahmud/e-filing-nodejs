@@ -20,7 +20,7 @@ module.exports.createUser = function (newUser, callback) {
         bcrypt.hash(newUser.password,salt, function (err, hash) {
             newUser.password = hash;
             newUser.save(callback);
-            console.log("user inserted");
+            //console.log("user inserted");
         });
     });
 

@@ -35,12 +35,17 @@ module.exports = RFQ;
 
 module.exports.createRFQ = function (newRFQ, callback) {
     newRFQ.save(callback);
-    console.log(" rffff inserted");
+    //console.log(" rffff inserted");
 };
 
 module.exports.getRFQbyID = function(ID, callback) {
     RFQ.find(
-        {'refer_jachai.ID': ID},
-        {"_id": true}, (callback)
+        { $or:[ {'initiator_id':ID},
+            {'refer_jachai.ID':ID},
+            {'refer_hishab.ID':ID},
+            {'refer_committee.ID':ID},
+            {'refer_director.ID':ID}
+        ]},
+        {"_id": true, "step_id": true}, (callback)
     );
 }
