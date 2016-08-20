@@ -8,10 +8,15 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var bodyParser = require("body-parser");
 var passport = require("passport");
+var mongoose= require("mongoose");
 // exporting socketio to realtimejs for better maintenance
 module.exports = io ;
 require('./realtime');
 require("./passport-init");
+
+//database connection
+var dburl ="mongodb://rasifmahmud16:123456asd@ds161485.mlab.com:61485/razon-mongo";
+mongoose.connect(dburl);
 
 
 // view engine setup
