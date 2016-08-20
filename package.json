@@ -9,6 +9,7 @@
   "author": "Razon",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
     "ejs": "^2.5.1",
