@@ -1,3 +1,38 @@
+$(document).ready(function(){
+
+    var myDate = new Date().toString().slice(0, 21);
+    document.getElementById("date").innerHTML = myDate;
+
+    $("#submit-requisition-form").click(function(){
+        var requsitionFormTable = document.getElementById('dataTable');
+
+        //gets rows of table
+        var rowLength = requsitionFormTable.rows.length;
+
+        //loops through rows
+        for (i = 2; i < rowLength; i++){
+
+            //gets cells of current row
+            var oCells = requsitionFormTable.rows.item(i).cells;
+
+            //gets amount of cells of current row
+            var cellLength = oCells.length;
+
+            //loops through each cell in current row
+            for(var j = 2; j < cellLength; j++){
+
+                // get your cell info here
+                var cellVal = requsitionFormTable.rows[i].cells[j].childNodes[1].innerHTML;   //oCells.item(j).childNodes[0].innerHTML;
+                alert(j + " --> " + cellVal);
+            }
+        }
+    });
+});
+
+
+
+
+//requsition form related functions
 function addRow(tableID) {
 
     var table = document.getElementById(tableID);
