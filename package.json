@@ -9,6 +9,7 @@
   "author": "Razon",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
     "ejs": "^2.5.1",
@@ -16,6 +17,9 @@
     "express-session": "^1.13.0",
     "jquery": "^2.2.1",
     "lodash": "^4.5.1",
+    "mongodb": "^2.2.7",
+    "mongoose": "^4.5.9",
+    "multer": "^1.2.0",
     "node-uuid": "^1.4.7",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
