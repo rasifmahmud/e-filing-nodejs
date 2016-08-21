@@ -1,16 +1,21 @@
 
 .modal-header{
+	text-align: center;
 	background-color:#337AB7;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.login-head{
+	text-align: center;
+	background-color:#337AB7;
+	color: #ffffff;
+	font-size: 20px;
 }
 
 .modal-footer{
 	border-color: #337AB7;
 }
-/*
-.tinymce{
-	border-color: #337AB7;
-	font-size: 28px;
-}*/
 
 .panel {
 	min-height: 200px;
@@ -27,11 +32,6 @@ div textarea {
 	font-size: 18px;
 }
 
-.modal-header{
-	text-align: center;
-	color: #ffffff;
-	font-size: 20px;
-}
 
 #forward{
 	background-color: #337AB7;
