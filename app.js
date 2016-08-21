@@ -13,8 +13,8 @@ var multer  = require('multer');
 var upload = multer({ dest: 'data/images/' });
 // exporting socketio to realtimejs for better maintenance
 module.exports = io ;
-require('./realtime');
-require("./passport-init");
+require('./realtime/realtime');
+require("./auth/passport-init");
 
 // database connection
 var dburl ="mongodb://rasifmahmud16:123456asd@ds161485.mlab.com:61485/razon-mongo";
@@ -48,7 +48,7 @@ app.use(passport.session());
 
 
 // verifying authentication before handling any routing
-var authRouter = require('./auth');
+var authRouter = require('./routers/auth_router');
 app.use(authRouter);
 
 
@@ -65,10 +65,10 @@ app.use(function (req, res, next) {
 
 
 // Initial routing
-var dashboardRouter = require('./dashboard_router');
+var dashboardRouter = require('./routers/dashboard_router');
 app.use(dashboardRouter);
 
-var apiRouter = require('./api_router');
+var apiRouter = require('./routers/api_router');
 app.use('/api', apiRouter);
 
 

@@ -1,7 +1,7 @@
 /**
  * Created by razon on 8/19/16.
  */
-var io = require('./app');
+var io = require('../app');
 var connectedUsers = {};
 var _ = require("lodash");
 // kono user connected hoilei jei ghotona ghotbe
