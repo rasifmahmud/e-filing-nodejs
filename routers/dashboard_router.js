@@ -4,7 +4,7 @@
 
 // initial declaraization
 
-    var User = require("./models/users");
+var User = require("../models/users");
 var express = require('express');
 var router = express.Router();
 
@@ -16,10 +16,10 @@ module.exports = router;
 router.route('/')
     .get(function (req, res) {
 
-        res.render('./bn_BD/dashboard');
+        res.render('bn_BD/dashboard');
     })
-    // .post(function (req, res) {
-    //     console.log(req.body);
-    //     console.log(req.user);
-    //     res.json({text: req.body, user: req.user});
-    // });
+// .post(function (req, res) {
+//     console.log(req.body);
+//     console.log(req.user);
+//     res.json({text: req.body, user: req.user});
+// });

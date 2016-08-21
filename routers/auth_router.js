@@ -1,9 +1,9 @@
 // intial declarization
 var express = require("express");
 var passport = require("passport");
-var users = require("./data/users.json");
-var User=require("./models/users");
-var RFQ=require("./models/RFQ");
+var users = require("../data/users.json");
+var User=require("../models/users");
+var RFQ=require("../models/RFQ");
 
 // exporting router module to the outer world
 var router = express.Router();
