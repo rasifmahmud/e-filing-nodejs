@@ -9,6 +9,8 @@ var io = require('socket.io').listen(server);
 var bodyParser = require("body-parser");
 var passport = require("passport");
 var mongoose= require("mongoose");
+var multer  = require('multer');
+var upload = multer({ dest: 'data/images/' });
 // exporting socketio to realtimejs for better maintenance
 module.exports = io ;
 require('./realtime');
