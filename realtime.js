@@ -21,6 +21,9 @@ io.sockets.on('connection', function (socket) {
 
         }
         console.log(connectedUsers);
+        getSockets('44f885e8-87e9-4911-973c-4074188f408a');
+
+
     });
     // if he disconnects himself from any of the sockets they got deleted eventually
     socket.on('disconnect', function () {
@@ -50,6 +53,17 @@ io.sockets.on('connection', function (socket) {
         socket.broadcast.emit('broadcast', 'Amra notification peyechi');
         callback("Shobaike notification pathai hurray aj chuti chuti re");
     });
+
+    // emitting realtime stuffs through the sockets of a single user
+    function getSockets(userID) {
+        var socket_array = connectedUsers[userID];
+        _.map(socket_array,function (s) {
+            s.emit("moga", "O amar shokhi");
+        });
+
+    }
+
+
 
 
 });

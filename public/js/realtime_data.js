@@ -34,4 +34,8 @@ $(document).ready(function() {
         console.log(data);
     });
 
+    socket.on('moga',function (data) {
+        console.log(data);
+    });
+
 });

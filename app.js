@@ -16,7 +16,7 @@ module.exports = io ;
 require('./realtime');
 require("./passport-init");
 
-//database connection
+// database connection
 var dburl ="mongodb://rasifmahmud16:123456asd@ds161485.mlab.com:61485/razon-mongo";
 mongoose.connect(dburl);
 
