@@ -4,7 +4,7 @@
 
 // initial declaraization
 
-var User = require("../models/users");
+
 var express = require('express');
 var router = express.Router();
 
@@ -15,7 +15,6 @@ module.exports = router;
 // routing to the dashboard
 router.route('/')
     .get(function (req, res) {
-
         res.render('bn_BD/dashboard');
     })
 // .post(function (req, res) {
