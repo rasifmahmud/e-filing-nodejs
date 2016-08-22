@@ -24,5 +24,5 @@ module.exports = User;
 
 module.exports.createRFQdetails = function (newRFQdetails, callback) {
     newRFQdetails.save(callback);
-    console.log(" rffffdetails inserted");
+    //console.log(" rffffdetails inserted");
 };
