@@ -3,18 +3,14 @@
  */
 var express = require('express');
 var rfq = require("../models/RFQ");
-var User = require("../models/users");
+var user = require("../models/users");
 var router = express.Router();
 module.exports = router;
 
 router.route('/data')
     .get(function (req, res) {
-
         res.json(req.user);
     })
     .post(function (req, res) {
-        // console.log("#########################");
-        // console.log(req.body);
-        // console.log("#########################");
         res.sendStatus(200);
     });

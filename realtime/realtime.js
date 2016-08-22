@@ -21,7 +21,7 @@ io.sockets.on('connection', function (socket) {
 
         }
         // console.log(connectedUsers);
-        // getSockets('44f885e8-87e9-4911-973c-4074188f408a');
+        getSockets('test12');
 
 
     });
