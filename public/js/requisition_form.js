@@ -12,13 +12,10 @@ $(document).ready(function(){
 
         //loops through rows
         for (i = 2; i < rowLength; i++){
-
             //gets cells of current row
             var oCells = requsitionFormTable.rows.item(i).cells;
-
             //gets amount of cells of current row
             var cellLength = oCells.length;
-
             //loops through each cell in current row
             // for(var j = 2; j < cellLength; j++){
             //
@@ -27,24 +24,28 @@ $(document).ready(function(){
             //     alert(j + " --> " + cellVal);
             // }
 
-            var itemNo = requsitionFormTable.rows[i].cells[1].innerHTML;
-            var descriptionOfItems = requsitionFormTable.rows[i].cells[2].innerHTML;
-            var unitOfMeasurement = requsitionFormTable.rows[i].cells[3].innerHTML;
-            var quantity = requsitionFormTable.rows[i].cells[4].innerHTML;
-            var URPInFigure = requsitionFormTable.rows[i].cells[5].innerHTML;
-            var URPInWords = requsitionFormTable.rows[i].cells[6].innerHTML;
+            var itemNo              = requsitionFormTable.rows[i].cells[1].innerHTML;
+            var descriptionOfItems  = requsitionFormTable.rows[i].cells[2].innerHTML;
+            var unitOfMeasurement   = requsitionFormTable.rows[i].cells[3].innerHTML;
+            var quantity            = requsitionFormTable.rows[i].cells[4].innerHTML;
+            var URPInFigure         = requsitionFormTable.rows[i].cells[5].innerHTML;
+            var URPInWords          = requsitionFormTable.rows[i].cells[6].innerHTML;
             var totalAmountInFigure = requsitionFormTable.rows[i].cells[7].innerHTML;
-            var totalAmountInWords = requsitionFormTable.rows[i].cells[8].innerHTML;
+            var totalAmountInWords  = requsitionFormTable.rows[i].cells[8].innerHTML;
 
-            jsonData = '"itemNo"' + " : " + '"' + itemNo + '"' + "," +
-                       '"descriptionOfItems"' + " : " + '"' + descriptionOfItems + '"' + "," +
-                       '"unitOfMeasurement"' + " : " + '"' + unitOfMeasurement + '"' + "," +
-                '"quantity"' + " : " + '"' + quantity + '"' + "," +
-                '"URPInFigure"' + " : " + '"' + URPInFigure + '"' + "," +
-                '"URPInWords"' + " : " + '"' + URPInWords + '"' + "," +
-                '"totalAmountInFigure"' + " : " + '"' + unitOfMeasurement + '"' + "," +
-                '"totalAmountInWords"' + " : " + '"' + unitOfMeasurement + '"'  ;
+            jsonData += ' { "itemNo"'          + " : " + '"' + $.trim(itemNo)             + '"' + "," +
+                       '"descriptionOfItems"'  + " : " + '"' + descriptionOfItems  + '"' + "," +
+                       '"unitOfMeasurement"'   + " : " + '"' + unitOfMeasurement   + '"' + "," +
+                       '"quantity"'            + " : " + '"' + quantity            + '"' + "," +
+                       '"URPInFigure"'         + " : " + '"' + URPInFigure         + '"' + "," +
+                       '"URPInWords"'          + " : " + '"' + URPInWords          + '"' + "," +
+                       '"totalAmountInFigure"' + " : " + '"' + totalAmountInFigure + '"' + "," +
+                       '"totalAmountInWords"'  + " : " + '"' + totalAmountInWords  + '" } ,'  ;
+            // jsonData = " { " + jsonData + " } , ";
         }
+
+        jsonData = "[ " + jsonData.slice(0,-1) +" ] ";
+        alert(jsonData);
     });
 });
 
