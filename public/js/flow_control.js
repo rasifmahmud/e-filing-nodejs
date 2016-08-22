@@ -45,6 +45,24 @@ $(document).ready(function(){
     if (step9_complete === true)  document.getElementById( 'step10-panel' ).style.display = 'block';
     if (step10_complete === true)  document.getElementById( 'step11-panel' ).style.display = 'block';
 
+
+
+
+    //  3 types of users are possible. 1. director 2. scientist 3. hishab rokhkhk
+    var userType = "scientist" ;
+    // initiator / jachaikari / hishab rokhkhok / director
+    var rfqPrivilege ;
+    var proPicImageURL="../dist/img/user2-160x160.jpg";
+    var fullName = "Md. Moniruzzaman";
+    var designation = "Scientific Officer";
+    var isOnline = "Online";
+
+    $(".pro-pic").attr("src",proPicImageURL);
+    $(".full-name").text(fullName);
+    $(".designation").text(designation);
+    $(".is-online").text(isOnline);
+
+
 });
 
 
