@@ -5,20 +5,24 @@
 // initial declarization
 var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
-var users = require("../data/users.json");
 var _ = require("lodash");
+var users = require("../models/users");
 
 
 // setting authentication strategy and crosschecking username and password
-passport.use(new LocalStrategy(function(username, password, done){
-    var user = _.find(users, u => u.name === username);
+passport.use(new LocalStrategy(function (username, password, done) {
+    users.getUserbyUsername(username, function (err, user) {
+        if (err) return console.log(err);
+        // if(!user || user.password !== password){
+        if (!user) {
+            done(null, false);
+            return;
+        }
 
-    if(!user || user.password !== password){
-        done(null, false);
-        return;
-    }
+        done(null, user);
 
-    done(null, user);
+    });
+
 }));
 
 

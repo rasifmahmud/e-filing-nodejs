@@ -28,25 +28,7 @@ router.get("/login", function (req, res) {
         res.redirect('/');
     }
 
-    var newrfqinfo = new mongoose.Schema({
-        RFQ_ID: {type: Schema.ObjectId, ref: 'RFQ' },
-        title: {type: String},
-        bidhi_niti: {type: String},
-        details:
-            [{
-                item_no: {type: Number},
-                desctription: {type: String},
-                unit: {type: Number},
-                qty: {type: Number},
-                price_fig: {type: Number},
-                price_words: {type: String},
-                total_fig: {type: Number},
-                total_words: {type: String},
-                total_tt_fig: {type: Number},
-                total_tt_words: {type: String},
-            }]
-    });
-
+    
     res.render("login");
 });
 
