@@ -5,6 +5,7 @@ var userSchema = new mongoose.Schema({
     name: {type: String},
     username: {type: String, unique: true, index: true, required: true},
     password: {type: String},
+    designation: {type: String},
     created: {type: Date,default: Date.now},
     dob: {type: Date},
     contactNo: {type: [String]},
@@ -25,3 +26,7 @@ module.exports.createUser = function (newUser, callback) {
     });
 
 };
+
+module.exports.getUserbyUsername = function (username, callback) {
+    User.findOne({username: username}, callback);
+}

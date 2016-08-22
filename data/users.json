@@ -14,5 +14,35 @@
     "name": "john",
     "id": "9841a17f-7a55-4bf8-bb90-a828cb8d14d1",
     "password": "doe"
+  },
+  {
+    "name": "tanmoy12",
+
+    "password": "123456"
+  },
+  {
+    "name": "anik12",
+
+    "password": "123456"
+  },
+  {
+    "name": "razon12",
+
+    "password": "123456"
+  },
+  {
+    "name": "imran12",
+
+    "password": "123456"
+  },
+  {
+    "name": "shadman12",
+
+    "password": "123456"
+  },
+  {
+    "name": "lincon12",
+
+    "password": "123456"
   }
 ]
