@@ -10,10 +10,11 @@ var users = require("../models/users");
 
 
 // setting authentication strategy and crosschecking username and password
-passport.use(new LocalStrategy(function(username, password, done){
-    users.getUserbyUsername(username,function (err,user) {
-        if(err) return console.log(err);
+passport.use(new LocalStrategy(function (username, password, done) {
+    users.getUserbyUsername(username, function (err, user) {
+        if (err) return console.log(err);
         if(!user || user.password !== password){
+        // if (!user) {
             done(null, false);
             return;
         }

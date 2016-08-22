@@ -53,6 +53,9 @@ module.exports.getFullRFQListbyID = function(ID, callback) {
 
 module.exports.getFullRFQListbyUsername = function(username, callback){
     User.getUserbyUsername(username,  function (er, doc) {
+        if(!doc){
+            return;
+        }
        var ID= doc._id;
         //console.log(ID);
 

@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
-
+var ObjectId = require('mongodb').ObjectId;
 var RFQdetailsSchema = new mongoose.Schema({
     RFQ_ID: {type: Schema.ObjectId },
     title: {type: String},
@@ -20,9 +20,13 @@ var RFQdetailsSchema = new mongoose.Schema({
     }
 });
 var RFQdetails= mongoose.model('RFQdetails', RFQdetailsSchema);
-module.exports = User;
+module.exports = RFQdetails;
 
 module.exports.createRFQdetails = function (newRFQdetails, callback) {
     newRFQdetails.save(callback);
     //console.log(" rffffdetails inserted");
 };
+module.exports.getRFQInfobyID = function (ID, callback) {
+    RFQdetails.findOne({_id: ID}, callback);
+};
+
