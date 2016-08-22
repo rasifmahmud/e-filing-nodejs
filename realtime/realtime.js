@@ -21,7 +21,7 @@ io.sockets.on('connection', function (socket) {
 
         }
         // console.log(connectedUsers);
-        getSockets('test12');
+        getSockets(userID);
 
 
     });

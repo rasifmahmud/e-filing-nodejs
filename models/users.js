@@ -28,5 +28,5 @@ module.exports.createUser = function (newUser, callback) {
 };
 
 module.exports.getUserbyUsername = function (username, callback) {
-    User.findOne({username: username}, callback);
+    User.findOne({username: username}, callback).lean();
 }
