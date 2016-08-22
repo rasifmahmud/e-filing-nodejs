@@ -3,6 +3,7 @@ $(document).ready(function(){
     var myDate = new Date().toString().slice(0, 21);
     document.getElementById("date").innerHTML = myDate;
 
+    var jsonData = "";
     $("#submit-requisition-form").click(function(){
         var requsitionFormTable = document.getElementById('dataTable');
 
@@ -19,12 +20,30 @@ $(document).ready(function(){
             var cellLength = oCells.length;
 
             //loops through each cell in current row
-            for(var j = 2; j < cellLength; j++){
+            // for(var j = 2; j < cellLength; j++){
+            //
+            //     // get your cell info here
+            //     var cellVal = requsitionFormTable.rows[i].cells[j].innerHTML;   //oCells.item(j).childNodes[0].innerHTML;
+            //     alert(j + " --> " + cellVal);
+            // }
 
-                // get your cell info here
-                var cellVal = requsitionFormTable.rows[i].cells[j].innerHTML;   //oCells.item(j).childNodes[0].innerHTML;
-                alert(j + " --> " + cellVal);
-            }
+            var itemNo = requsitionFormTable.rows[i].cells[1].innerHTML;
+            var descriptionOfItems = requsitionFormTable.rows[i].cells[2].innerHTML;
+            var unitOfMeasurement = requsitionFormTable.rows[i].cells[3].innerHTML;
+            var quantity = requsitionFormTable.rows[i].cells[4].innerHTML;
+            var URPInFigure = requsitionFormTable.rows[i].cells[5].innerHTML;
+            var URPInWords = requsitionFormTable.rows[i].cells[6].innerHTML;
+            var totalAmountInFigure = requsitionFormTable.rows[i].cells[7].innerHTML;
+            var totalAmountInWords = requsitionFormTable.rows[i].cells[8].innerHTML;
+
+            jsonData = '"itemNo"' + " : " + '"' + itemNo + '"' + "," +
+                       '"descriptionOfItems"' + " : " + '"' + descriptionOfItems + '"' + "," +
+                       '"unitOfMeasurement"' + " : " + '"' + unitOfMeasurement + '"' + "," +
+                '"quantity"' + " : " + '"' + quantity + '"' + "," +
+                '"URPInFigure"' + " : " + '"' + URPInFigure + '"' + "," +
+                '"URPInWords"' + " : " + '"' + URPInWords + '"' + "," +
+                '"totalAmountInFigure"' + " : " + '"' + unitOfMeasurement + '"' + "," +
+                '"totalAmountInWords"' + " : " + '"' + unitOfMeasurement + '"'  ;
         }
     });
 });
