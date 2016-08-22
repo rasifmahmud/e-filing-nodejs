@@ -9,7 +9,7 @@ io.sockets.on('connection', function (socket) {
 
     // A new user is currently connected , putting him in connectedusers
     socket.on('new user', function (userID) {
-        console.log('new user');
+        // console.log('new user');
         socket.userID = userID;
         if (userID in connectedUsers) {
             connectedUsers[socket.userID].push(socket);
@@ -20,8 +20,8 @@ io.sockets.on('connection', function (socket) {
             connectedUsers[socket.userID].push(socket);
 
         }
-        console.log(connectedUsers);
-        getSockets('44f885e8-87e9-4911-973c-4074188f408a');
+        // console.log(connectedUsers);
+        getSockets('test12');
 
 
     });
@@ -42,7 +42,7 @@ io.sockets.on('connection', function (socket) {
             }
 
         }
-        console.log(connectedUsers);
+        // console.log(connectedUsers);
 
 
     });

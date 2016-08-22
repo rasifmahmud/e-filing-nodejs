@@ -13,6 +13,7 @@ $(document).ready(function() {
     }).done(function (user) {
         user_obj = user;
         // new user connected hoise eita server k janaite hbe realtime er bepar shepar
+        console.log(user_obj);
         $.ajax({
             type: "POST",
             url: "/api/data",
@@ -20,7 +21,7 @@ $(document).ready(function() {
             contentType : "application/json"
 
         }).done(function () {
-            socket.emit('new user', user_obj.id);
+            socket.emit('new user', user_obj.username);
 
         });
 

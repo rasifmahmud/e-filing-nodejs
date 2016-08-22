@@ -2,6 +2,8 @@
  * Created by razon on 8/19/16.
  */
 var express = require('express');
+var rfq = require("../models/RFQ");
+var user = require("../models/users");
 var router = express.Router();
 module.exports = router;
 
@@ -10,8 +12,5 @@ router.route('/data')
         res.json(req.user);
     })
     .post(function (req, res) {
-        console.log("#########################");
-        console.log(req.body);
-        console.log("#########################");
         res.sendStatus(200);
     });
