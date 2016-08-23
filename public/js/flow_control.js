@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 
     //  3 types of users are possible. 1. director 2. scientist 3. hishab rokhkhk
-    var userType = "scientist" ;
+    var userType;
     // initiator / jachaikari / hishab rokhkhok / director
     var rfqPrivilege ;
     var proPicImageURL="../dist/img/user2-160x160.jpg";
@@ -61,6 +61,11 @@ $(document).ready(function(){
     $(".full-name").text(fullName);
     $(".designation").text(designation);
     $(".is-online").text(isOnline);
+
+    var user = special_data.user;
+    var rfq_list = special_data.rfq_list;
+    console.log("username"+"-->" + user.username);
+    console.log("password ---> " + user.password);
 
 
 });
