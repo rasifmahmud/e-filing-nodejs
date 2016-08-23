@@ -2,7 +2,7 @@
 <html ng-app>
 
 <head>
-
+    <!-- 3033776dca33776a8e163ad4c45f43e2eb90b7a5 -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DRiCM</title>
@@ -53,7 +53,15 @@
     <!--  Left sidebar ends -->
 
     <!-- new RFQ initiate korar 16 steps start -->
-    <% include ../partials/newRFQSteps.ejs %>
+    <% if(main_content === "rfq_request") {%>
+        <% include ../partials/newRFQSteps.ejs %>
+    <% } %>
+
+    <% if(main_content === "default") {%>
+        <% include ../partials/newRFQSteps.ejs %>
+    <% } %>
+
+
     <!-- new RFQ initiate korar 16 steps end -->
 
     <!-- footer start -->
