@@ -4,6 +4,7 @@ var passport = require("passport");
 var users = require("../data/users.json");
 var User=require("../models/users");
 var RFQ=require("../models/RFQ");
+var RFQDetails=require("../models/RFQ_info");
 
 // exporting router module to the outer world
 var router = express.Router();
@@ -28,7 +29,9 @@ router.get("/login", function (req, res) {
         res.redirect('/');
     }
 
-    
+    RFQ.getRFQbyID("57b9eaa64a2cc77834c9c7c5" , function (err, docs) {
+        console.log(docs);
+    })
     res.render("login");
 });
 

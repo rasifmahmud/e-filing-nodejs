@@ -9,15 +9,16 @@ var RFQdetailsSchema = new mongoose.Schema({
     [{
         item_no: {type: Number},
         desctription: {type: String},
-        unit: {type: Number},
+        unit: {type: String},
         qty: {type: Number},
         price_fig: {type: Number},
         price_words: {type: String},
         total_fig: {type: Number},
-        total_words: {type: String},
-        total_tt_fig: {type: Number},
-        total_tt_words: {type: String},
-    }]
+        total_words: {type: String}
+
+    }],
+    total_tt_fig: {type: Number},
+    total_tt_words: {type: String}
 });
 var RFQdetails= mongoose.model('RFQdetails', RFQdetailsSchema);
 module.exports = RFQdetails;
