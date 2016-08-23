@@ -2,6 +2,10 @@ $(document).ready(function(){
 
     "use strict";
 
+
+    var myDate = new Date().toString().slice(0, 21);
+    document.getElementById("date").innerHTML = myDate;
+
     var i = 2;
     $("#forward-btn").click(function() {
         $("#step" + i + "-panel").show("slow");
@@ -44,8 +48,12 @@ $(document).ready(function(){
     if (step10_complete === true)  document.getElementById( 'step11-panel' ).style.display = 'block';
 
 
-    var myDate = new Date().toString().slice(0, 21);
-    document.getElementById("date").innerHTML = myDate;
+
+    // step 1  er jonno necessary data start
+    var rfq_heading = "";
+    $("#rfq-initiator-name").text("initiator name");
+    $("td").contentEditable = true;
+    //$("td").required = true;
 
     var jsonData = "";
     $("#submit-requisition-form").click(function(){
@@ -86,10 +94,15 @@ $(document).ready(function(){
                        '"totalAmountInFigure"' + " : " + '"' + totalAmountInFigure + '"' + "," +
                        '"totalAmountInWords"'  + " : " + '"' + totalAmountInWords  + '" } ,'  ;
             // jsonData = " { " + jsonData + " } , ";
+            rfq_heading+= descriptionOfItems + " , ";
         }
 
+        $("#rfq-heading").text(rfq_heading.slice(0,-2));
+
+
+
         jsonData = "[ " + jsonData.slice(0,-1) +" ] ";
-        alert(jsonData);
+        //alert(jsonData);
     });
 });
 
