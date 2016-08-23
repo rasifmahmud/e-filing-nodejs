@@ -3,7 +3,6 @@
  */
 var express = require('express');
 var rfq = require("../models/RFQ");
-var rfqdetails = require("../models/RFQ_info");
 var _ = require('lodash');
 var router = express.Router();
 module.exports = router;
@@ -25,6 +24,16 @@ module.exports = router;
 // function get_rfq(result,callback) {
 //     loop_through(result);
 //     callback(result);
+//
+// }
+// function getThemAll(req,res) {
+//     rfq.getFullRFQListbyUsername(req.user.username, function (err, result) {
+//         if (err) return console.log(err);
+//         get_rfq(result,function (result) {
+//             // wanted to do my coding here
+//         });
+//
+//     });
 //
 // }
 
