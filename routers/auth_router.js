@@ -29,9 +29,6 @@ router.get("/login", function (req, res) {
         res.redirect('/');
     }
 
-    RFQ.getRFQbyID("57b9eaa64a2cc77834c9c7c5" , function (err, docs) {
-        console.log(docs);
-    })
     res.render("login");
 });
 
