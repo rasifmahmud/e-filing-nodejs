@@ -3,9 +3,9 @@ $(document).ready(function(){
     var userType;
     // initiator / jachaikari / hishab rokhkhok / director
     var rfqPrivilege ;
-    var proPicImageURL="../dist/img/user2-160x160.jpg";
-    var fullName = "Md. Moniruzzaman";
-    var designation = "Scientific Officer";
+    var proPicImageURL="/api/pic";
+    var fullName = special_data.user.name;
+    var designation = special_data.user.designation;
     var isOnline = "Online";
 
     $(".pro-pic").attr("src",proPicImageURL);
@@ -13,8 +13,8 @@ $(document).ready(function(){
     $(".designation").text(designation);
     $(".is-online").text(isOnline);
 
-    console.log(special_data.user);
-    console.log(special_data.RFQ_list);
+    // console.log(special_data.user);
+    // console.log(special_data.RFQ_list);
 
 
 

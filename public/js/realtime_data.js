@@ -17,5 +17,12 @@ $(document).ready(function() {
     socket.on('moga',function (data) {
         console.log(data);
     });
+    socket.on('online', function (data) {
+        console.log(data);
+    })
+
+    socket.on('offline', function (data) {
+        console.log(data);
+    })
 
 });
