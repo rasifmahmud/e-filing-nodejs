@@ -14,7 +14,7 @@ $(document).ready(function(){
     $(".is-online").text(isOnline);
 
     console.log(special_data.user);
-    console.log(special_data.rfq_list);
+    console.log(special_data.RFQ_list);
 
 
 

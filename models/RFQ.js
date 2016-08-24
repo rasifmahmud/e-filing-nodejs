@@ -34,13 +34,13 @@ module.exports = RFQ;
 
 module.exports.createRFQ = function (newRFQ, callback) {
     newRFQ.save(callback);
-    //console.log(" rffff inserted");
+
 };
 
 
 module.exports.getAllRFQbyUserID = function(ID, callback) {
     RFQ
-        .findOne({
+        .find({
             $or: [{'initiator_id': ID},
                 {'refer_jachai.ID': ID},
                 {'refer_hishab.ID': ID},
@@ -94,4 +94,35 @@ var getFullRFQListbyUsername = function (username, callback) {
 
 module.exports.getFullRFQListbyUsername= getFullRFQListbyUsername;
 
+module.exports.insertRFQ = function (frontdoc, initiator_id, done) {
+    var newRFQ= new RFQ({
+        initiator_id: initiator_id,
 
+        step_id: 1,
+    });
+    RFQ.createRFQ(newRFQ, function (err, rfqdoc) {
+        if (err) throw err;
+        else{
+            var newRFQDetails = new RFQDetails({
+                RFQ_ID: rfqdoc._id,
+                title: "errrr",
+                bidhi_niti: "bidhi",
+                details: frontdoc,
+
+                total_tt_fig: 12,
+                total_tt_words: "nada"
+            });
+
+            RFQDetails.createRFQdetails(newRFQDetails, function (err, rfqdetailsdoc) {
+                if (err) throw err;
+                else{
+                    console.log(rfqdetailsdoc._id);
+                    RFQ.findOne({_id : rfqdoc._id}, function (err, doc){
+                        doc.RFQ_details_id = rfqdetailsdoc._id;
+                        doc.save(done);
+                    });
+                }
+            });
+        }
+    });
+}

@@ -6,3 +6,4 @@ $.ajax({
     special_data = data;
     $.holdReady(false);
 });
+
