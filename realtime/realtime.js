@@ -8,41 +8,43 @@ var _ = require("lodash");
 io.sockets.on('connection', function (socket) {
 
     // A new user is currently connected , putting him in connectedusers
-    socket.on('new user', function (userID) {
+    socket.on('new user', function (username) {
         // console.log('new user');
-        socket.userID = userID;
-        if (userID in connectedUsers) {
-            connectedUsers[socket.userID].push(socket);
+        socket.username = username;
+        if (username in connectedUsers) {
+            connectedUsers[socket.username].push(socket);
 
         }
         else {
-            connectedUsers[socket.userID] = [];
-            connectedUsers[socket.userID].push(socket);
+            connectedUsers[socket.username] = [];
+            connectedUsers[socket.username].push(socket);
 
         }
-        // console.log(connectedUsers);
-        getSockets(userID);
-
+        console.log(connectedUsers);
+        // getSockets(username);
+        socket.broadcast.emit('online', getOnlineUsernames());
 
     });
     // if he disconnects himself from any of the sockets they got deleted eventually
     socket.on('disconnect', function () {
-        if (!socket.userID) {
+        if (!socket.username) {
             return;
         }
         else {
-            var array = connectedUsers[socket.userID];
+            var array = connectedUsers[socket.username];
             var newArray= [];
             newArray = _.filter(array, s => s.id !== socket.id);
             if(newArray.length==0){
-                delete connectedUsers[socket.userID];
+                socket.broadcast.emit('offline', getOnlineUsernames());
+
+                delete connectedUsers[socket.username];
             }
             else{
-                connectedUsers[socket.userID] = newArray;
+                connectedUsers[socket.username] = newArray;
             }
 
         }
-        // console.log(connectedUsers);
+        console.log(connectedUsers);
 
 
     });
@@ -55,11 +57,17 @@ io.sockets.on('connection', function (socket) {
     });
 
     // emitting realtime stuffs through the sockets of a single user
-    function getSockets(userID) {
-        var socket_array = connectedUsers[userID];
+    function getSockets(username) {
+        var socket_array = connectedUsers[username];
         _.map(socket_array,function (s) {
-            s.emit("moga", "O amar shokhi");
+            s.emit("moga", getOnlineUsernames());
         });
+
+    };
+    function getOnlineUsernames() {
+        var onlineUsers = [];
+        for(var k in connectedUsers) onlineUsers.push(k);
+        return onlineUsers;
 
     }
 
