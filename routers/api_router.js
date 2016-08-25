@@ -6,8 +6,7 @@ var RFQ = require("../models/RFQ");
 var _ = require('lodash');
 var router = express.Router();
 module.exports = router;
-
-
+var PATH = require('path');
 
 router.route('/data')
     .get(function (req, res) {
@@ -29,5 +28,6 @@ router.route('/pic')
     .get(function (req, res) {
 
         var path = req.user.profilePic;
-        res.sendFile('/home/razon/WebstormProjects/DRICM'+path);
+        res.sendFile(PATH.join(__dirname,'..',path));
     });
+
