@@ -9,6 +9,7 @@ var io = require('socket.io').listen(server);
 var bodyParser = require("body-parser");
 var passport = require("passport");
 var mongoose= require("mongoose");
+var engine = require('ejs-blocks');
 var multer  = require('multer');
 var upload = multer({ dest: 'data/images/' });
 // exporting socketio to realtimejs for better maintenance
@@ -22,6 +23,7 @@ mongoose.connect(dburl);
 
 
 // view engine setup
+app.engine('ejs', engine);
 app.set("views", "./views");
 app.set('view engine', 'ejs');
 
