@@ -1,0 +1,95 @@
+<!-- --------------- Modal for step1 chahida potro start ------------------ -->
+<div class="modal fade" id="step1-requirement-form-modal" role="dialog" tabindex="1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>ডেজিগনেটেড রেফারেন্স ইনস্টিটিউট ফর কেমিক্যাল মেজারমেন্টস</h3>
+                <h4>বাংলাদেশ বিজ্ঞান ও শিল্প গবেষণা পরিষদ</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="container-fluid" style="color: #ffffff;">
+                            <div class="row">
+                                <div class="col-md-6">সূত্র নং : ২০১৪১-১৫ আসবাবপত্র ক্রয়</div>
+                                <div class="col-md-6" id="date" style="text-align:center;"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"
+                                     style="font-size:25px;text-align:center;font-weight:bold;">
+                                    চাহিদা পত্র
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <table id="dataTable" width="100%" align="center">
+                            <tr>
+                                <th rowspan="2"></th>
+                                <th rowspan="2">Item No.</th>
+                                <th rowspan="2">Description of Items</th>
+                                <th rowspan="2">Unit of Measurement</th>
+                                <th rowspan="2">Quantity</th>
+                                <th colspan="2">Unit Rate of Price</th>
+                                <th colspan="2">Total Amount</th>
+                            </tr>
+                            <tr id="unit">
+                                <th>In Figure</th>
+                                <th>In Words</th>
+                                <th>In Figure</th>
+                                <th>In Words</th>
+                            </tr>
+                            <tr>
+                                <td height="100px" contenteditable="true"><input type="checkbox"
+                                                                                 name="chk"/></td>
+                                <td height="100px" contenteditable="true"
+                                    style="text-align: center;"> 1
+                                </td>
+                                <td height="100px" contenteditable="true"></td>
+                                <td height="100px" contenteditable="true"></td>
+                                <td height="100px" contenteditable="true"></td>
+                                <td height="100px" contenteditable="true"></td>
+                                <td height="100px" contenteditable="true"></td>
+                                <td height="100px" contenteditable="true"></td>
+                                <td height="100px" contenteditable="true"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <!-- <div class="col-sm-10 col-md-10 col-lg-10"></div>
+                            <div class="col-sm-2  col-md-2 col-lg-2 pull-right"> -->
+                            <div class="pull-right">
+                                <div class="btn-group" style="padding-right:15px;">
+                                    <button type="button" class="btn btn-sm btn-primary"
+                                            onclick="addRow('dataTable')"> Add Item
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger"
+                                            onclick="deleteRow('dataTable')">Delete Item
+                                    </button>
+                                    <!-- <input type="button" value="Add Item" onclick="addRow('dataTable')" />
+                                    <input type="button" value="Delete Item" onclick="deleteRow('dataTable')" /> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="pull-right">
+                        <div class="btn-group" style="padding-right:30px;">
+                            <button type="button" class="btn btn-success"
+                                    id="submit-requisition-form" data-dismiss="modal"> Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- --------------- Modal for step1 chahida potro start ------------------ -->
+
+
+<script type="text/javascript " src="../js/RF_uneditable.js"></script>

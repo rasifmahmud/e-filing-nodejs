@@ -25,9 +25,10 @@ router.route('/upload')
         });
         res.sendStatus(200);
     });
-router.route('/pic')
-    .get(function (req, res) {
 
-        var path = req.user.profilePic;
-        res.sendFile('/home/razon/WebstormProjects/DRICM'+path);
-    });
+// router.route('/pic')
+//     .get(function (req, res) {
+//
+//         var path = req.user.profilePic;
+//         res.sendFile('/home/username/WebstormProjects/DRICM'+path);
+//     });
