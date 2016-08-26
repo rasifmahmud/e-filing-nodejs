@@ -13,8 +13,14 @@ $(document).ready(function(){
     $(".designation").text(designation);
     $(".is-online").text(isOnline);
 
-    // console.log(special_data.user);
-    // console.log(special_data.RFQ_list);
+    console.log(special_data.user);
+    console.log(special_data.RFQ_list);
+
+    var num_of_rfq = special_data.RFQ_list.length;
+    for(var i=0;i<num_of_rfq;i++){
+
+    }
+
 
 
 

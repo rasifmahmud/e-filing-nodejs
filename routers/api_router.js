@@ -25,6 +25,9 @@ router.route('/upload')
         res.sendStatus(200);
     });
 
+router.route('/pic')
+    .get(function (req, res) {
 
-    var path = req.user.profilePic;
-    res.sendFile(PATH.join(__dirname,'..',path));
+        var path = req.user.profilePic;
+        res.sendFile(PATH.join(__dirname,'..',path));
+    });
