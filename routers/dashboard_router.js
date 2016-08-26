@@ -7,7 +7,7 @@
 
 var express = require('express');
 var router = express.Router();
-
+var RFQ = require("../models/RFQ");
 
 // exporting the module to the outer world
 module.exports = router;
@@ -15,8 +15,12 @@ module.exports = router;
 // routing to the dashboard
 router.route('/')
     .get(function (req, res) {
-        // res.render('bn_BD/dashboard');
-        res.render('bn_BD/dashboard',{ main_content:"default" });
+        RFQ.getAllRFQbyUserID(req.user._id, function (err, result) {
+            if (err) return console.log(err);
+            res.render('bn_BD/dashboard',{main_content:"default",user: req.user, RFQ_list: result});
+
+        });
+
     });
 
 router.route('/rfq_request')
