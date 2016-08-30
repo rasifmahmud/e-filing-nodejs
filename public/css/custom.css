@@ -1,3 +1,9 @@
+.small-box{
+	-moz-box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+	box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
 
 .modal-header{
 	text-align: center;

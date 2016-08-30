@@ -28,7 +28,8 @@
     "promise": "^7.1.1",
     "socket.io": "^1.4.8",
     "ejs-locals": "~1.0.2",
-    "ejs-blocks": "~0.1.4"
+    "ejs-blocks": "~0.1.4",
+    "admin-lte": "~2.3.6"
   },
   "devDependencies": {
     "morgan": "^1.7.0"

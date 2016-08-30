@@ -47,7 +47,6 @@ $(document).ready(function () {
 
     // step 1  er jonno necessary data start
     var rfq_heading = "";
-    $("#rfq-initiator-name").text("initiator name");
     $("td").contentEditable = true;
     //$("td").required = true;
     var jsonArray = [];

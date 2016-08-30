@@ -38,5 +38,23 @@ router.route('/rfq_running')
 router.route('/rfq_list')
     .get(function (req, res) {
         // res.render('bn_BD/RFQ_List');
-        res.render('bn_BD/dashboard',{ main_content:"rfq_list" });
+        // res.render('bn_BD/dashboard',{main_content:"rfq_list"});
+
+        RFQ.getAllRFQbyUserID(req.user._id, function (err, result) {
+            if (err) return console.log(err);
+            res.render('bn_BD/dashboard',{main_content:"rfq_list",user: req.user, RFQ_list: result});
+
+        });
     });
+
+
+router.route('/test')
+    .get(function (req, res) {
+        // res.render('bn_BD/RFQ_Running');
+        res.render('bn_BD/dashboard',{ main_content:"test" });
+    });
+
+
+
+
+

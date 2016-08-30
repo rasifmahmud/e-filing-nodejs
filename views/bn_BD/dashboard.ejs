@@ -53,20 +53,36 @@
     <!--  Left sidebar ends -->
 
     <!-- new RFQ initiate korar 16 steps start -->
-    <% if(main_content === "default") {%>
 
-        <% include ../partials/taskList.ejs %>
 
-    <% } else if(main_content === "rfq_request") {%>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <div id="main-content">
 
-        <% include ../partials/newRFQSteps.ejs %>
+            <% if(main_content === "default") {%>
 
-    <% } else if(main_content === "rfq_list") {%>
+                <% include ../partials/taskList.ejs %>
 
-        <% include ../partials/RFQ_list.ejs %>
+            <% } else if(main_content === "rfq_request") {%>
 
-    <% } %>
+                <% include ../partials/newRFQSteps.ejs %>
 
+            <% } else if(main_content === "rfq_list") {%>
+
+                <% include ../partials/RFQ_list.ejs %>
+
+            <% } else if(main_content === "rfq_detailed"){ %>
+
+                <% include ../partials/RFQ_list.ejs %>
+
+            <% } else if(main_content === "test"){ %>
+
+                <% include ../partials/RF_uneditable.ejs %>
+
+            <% } %>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
 
 
     <!-- new RFQ initiate korar 16 steps end -->
