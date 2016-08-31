@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    // console.log($("#target").html());
+    // $("#main-content").html($("#target").html());
     $("#nothead").empty().append("You have " +special_data.RFQ_list.length + " notifications" );
     $("#notnumber").empty().append(special_data.RFQ_list.length);
 

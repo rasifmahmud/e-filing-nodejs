@@ -1,4 +1,16 @@
+function showd(i) {
+    window.alert('you  ' + i);
+    var inner = $("#target").html();
+    console.log(inner);
+    $("#main-content").html($("#target").html());
+
+}
+
 $(document).ready(function(){
+    // console.log($("#boom").html());
+    // console.log($("#target").innerHTML);
+    // console.log($("#target").text());
+
     //  3 types of users are possible. 1. director 2. scientist 3. hishab rokhkhk
     var userType;
     // initiator / jachaikari / hishab rokhkhok / director
@@ -37,6 +49,7 @@ $(document).ready(function(){
                 initiator_name = rfq_list[i].initiator_id.name;
                 initiating_date = rfq_list[i].created;
                 rfq_title = rfq_list[i].RFQ_details_id.title;
+                rfq_state = rfq_list[i].state;
                 // rfq_title = rfq_list[i].RFQ_details_id.title;
                 console.log(special_data.RFQ_list[i].state);
                 if(rfq_state === "running"){
@@ -87,7 +100,7 @@ $(document).ready(function(){
                                             '<div class="icon">'+
                                                 '<i class="' + icon + '" aria-hidden="true"></i>'+
                                             '</div>'+
-                                            '<a href="#" class="small-box-footer" id="rfq-more-info'+ i +'">'+
+                                            '<a class="small-box-footer" href="rfq_list" id="rfq-more-info'+ i +'">'+
                                                 'More info <i class="fa fa-arrow-circle-right fa-lg"></i>'+
                                             '</a>'+
                                         '</div>'+
@@ -101,16 +114,26 @@ $(document).ready(function(){
             }
             return '<div style="padding-top: 15px;">'+html_text +'</div>';
         });
+
+        var no_of_rfq = special_data.RFQ_list.length;
+        for(let i = 0; i < no_of_rfq; i++) {
+            console.log(i);
+            $('#rfq-more-info' + i).click( function(){
+                // showd(i);
+            });
+        }
     });
 
-    var no_of_rfq = special_data.RFQ_list;
-    for(var i=0;i<no_of_rfq;i++){
-        var id = "rfq-more-info" + i;
-        $(id).click(function () {
-            console.log(i);
-        });
-    }
 
+    // for(var i=0;i<5;i++){
+    //     var id = "#rfq-more-info" + i;
+
+    //
+    // }
+
+    // $("#rfq-more-info0").click(function () {
+    //     console.log("thioh dofnd");
+    // });
 
 //    main content by default jeta thakbe
 //    activity list
