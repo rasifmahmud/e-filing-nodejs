@@ -39,3 +39,11 @@ router.route('/rfq_list')
     .get(function (req, res) {
         res.render('bn_BD/RFQ_List');
     });
+// router.route('/rfq_detail/:id')
+//     .get(function (req, res) {
+//         var id = req.params.id;
+//         res.json({RFQ_Index:id});
+//         res.redirect('/');
+//
+//
+//     });

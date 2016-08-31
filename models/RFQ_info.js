@@ -27,3 +27,7 @@ module.exports.createRFQdetails = function (newRFQdetails, callback) {
     newRFQdetails.save(callback);
     //console.log(" rffffdetails inserted");
 };
+module.exports.getRFQInfobyID = function (ID, callback) {
+    RFQdetails.findOne({_id: ID}, callback).lean();
+};
+
