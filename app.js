@@ -12,6 +12,14 @@ var mongoose= require("mongoose");
 var engine = require('ejs-blocks');
 var multer  = require('multer');
 var upload = multer({ dest: 'data/images/' });
+
+
+var RFQ = require("./models/RFQ");
+var RFQ_details = require('./models/RFQ_info');
+var _ = require('lodash');
+
+
+
 // exporting socketio to realtimejs for better maintenance
 module.exports = io ;
 require('./realtime/realtime');

@@ -21,8 +21,10 @@ router.route('/data')
 router.route('/upload')
     .post(function (req, res) {
         RFQ.insertRFQ(req.body, req.user._id, function (err, doc) {
+            if(err) return console.log(err);
+            res.sendStatus(200);
         });
-        res.sendStatus(200);
+
     });
 
 router.route('/pic')
@@ -30,4 +32,11 @@ router.route('/pic')
 
         var path = req.user.profilePic;
         res.sendFile(PATH.join(__dirname,'..',path));
+    });
+
+router.route('/rfq_list/:id')
+    .get(function (req, res) {
+        var id = req.params.id;
+        res.json({RFQ_Index:id});
+
     });

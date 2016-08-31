@@ -31,7 +31,7 @@ router.route('/rfq_request')
 
 router.route('/rfq_running')
     .get(function (req, res) {
-       // res.render('bn_BD/RFQ_Running');
+        // res.render('bn_BD/RFQ_Running');
         res.render('bn_BD/dashboard',{ main_content:"rfq_running" });
     });
 
@@ -53,8 +53,4 @@ router.route('/test')
         // res.render('bn_BD/RFQ_Running');
         res.render('bn_BD/dashboard',{ main_content:"test" });
     });
-
-
-
-
 
