@@ -1,8 +1,8 @@
 function showd(i) {
     window.alert('you  ' + i);
     var inner = $("#target").html();
-    console.log(inner);
-    $("#main-content").html($("#target").html());
+    console.log("ggug juyg");
+    // $("#main-content").html($("#target").html());
 
 }
 
@@ -119,7 +119,7 @@ $(document).ready(function(){
         for(let i = 0; i < no_of_rfq; i++) {
             console.log(i);
             $('#rfq-more-info' + i).click( function(){
-                // showd(i);
+                show_detail(i);
             });
         }
     });
