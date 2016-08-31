@@ -2,9 +2,7 @@ $(document).ready(function () {
 
     "use strict";
 
-
-    var myDate = new Date().toString().slice(0, 21);
-    document.getElementById("date").innerHTML = myDate;
+    // $("#main-content").html("<h1> thtihththtgthtihtihtthgth </h1>");
 
     var i = 2;
     $("#forward-btn").click(function () {
@@ -50,7 +48,6 @@ $(document).ready(function () {
 
     // step 1  er jonno necessary data start
     var rfq_heading = "";
-    $("#rfq-initiator-name").text("initiator name");
     $("td").contentEditable = true;
     //$("td").required = true;
     var jsonArray = [];
