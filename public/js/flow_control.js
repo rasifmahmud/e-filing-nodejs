@@ -1,8 +1,8 @@
 function showd(i) {
     window.alert('you  ' + i);
     var inner = $("#target").html();
-    console.log(inner);
-    $("#main-content").html($("#target").html());
+    console.log("ggug juyg");
+    // $("#main-content").html($("#target").html());
 
 }
 
@@ -100,7 +100,7 @@ $(document).ready(function(){
                                             '<div class="icon">'+
                                                 '<i class="' + icon + '" aria-hidden="true"></i>'+
                                             '</div>'+
-                                            '<a class="small-box-footer" href="rfq_list" id="rfq-more-info'+ i +'">'+
+                                            '<a class="small-box-footer" href="rfq_list" id="/api/rfq_list/'+ i +'">'+
                                                 'More info <i class="fa fa-arrow-circle-right fa-lg"></i>'+
                                             '</a>'+
                                         '</div>'+
@@ -115,13 +115,13 @@ $(document).ready(function(){
             return '<div style="padding-top: 15px;">'+html_text +'</div>';
         });
 
-        var no_of_rfq = special_data.RFQ_list.length;
-        for(let i = 0; i < no_of_rfq; i++) {
-            console.log(i);
-            $('#rfq-more-info' + i).click( function(){
-                // showd(i);
-            });
-        }
+        // var no_of_rfq = special_data.RFQ_list.length;
+        // for(let i = 0; i < no_of_rfq; i++) {
+        //     console.log(i);
+        //     $('#rfq-more-info' + i).click( function(){
+        //         show_detail(i);
+        //     });
+        // }
     });
 
 
