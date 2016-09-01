@@ -12,7 +12,7 @@ $(document).ready(function () {
     function show_detail(i) {
         index_step = i;
     }
-    
+
 
     for (var i= index_step+1 ;i<=16;i++){
         document.getElementById('step' + i + '-panel').style.display = 'none';
