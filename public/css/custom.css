@@ -24,18 +24,18 @@
 }
 
 .panel {
-	min-height: 200px;
+	/*min-height: 200px;*/
 	-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 div textarea {
-	font-size: 18px;
+	/*font-size: 18px;*/
 }
 
 .panel-body {
-	font-size: 18px;
+	/*font-size: 12px;*/
 }
 
 

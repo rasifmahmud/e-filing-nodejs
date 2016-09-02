@@ -26,6 +26,7 @@ $(document).ready(function(){
     $(".is-online").text(isOnline);
 
     console.log(special_data.RFQ_list);
+    console.log(special_data.user);
     //window.alert(special_data.RFQ_list.length);
 
 
@@ -48,7 +49,7 @@ $(document).ready(function(){
             for(var i=0;i<rfq_list.length;i++){
                 initiator_name = rfq_list[i].initiator_id.name;
                 initiating_date = rfq_list[i].created;
-                rfq_title = rfq_list[i].RFQ_details_id.title;
+                rfq_title ="";// rfq_list[i].RFQ_details_id.title;
                 rfq_state = rfq_list[i].state;
                 // rfq_title = rfq_list[i].RFQ_details_id.title;
                 console.log(special_data.RFQ_list[i].state);
