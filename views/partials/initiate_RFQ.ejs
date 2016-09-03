@@ -1,0 +1,272 @@
+<script type="text/javascript " src="../js/requisition_form.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+<style type="text/css">
+    @media screen and (min-width: 768px) {
+        .modal-dialog {
+            width: 700px; /* New width for default modal */
+        }
+        .modal-sm {
+            width: 350px; /* New width for small modal */
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .modal-lg {
+            width: 1050px; /* New width for large modal */
+        }
+    }
+</style>
+    <!-- Content Header (Page header) -->
+    <section class="content-header" id="header">
+        <div class="container-fluid heading">
+            <div>
+                <h2>ডেজিগনেটেড রেফারেন্স ইনস্টিটিউট ফর কেমিক্যাল মেজারমেন্টস</h2>
+                <h3>বাংলাদেশ বিজ্ঞান ও শিল্প গবেষণা পরিষদ</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!------------------------- step 1 content starts  ---------------------------------- -->
+        <div class="panel panel-primary" id="step1-panel">
+            <div class="panel-heading">
+                <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                        data-target="#step1-requirement-form-modal"><i class="fa fa-upload fa-lg"
+                                                                       aria-hidden="true"> | চাহিদা পত্র </i>
+                </button>
+            </div>
+            <div class="panel-body">
+                <p>বাংলাদেশ বিজ্ঞান ও শিল্প গবেষণা পরিষদ (বিসিএসআইআর)-এর আওতাধীন ডেজিগনেটেড রেফারেন্স ইনস্টিটিউট ফর
+                    কেমিক্যাল মেজারমেন্টস- এর বৈজ্ঞানিক কর্মকর্তা
+                    <b> <span id="rfq-initiator-name" style="color: #337AB7;"> ............</span> </b> এর কাছ থেকে প্রাপ্ত
+                    চাহিদার (কপি সংযুক্ত) আলোকে গবেষণার জন্য
+                    <b><span style="color: #337AB7;" id="rfq-heading">............</span></b> ক্রয় করা প্রয়োজন। কাজটি জরুরী বিধায় স্থানীয় সরবরাহকারী প্রতিষ্ঠানের
+                    সাথে যোগাযোগ করে তুলনামূলক প্রতিযোগী দরদাতা দ্বারা PPR-২০০৮ এর তফসীল-২-এর বিধি ৯(২)(ক) অনুসরণে
+                    RFQ পদ্ধতিতে সংগ্রহ করা যেতে পারে।
+                </p>
+                <div id="step1-data-container" style="font-size:28px;"></div>
+
+                <!-- --------------- Modal for step1 chahida potro start ------------------ -->
+                <div class="modal fade" id="step1-requirement-form-modal" role="dialog" tabindex="1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>ডেজিগনেটেড রেফারেন্স ইনস্টিটিউট ফর কেমিক্যাল মেজারমেন্টস</h3>
+                                <h4>বাংলাদেশ বিজ্ঞান ও শিল্প গবেষণা পরিষদ</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <form>
+                                        <div class="form-group">
+                                            <div>
+                                                <div class="input-group" style="padding-right: 15px;padding-left: 15px;">
+                                                    <span class="input-group-addon" id="basic-addon1">RFQ Title</span>
+                                                    <input style="border-color: #00acd6" type="text" class="form-control" placeholder="RFQ Title" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <div class="container-fluid" style="color: #ffffff;">
+                                            <div class="row">
+                                                <div class="col-md-12"
+                                                     style="font-size:25px;text-align:center;font-weight:bold;">
+                                                    চাহিদা পত্র
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-12" style="text-align:center;">সূত্র নং : ২০১৪১-১৫ আসবাবপত্র ক্রয়</div>
+                                                <div class="col-md-6 col-sm-6 col-xs-12" id="date" style="text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <!--table-bordered-->
+                                        <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Item No.</th>
+                                                    <th>Description of Items</th>
+                                                    <th>Quantity</th>
+                                                    <th>Unit Rate of Price</th>
+                                                    <th>Total Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                        <!--<table id="dataTable" width="100%" align="center">-->
+                                            <!--<tr>-->
+                                                <!--<th rowspan="2"></th>-->
+                                                <!--<th rowspan="2">Item No.</th>-->
+                                                <!--<th rowspan="2">Description of Items</th>-->
+                                                <!--<th rowspan="2">Unit of Measurement</th>-->
+                                                <!--<th rowspan="2">Quantity</th>-->
+                                                <!--<th colspan="2">Unit Rate of Price</th>-->
+                                                <!--<th colspan="2">Total Amount</th>-->
+                                            <!--</tr>-->
+                                            <!--<tr id="unit">-->
+                                                <!--<th>In Figure</th>-->
+                                                <!--<th>In Words</th>-->
+                                                <!--<th>In Figure</th>-->
+                                                <!--<th>In Words</th>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td height="100px"><input type="checkbox" name="chk"></td>-->
+                                                <!--<td height="100px" style="text-align: center;"> 1 </td>-->
+                                                <!--<td height="100px" contenteditable="true"></td>-->
+                                                <!--<td height="100px" contenteditable="true"></td>-->
+                                                <!--<td height="100px" contenteditable="true"></td>-->
+                                                <!--<td height="100px" contenteditable="true"></td>-->
+                                                <!--<td height="100px" contenteditable="true"></td>-->
+                                                <!--<td height="100px" contenteditable="true"></td>-->
+                                                <!--<td height="100px" contenteditable="true"></td>-->
+                                            <!--</tr>-->
+                                        <!--</table>-->
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="row">
+                                            <!-- <div class="col-sm-10 col-md-10 col-lg-10"></div>
+                                            <div class="col-sm-2  col-md-2 col-lg-2 pull-right"> -->
+                                            <div class="pull-right">
+                                                <div class="btn-group" style="padding-right:15px;">
+                                                    <button type="button" class="btn btn-sm btn-primary"
+                                                            onclick="addRow('example')"> Add Item
+                                                    </button>
+                                                    <button type="button" class="btn btn-sm btn-danger"
+                                                            onclick="deleteRow('example')">Delete Item
+                                                    </button>
+                                                    <!-- <input type="button" value="Add Item" onclick="addRow('dataTable')" />
+                                                    <input type="button" value="Delete Item" onclick="deleteRow('dataTable')" /> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row" style="padding-right: 15px;padding-left: 15px;">
+                                        <div class="row">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <p>2. Lorem ipsum dolor sit amet, donec etiam sed, justo non sem morbi,
+                                                        ac provident placerat, pede tincidunt nulla quis diamlorem.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <p>3. Lorem ipsum dolor sit amet, donec etiam sed, justo non sem morbi,
+                                                        ac provident placerat, pede tincidunt nulla quis diamlorem.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="font-size: 12px;">
+                                            <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                                                <div class="row">
+                                                    <img class="img-rounded" alt="Scientist Signature" width="100" height="60">
+                                                </div>
+                                                <div class="row" style="font-size: 12px;">Scientist Signature</div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                                                <div class="row">
+                                                    <img class="img-rounded" alt="Verifier Signature" width="100" height="60">
+                                                </div>
+                                                <div class="row" style="font-size: 12px;">Verifier Signature</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-right: 15px;padding-left: 15px;">
+                                        <div class="row">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <p>4. Lorem ipsum dolor sit amet, donec etiam sed, justo non sem morbi,
+                                                        ac provident placerat, pede tincidunt nulla quis diamlorem.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="font-size: 12px;">
+                                            <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                                                <div class="row">
+                                                    <img class="img-rounded" alt="Accountant Signature" width="100" height="60">
+                                                </div>
+                                                <div class="row" style="font-size: 12px;">Accountant Signature</div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                                                <div class="row">
+                                                    <img class="img-rounded" alt="Director Signature" width="100" height="60">
+                                                </div>
+                                                <div class="row" style="font-size: 12px;">Director Signature</div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <form data-toggle="validator" role="form">
+                                                    <div class="form-group">
+                                                        <div class="form-inline row">
+                                                            <div class="form-group has-feedback col-sm-6">
+                                                                <label for="inputName" class="control-label">Name</label>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon">Username</span>
+                                                                    <input type="text" class="form-control" id="inputName" placeholder="Your Username Is Mandatory" required>
+                                                                </div>
+                                                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                                                <div class="help-block with-errors">Hey look, this one has feedback icons!</div>
+                                                            </div>
+
+                                                            <div class="form-group col-sm-6">
+                                                                <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Your Password Is Mandatory" required>
+                                                                <div class="help-block">Minimum of 6 characters</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="row">
+                                    <div class="pull-right">
+                                        <div class="btn-group" style="padding-right:30px;">
+                                            <button type="button" class="btn btn-success"
+                                                    id="submit-requisition-form" data-dismiss="modal"> Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- --------------- Modal for step1 chahida potro start ------------------ -->
+            </div>
+        </div>
+        <!------------------------- steps complete  ---------------------------------- -->
+        <div id="forward" class="container-fluid">
+            <div class="row">
+                <div class="col-md-offset-10 col-md-2">
+                    <button type="button" class="btn btn-info btn-sm" id="forward-btn"><i class="fa fa-upload fa-lg" aria-hidden="true"> |
+                            Forward </i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+
+
+<!--<script type="text/javascript " src="../js/flow_control.js"></script>-->

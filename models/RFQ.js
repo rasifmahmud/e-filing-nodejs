@@ -139,7 +139,9 @@ module.exports.updatedirector = function (rfq_id, committee, done) {
     RFQ.findOne({ _id: rfq_id }, function (err, doc){
         doc.refer_director.date = date.now;
         doc.refer_director.signed= true;
-        doc.refer_accountant.ID= accountant_id;
+        for (i = 0; i < committee.length; i++) {
+            doc.refer_committee.push({ID: committee[i]});
+        }
 
         doc.save(done);
     });

@@ -1,35 +1,22 @@
+/**
+ * Created by username on 8/31/16.
+ */
+
 $(document).ready(function () {
 
     "use strict";
 
-    // $("#main-content").html("<h1> thtihththtgthtihtihtthgth </h1>");
-    var myDate = new Date().toString().slice(0, 21);
-    document.getElementById("date").innerHTML = myDate;
 
-    var table = document.getElementById("#example");
+    var index_step = 7;
 
-    var rowCount = 1 ;
-    //var row = table.insertRow(rowCount);
+    function show_detail(i) {
+        index_step = i;
+    }
 
 
-    // class="form-control input-sm"
-    // $(".form-control").disabled = true;
-
-    $("#example > tbody").append('<tr>'+
-
-        '<td><a href="#"><span class="badge">'+rowCount+'</span></a></td>'+
-        '<td contenteditable="true"></td>"'+
-        '<td contenteditable="true"></td>' +
-        '<td contenteditable="true"></td>' +
-        '<td contenteditable="true"></td>' +
-
-        '</tr>');
-
-    var i = 2;
-    $("#forward-btn").click(function () {
-        $("#step" + i + "-panel").show("slow");
-        i++;
-    });
+    for (var i= index_step+1 ;i<=16;i++){
+        document.getElementById('step' + i + '-panel').style.display = 'none';
+    }
 // initially all the panels from 2-16 are hidden
 //     document.getElementById('step2-panel').style.display = 'none';
 //     document.getElementById('step3-panel').style.display = 'none';
@@ -65,12 +52,11 @@ $(document).ready(function () {
 //     if (step8_complete === true)  document.getElementById('step9-panel').style.display = 'block';
 //     if (step9_complete === true)  document.getElementById('step10-panel').style.display = 'block';
 //     if (step10_complete === true)  document.getElementById('step11-panel').style.display = 'block';
-
+//
 
     // step 1  er jonno necessary data start
     var rfq_heading = "";
     $("td").contentEditable = true;
-    $("td").textWrap = true;
     //$("td").required = true;
     var jsonArray = [];
     var jsonData = {};
@@ -117,94 +103,19 @@ $(document).ready(function () {
 
         }
 
-        $("#rfq-heading").text(rfq_heading.slice(0, -2));
+        // $("#rfq-heading").text(rfq_heading.slice(0, -2));
 
-        $.ajax({
-            type: "POST",
-            url: "/api/upload",
-            data: JSON.stringify(jsonArray),
-            contentType: "application/json"
-
-        }).done(function () {
-            console.log("Message sent successfully");
-        });
+        // $.ajax({
+        //     type: "POST",
+        //     url: "/api/upload",
+        //     data: JSON.stringify(jsonArray),
+        //     contentType: "application/json"
+        //
+        // }).done(function () {
+        //     console.log("Message sent successfully");
+        // });
 
 
     });
 });
 
-
-//requsition form related functions
-function addRow(tableID) {
-
-    var table = document.getElementById(tableID);
-
-    var rowCount = table.rows.length;
-    //var row = table.insertRow(rowCount);
-
-
-    $("#example > tbody").append('<tr>'+
-
-        '<td><a href="#"><span class="badge">'+rowCount+'</span></a></td>'+
-        '<td contenteditable="true"></td>"'+
-        '<td contenteditable="true"></td>' +
-        '<td contenteditable="true"></td>' +
-        '<td contenteditable="true"></td>' +
-
-        '</tr>');
-
-
-    //
-    // var cell1 = row.insertCell(0);
-    // var element1 = document.createElement("input");
-    // element1.type = "checkbox";
-    // element1.name = "chkbox[]";
-    // // cell1.style.height = "100px";
-    // cell1.appendChild(element1);
-    //
-    // var cell2 = row.insertCell(1);
-    // cell2.style.textAlign = "center";
-    // cell2.innerHTML = rowCount - 1;
-    // // cell2.style.height = "100px";
-    //
-    // var cell3 = row.insertCell(2);
-    // cell3.contentEditable = true;
-    // //cell3.appendChild(element2);
-    //
-    // var cell4 = row.insertCell(3);
-    // cell4.contentEditable = true;
-    // //cell4.appendChild(element3);
-    //
-    // var cell5 = row.insertCell(4);
-    // cell5.contentEditable = true;
-    // //cell5.appendChild(element4);
-
-
-}
-
-function deleteRow(tableID) {
-    try {
-        var table = document.getElementById(tableID);
-        var rowCount = table.rows.length;
-
-        for (var i = 0; i < rowCount; i++) {
-            var row = table.rows[i];
-            var chkbox = row.cells[0].childNodes[0];
-            if (null != chkbox && true == chkbox.checked) {
-                table.deleteRow(i);
-                rowCount--;
-                i--;
-            }
-
-
-        }
-
-        for (var i = 2; i < rowCount; i++) {
-            table.rows[i].cells[1].innerHTML = i - 1;
-
-        }
-
-    } catch (e) {
-        alert(e);
-    }
-}
