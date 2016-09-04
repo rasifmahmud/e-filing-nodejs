@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <!-- de553438af5701173a1f743d30683bd8d812fbe4 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DRiCM</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
+
+
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../dist/css/skins/skin-blue.min.css">
+
+
+
+    <script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <!------------------------------- chahida_potro   -------------------------------  -->
+
+    <link rel="stylesheet" href="../css/requisition_form.css">
+
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <!-- Main Header -->
+    <% include ../partials/dashBoardHeader.ejs %>
+    <!-- Main Header Ends -->
+
+    <!-- Left sidebar start -->
+    <% include ../partials/leftSideBar.ejs %>
+    <!--  Left sidebar ends -->
+
+    <!-- new RFQ initiate korar 16 steps start -->
+
+
+    <!--<div id="target1">-->
+        <!--<section class="content-header" id="target">-->
+            <!--<div class="container-fluid heading">-->
+                <!--<div>-->
+                    <!--<h2>ডেজিগনেটেড রেফারেন্স ইনস্টিটিউট ফর কেমিক্যাল মেজারমেন্টস</h2>-->
+                    <!--<h3>বাংলাদেশ বিজ্ঞান ও শিল্প গবেষণা পরিষদ</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</section>-->
+    <!--</div>-->
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <div id="main-content">
+
+            <% if(main_content === "default") {%>
+
+                <% include ../partials/taskList.ejs %>
+
+            <% } else if(main_content === "rfq_request") {%>
+
+                <% include ../partials/initiate_RFQ.ejs %>
+
+            <% } else if(main_content === "rfq_list") {%>
+
+                <% include ../partials/RFQ_details.ejs %>
+
+            <% } else if(main_content === "rfq_detailed"){ %>
+
+                <% include ../partials/RFQ_details.ejs %>
+
+            <% } else if(main_content === "test"){ %>
+
+                <% include ../partials/RF_uneditable.ejs %>
+
+            <% } %>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+
+
+    <!-- new RFQ initiate korar 16 steps end -->
+
+    <!-- footer start -->
+    <% include ../partials/footer.ejs %>
+    <!-- footer end -->
+
+    <% include ../partials/rightSideBar.ejs %>
+    <!-- REQUIRED JS SCRIPTS -->
+
+    <!-- jQuery 2.2.0 -->
+    <script src="../plugins/jQuery/jQuery-2.2.0.min.js "></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="../bootstrap/js/bootstrap.min.js "></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/app.min.js "></script>
+
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min.js"></script>
+
+    <script type="text/javascript " src="../js/socket.io.js"></script>
+    <script type="text/javascript" src="../js/declare.js"></script>
+    <script type="text/javascript " src="../js/data_binder.js"></script>
+    <script type="text/javascript " src="../js/realtime_data.js"></script>
+    <script type="text/javascript " src="../js/flow_control.js"></script>
+    <script type="text/javascript " src="../js/notifications.js"></script>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+.small-box{
+	-moz-box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+	box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+
+.modal-header{
+	text-align: center;
+	background-color:#337AB7;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.login-head{
+	text-align: center;
+	background-color:#337AB7;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+.modal-footer{
+	border-color: #337AB7;
+}
+
+.panel {
+	/*min-height: 200px;*/
+	-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+div textarea {
+	/*font-size: 18px;*/
+}
+
+.panel-body {
+	/*font-size: 12px;*/
+}
+
+
+#forward{
+	background-color: #337AB7;
+	min-height: 100px;
+	-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	justify-content:flex-end;
+}
+
+.heading{
+	color: #ffffff;
+	font-weight: 400;
+	text-align: center;
+	background-color: #337AB7;
+	min-height: 100px;
+	-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+div #date{
+	text-align: right;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DRiCM</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="/css/custom.css">-->
+
+    <style>
+        .panel-login {
+            -moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+    </style>
+</head>
+<body>
+<div class="row">
+    <div>
+        <div class="panel panel-primary" >
+            <div class="panel-heading">
+                <div style="text-align: center;" id="headline">
+                    <h2>Designated Reference Institute For Chemical Measurement</h2>
+                    <hr style="background-color: cyan;">
+                    <h3>Bangladesh Council of Scientific & Industrial Research</h3>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                        <div class="panel panel-login panel-primary" >
+                            <div class="panel-heading" style="padding-top: 2px;">
+                                <h2> Login </h2>
+                            </div>
+                            <div class="panel-body">
+                                <form action="/login" method="post" id="login">
+                                    <div class="form-group">
+                                        <label style="color: #337AB7;">Username:</label>
+                                        <input type="text" name="username" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="color: #337AB7;">Password:</label>
+                                        <input type="password" name="password" class="form-control">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="panel-footer">
+                                <input type="submit" value="Log In" class="btn btn-primary btn-block btn-lg" form="login">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
