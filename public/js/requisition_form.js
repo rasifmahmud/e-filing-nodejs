@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     $("#example > tbody").append('<tr>'+
 
-        '<td><a href="#"><span class="badge">'+rowCount+'</span></a></td>'+
+        '<td><input type="checkbox"></td>'+
         '<td contenteditable="true"></td>"'+
         '<td contenteditable="true"></td>' +
         '<td contenteditable="true"></td>' +
@@ -145,7 +145,7 @@ function addRow(tableID) {
 
     $("#example > tbody").append('<tr>'+
 
-        '<td><a href="#"><span class="badge">'+rowCount+'</span></a></td>'+
+        '<td><input type="checkbox"></td>'+
         '<td contenteditable="true"></td>"'+
         '<td contenteditable="true"></td>' +
         '<td contenteditable="true"></td>' +
@@ -199,10 +199,6 @@ function deleteRow(tableID) {
 
         }
 
-        for (var i = 2; i < rowCount; i++) {
-            table.rows[i].cells[1].innerHTML = i - 1;
-
-        }
 
     } catch (e) {
         alert(e);
