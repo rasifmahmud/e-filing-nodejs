@@ -13,7 +13,6 @@ var engine = require('ejs-blocks');
 var multer  = require('multer');
 var upload = multer({ dest: 'data/images/' });
 
-
 var RFQ = require("./models/RFQ");
 var RFQ_details = require('./models/RFQ_info');
 var _ = require('lodash');
@@ -71,8 +70,6 @@ app.use(function (req, res, next) {
     }
     res.redirect("/login");
 });
-
-
 
 // Initial routing
 var dashboardRouter = require('./routers/dashboard_router');

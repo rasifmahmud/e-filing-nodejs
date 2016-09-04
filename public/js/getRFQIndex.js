@@ -11,6 +11,4 @@ $( "#rfq-more-info" ).click(function() {
         console.log(data.RFQ_Index);
         required_data = data;
     });
-
-
 });
