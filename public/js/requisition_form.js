@@ -185,37 +185,24 @@ function addRow(tableID) {
 
 
 function deleteRow(tableID) {
-    // try {
-    //     var table = document.getElementById(tableID);
-    //     var rowCount = table.rows.length;
-    //
-    //     for (var i = 0; i < rowCount; i++) {
-    //         var row = table.rows[i];
-    //         var chkbox = row.cells[0].childNodes[0];
-    //         if (null != chkbox && true == chkbox.checked) {
-    //             table.deleteRow(i);
-    //             rowCount--;
-    //             i--;
-    //         }
-    //
-    //
-    //     }
-    //
-    //     for (var i = 2; i < rowCount; i++) {
-    //         table.rows[i].cells[0].childNodes[0] = i - 1;
-    //
-    //     }
-    //
-    // } catch (e) {
-    //     alert(e);
-    // }
-
-    $('#example').find('tr').click( function(){
+    try {
         var table = document.getElementById(tableID);
         var rowCount = table.rows.length;
 
-        // alert('You clicked row '+ ($(this).index()+1) );
-        table.deleteRow(($(this).index()));
+        for (var i = 0; i < rowCount; i++) {
+            var row = table.rows[i];
+            var chkbox = row.cells[0].childNodes[0];
+            if (null != chkbox && true == chkbox.checked) {
+                table.deleteRow(i);
+                rowCount--;
+                i--;
+            }
 
-    });
+
+        }
+
+
+    } catch (e) {
+        alert(e);
+    }
 }
