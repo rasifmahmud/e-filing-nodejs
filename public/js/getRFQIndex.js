@@ -10,6 +10,4 @@ $( "#rfq-more-info" ).click(function() {
     }).done(function (data) {
         required_data = data;
     });
-
-
 });

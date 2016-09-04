@@ -2,8 +2,10 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 var User = require("./users");
 var notifications= require("./notifications");
+var RFQDetails=require("./RFQ_info");
 
 var rfqSchema = new mongoose.Schema({
+    RFQ_details_id: {type: Schema.ObjectId, ref: 'RFQdetails'},
     initiator_id: {type: Schema.ObjectId, ref: 'User'},
     created: {type: Date, default: Date.now},
     step_id: {type: Number},
