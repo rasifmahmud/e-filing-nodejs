@@ -13,7 +13,7 @@ $(document).ready(function(){
                 '<a href="#">' +
                     '<div class="row" style="word-break: break-word;white-space: normal;">'+
                         '<div class="col-xs-2" style="margin-top:8px;">'+
-                            '<img src="/api/pic" height="46" width="44">'+
+                            '<img src="/api/pic" class="img-rounded" height="46" width="44">'+
                         '</div>'+
                         '<div class="col-xs-10">'+
                             '<p style="margin-left:10px; margin-bottom:2px;">'+ '<b>'+ special_data.RFQ_list[i].initiator_id.name + '</b>' +' asked for authentification</p>'+
