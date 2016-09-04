@@ -12,6 +12,9 @@ var RFQ = require("../models/RFQ");
 // exporting the module to the outer world
 module.exports = router;
 
+//using middleware
+router.use('/rfq_detail',express.static('public'));
+
 // routing to the dashboard
 router.route('/')
     .get(function (req, res) {
@@ -47,7 +50,18 @@ router.route('/rfq_list')
         });
     });
 
+router.route('/rfq_detail/:id')
+    .get(function (req, res) {
+        var id = req.params.id;
+        RFQ.getAllRFQbyUserID(req.user._id, function (err, result) {
+            if (err) return console.log(err);
+            res.render('bn_BD/RFQ_Detail',{main_content:"default",user: req.user, RFQ_list: result,RFQ_index:id});
 
+        });
+
+
+
+    });
 router.route('/test')
     .get(function (req, res) {
         // res.render('bn_BD/RFQ_Running');
