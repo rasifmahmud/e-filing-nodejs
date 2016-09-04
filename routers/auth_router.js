@@ -5,6 +5,11 @@ var users = require("../data/users.json");
 var User=require("../models/users");
 var RFQ=require("../models/RFQ");
 var RFQDetails=require("../models/RFQ_info");
+var officegen = require('officegen');
+var async = require ( 'async' );
+var fs = require('fs');
+var path = require('path');
+
 
 // exporting router module to the outer world
 var router = express.Router();

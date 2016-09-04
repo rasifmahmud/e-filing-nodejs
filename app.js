@@ -13,7 +13,6 @@ var engine = require('ejs-blocks');
 var multer  = require('multer');
 var upload = multer({ dest: 'data/images/' });
 
-
 var RFQ = require("./models/RFQ");
 var RFQ_details = require('./models/RFQ_info');
 var _ = require('lodash');
@@ -72,8 +71,6 @@ app.use(function (req, res, next) {
     res.redirect("/login");
 });
 
-
-
 // Initial routing
 var dashboardRouter = require('./routers/dashboard_router');
 app.use(dashboardRouter);
@@ -81,13 +78,6 @@ app.use(dashboardRouter);
 var apiRouter = require('./routers/api_router');
 app.use('/api', apiRouter);
 
-RFQ.getRFQdetailsbyID("57c84fa72c51732818c9c9b3", "57b9ec8eaf1bae5c2d6b3d72", function (err, done) {
-    if(err) throw err;
-    else{
-        console.log("here's done");
-        console.log(done);
-    }
-});
 
 // Running the server on port 3000
 server.listen(3000, function () {
