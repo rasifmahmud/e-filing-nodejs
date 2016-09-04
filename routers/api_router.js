@@ -37,6 +37,7 @@ router.route('/pic')
 router.route('/rfq_list/:id')
     .get(function (req, res) {
         var id = req.params.id;
+        console.log(id);
         res.json({RFQ_Index:id});
 
     });
