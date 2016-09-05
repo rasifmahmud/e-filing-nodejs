@@ -129,7 +129,6 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
             }
         });
 }
-
 module.exports.updateaccountant = function (rfq_id, accountant_id, done) {
     RFQ.findOne({ _id: rfq_id }, function (err, doc){
         //doc.refer_verifier.date = Date.now;
@@ -201,3 +200,4 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
         });
     });
 }
+
