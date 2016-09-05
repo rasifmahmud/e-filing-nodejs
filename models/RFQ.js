@@ -5,7 +5,6 @@ var notifications= require("./notifications");
 var RFQDetails=require("./RFQ_info");
 
 var rfqSchema = new mongoose.Schema({
-    RFQ_details_id: {type: Schema.ObjectId, ref: 'RFQdetails'},
     initiator_id: {type: Schema.ObjectId, ref: 'User'},
     created: {type: Date, default: Date.now},
     step_id: {type: Number},
@@ -58,7 +57,7 @@ module.exports.createRFQ = function (newRFQ, callback) {
         var newnot= new notifications({
             rfq_id: doc._id,
             from: doc.initiator_id,
-            to: doc.refer_verifier,
+            to: doc.refer_verifier.ID,
             text: "asked for verification"
         });
         notifications.createnotification(newnot, callback);

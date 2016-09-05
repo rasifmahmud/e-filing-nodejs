@@ -10,6 +10,8 @@ var router = express.Router();
 module.exports = router;
 var PATH = require('path');
 var real = require('../realtime/realtime');
+var bcrypt = require("bcryptjs");
+
 router.route('/data')
     .get(function (req, res) {
         RFQ.getAllRFQbyUserID(req.user._id, function (err, result) {
@@ -18,8 +20,8 @@ router.route('/data')
                 if (err2) return console.log(err2);
                 user.getbydesignation("Scientific Officer", function (err3, result3) {
                     if (err3) return console.log(err3);
-
-                    res.json({user: req.user, RFQ_list: result, notification: result2, verifier: result3});
+                    console.log(result3);
+                    res.json({user: req.user, RFQ_list: result, notification: result2, forward_list: result3});
 
                 });
 
@@ -48,7 +50,15 @@ router.route('/rfq_detail/:id')
 
 router.route('/upload')
     .post(function (req, res) {
-        RFQ.insertRFQ(req.body, req.user._id, function (err, doc) {
+        console.log(req.body);
+        var newRFQ= new RFQ({
+            title: req.body.title,
+            details: req.body.details,
+            initiator_id: req.body.initiator_id,
+            bidhi_niti: req.body.bidhi_niti,
+            refer_verifier: req.body.refer_verifier
+        });
+        RFQ.createRFQ(newRFQ, function (err, doc) {
             if (err) return console.log(err);
             res.sendStatus(200);
         });
@@ -75,3 +85,25 @@ router.route('/pic/:path')
         res.sendFile(PATH.join(__dirname, '../data/images', path));
     });
 
+router.route('/verify')
+    .post(function (req, res) {
+        var username = req.body.username;
+        var password = req.body.password;
+        if(username==req.user.username){
+            bcrypt.compare(password, req.user.password, function(err, result) {
+                if(err) return console.log(err);
+                // password matched
+                if(result){
+                    res.json("passed");
+                }
+                // password didnt match
+                else{
+                    res.json("failed");
+                }
+            });
+        }
+        else{
+            res.json("failed");
+        }
+
+    });

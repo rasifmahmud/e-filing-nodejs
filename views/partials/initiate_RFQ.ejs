@@ -4,7 +4,6 @@
     });
 </script>
 
-<script type="text/javascript" src="../js/requisition_form.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -88,7 +87,7 @@
                                                     <div>
                                                         <div class="input-group" style="padding-right: 15px;padding-left: 15px;">
                                                             <span class="input-group-addon">RFQ Title</span>
-                                                            <input style="border-color: #00acd6" type="text" class="form-control" placeholder="RFQ Title" aria-describedby="basic-addon1">
+                                                            <input id="rfq_title" style="border-color: #00acd6" type="text" class="form-control" placeholder="RFQ Title" aria-describedby="basic-addon1">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -214,15 +213,29 @@
                                                 <div class="row" align="center">
                                                     <h4>Authenticate</h4>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
 
-                                                    </div>
-                                                    <!-- /.col -->
-                                                    <div class="col-md-6">
+                                                <div class="container">
+                                                    <h2>Horizontal form</h2>
+                                                    <form class="form-horizontal">
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2" for="username">Username:</label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                                <input type="username" class="form-control" id="username" placeholder="Enter username">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2" for="password">Password:</label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                                <input type="password" class="form-control" id="password" placeholder="Enter password">
+                                                            </div>
+                                                        </div>
 
-                                                    </div>
-                                                    <!-- /.col -->
+                                                        <div class="form-group">
+                                                            <div class="col-sm-offset-2 col-sm-10">
+                                                                <button id="authenticate" type="submit" class="btn btn-default">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                                 </div>
 
                                             </div>
