@@ -162,15 +162,17 @@
                                                         <div class="form-group">
                                                             <div>
                                                                 <div class="input-group" style="padding-right: 15px;padding-left: 15px;">
-                                                                    <span class="input-group-addon">RFQ Title</span>
-                                                                    <input style="border-color: #00acd6" type="text" class="form-control" placeholder="RFQ Title" aria-describedby="basic-addon1">
+                                                                    <span class="input-group-addon" style="background-color: #1ab7ea;  color:#fff;">RFQ Title</span>
+                                                                    <input style="font-weight:bold; font-size:large; border-color: #00acd6"
+                                                                           type="text" class="form-control" placeholder="RFQ Title" aria-describedby="basic-addon1"
+                                                                           id="rfq_title" readonly>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </form>
                                                 </div>
                                                 <!--table-bordered-->
-                                                <table id="example" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                                <table id="rfq_table_non" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                                     <thead>
                                                     <tr>
                                                         <th>Item No.</th>
@@ -183,6 +185,8 @@
                                                     <tbody>
                                                     </tbody>
                                                 </table>
+
+
                                             </div>
                                             <div class="panel-footer">
                                                 <div class="row">
@@ -781,10 +785,26 @@
 
 <script type="text/javascript " src="../js/socket.io.js"></script>
 <script type="text/javascript " src="../js/declare.js"></script>
-<script type="text/javascript " src="../js/data_binder.js"></script>
+<!--<script type="text/javascript " src="../js/data_binder.js"></script>-->
+<script>
+    RFQ_index = document.URL;
+    RFQ_index = RFQ_index.slice(0,-1);
+    RFQ_index = RFQ_index.substr(RFQ_index.lastIndexOf('/')+1);
+//    console.log(RFQ_index);
+    $.holdReady(true);
+    $.ajax({
+        type: "GET",
+        url: "/api/rfq_detail/"+RFQ_index,
+    }).done(function (data) {
+        special_data = data;
+        console.log(special_data);
+        $.holdReady(false);
+    });
+
+</script>
 <script type="text/javascript " src="../js/realtime_data.js"></script>
 <script type="text/javascript " src="../js/flow_control.js"></script>
-<script type="text/javascript " src="../js/notifications.js"></script>
+<!--<script type="text/javascript " src="../js/notifications.js"></script>-->
 <script type="text/javascript" src="../js/RFQ_details.js"></script>
 
 

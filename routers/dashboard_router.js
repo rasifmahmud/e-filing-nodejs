@@ -62,6 +62,14 @@ router.route('/rfq_detail/:id')
 
 
     });
+
+router.route('/rfq_detail/:id')
+    .get(function (req, res) {
+        
+        res.render('bn_BD/RFQ_Detail',{main_content:"default"});
+
+    });
+
 router.route('/test')
     .get(function (req, res) {
         // res.render('bn_BD/RFQ_Running');

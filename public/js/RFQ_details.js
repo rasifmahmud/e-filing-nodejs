@@ -10,24 +10,30 @@ $(document).ready(function () {
     var myDate = new Date().toString().slice(0, 21);
     document.getElementById("date").innerHTML = myDate;
 
-
-
-
-
-   //RFQ_details.ejs STARTS
+    
+    //SHADMAN'S WORK OF RFQ DETAILS STARTS
+    //RFQ_details.ejs STARTS
 
    //STEP 1
    var selected_rfq_id = 0;
-   document.getElementById('rfq-initiator-name').innerHTML = special_data.RFQ_list[selected_rfq_id].initiator_id.name;
-   document.getElementById('rfq-title').innerHTML = special_data.RFQ_list[selected_rfq_id].title;
+   document.getElementById('rfq-initiator-name').innerHTML = special_data.user.name;
+   document.getElementById('rfq-title').innerHTML = special_data.RFQ_detail.title;
 
    //STEP 2
 
    //STEP 3
-   document.getElementById('rfq-title2').innerHTML = special_data.RFQ_list[selected_rfq_id].title;
+   document.getElementById('rfq-title2').innerHTML = special_data.RFQ_detail.title;
 
-   //STEP 4
+   //RFQ_TITLE
+    document.getElementById("rfq_title").value = special_data.RFQ_detail.title;
+
+    //TABLE NON-EDITABLE
+    document.getElementById("rfq_table_non").contentEditable = false;
+
+    //TABLE ENTRY
+    // document.write(special_data.RFQ_list[selected_rfq_id].details.size);
    //RFQ_details.ejs ENDS
+    //SHADMAN'S WORK OF RFQ DETAILS ENDS
 
 
 

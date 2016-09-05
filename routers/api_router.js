@@ -17,6 +17,16 @@ router.route('/data')
         });
     });
 
+router.route('/rfq_detail/:id')
+    .get(function (req, res) {
+        var RFQ_ID = req.params.id;
+        var user_ID = req.user._id;
+        RFQ.getRFQdetailsbyID(RFQ_ID,user_ID, function (err, result) {
+            if (err) return console.log(err);
+            res.json({user:req.user, RFQ_detail: result});
+
+        });
+    });
 
 router.route('/upload')
     .post(function (req, res) {
