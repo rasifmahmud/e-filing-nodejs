@@ -63,7 +63,7 @@ module.exports.createRFQ = function (newRFQ, callback) {
         });
         notifications.createnotification(newnot, callback);
     });
-    
+
 };
 
 
@@ -129,7 +129,6 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
             }
         });
 }
-
 module.exports.updateaccountant = function (rfq_id, accountant_id, done) {
     RFQ.findOne({ _id: rfq_id }, function (err, doc){
         //doc.refer_verifier.date = Date.now;
@@ -183,7 +182,7 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
         }
 
         doc.save(function (err, doc2) {
-           notifications.removenotifications(rfq_id, doc2.refer_director.ID, function (err, doc3) {
+            notifications.removenotifications(rfq_id, doc2.refer_director.ID, function (err, doc3) {
                 console.log(doc2.refer_committee.length);
                 for (var i=0;i<doc2.refer_committee.length;i++) {
                     console.log(doc2.refer_committee[i].ID);
@@ -193,7 +192,7 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
                         text: "asked to chair committee"
                     });
                     notifications.createnotification(newnot, function (err, doc4) {
-                        
+
                     });
                 }
                 return done;

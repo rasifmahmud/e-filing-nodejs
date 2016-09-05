@@ -8,6 +8,7 @@ $( "#rfq-more-info" ).click(function() {
         type: "GET",
         url: "/api/rfq_list/"+id+"/"
     }).done(function (data) {
+        console.log(data.RFQ_Index);
         required_data = data;
     });
 });

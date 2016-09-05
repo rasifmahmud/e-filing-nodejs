@@ -13,53 +13,35 @@ var RFQ = require("../models/RFQ");
 module.exports = router;
 
 //using middleware
-router.use('/rfq_detail',express.static('public'));
+router.use('/rfq_detail', express.static('public'));
 
 // routing to the dashboard
 router.route('/')
     .get(function (req, res) {
-        RFQ.getAllRFQbyUserID(req.user._id, function (err, result) {
-            if (err) return console.log(err);
-            res.render('bn_BD/dashboard',{main_content:"default",user: req.user, RFQ_list: result});
-
-        });
+        res.render('bn_BD/dashboard', {main_content: "default"});
 
     });
 
 router.route('/rfq_request')
     .get(function (req, res) {
-        // res.render('bn_BD/RFQ_Request');
-        res.render('bn_BD/dashboard',{ main_content:"rfq_request" });
+        res.render('bn_BD/dashboard', {main_content: "rfq_request"});
     });
 
 router.route('/rfq_running')
     .get(function (req, res) {
-        // res.render('bn_BD/RFQ_Running');
-        res.render('bn_BD/dashboard',{ main_content:"rfq_running" });
+        res.render('bn_BD/dashboard', {main_content: "rfq_running"});
     });
 
 router.route('/rfq_list')
     .get(function (req, res) {
-        // res.render('bn_BD/RFQ_List');
-        // res.render('bn_BD/dashboard',{main_content:"rfq_list"});
 
-        RFQ.getAllRFQbyUserID(req.user._id, function (err, result) {
-            if (err) return console.log(err);
-            res.render('bn_BD/dashboard',{main_content:"rfq_list",user: req.user, RFQ_list: result});
+        res.render('bn_BD/dashboard', {main_content: "rfq_list"});
 
-        });
     });
 
 router.route('/rfq_detail/:id')
     .get(function (req, res) {
-        var id = req.params.id;
-        RFQ.getAllRFQbyUserID(req.user._id, function (err, result) {
-            if (err) return console.log(err);
-            res.render('bn_BD/RFQ_Detail',{main_content:"default",user: req.user, RFQ_list: result,RFQ_index:id});
-
-        });
-
-
+        res.render('bn_BD/RFQ_Detail', {main_content: "default"});
 
     });
 
@@ -73,6 +55,6 @@ router.route('/rfq_detail/:id')
 router.route('/test')
     .get(function (req, res) {
         // res.render('bn_BD/RFQ_Running');
-        res.render('bn_BD/dashboard',{ main_content:"test" });
+        res.render('bn_BD/dashboard', {main_content: "test"});
     });
 

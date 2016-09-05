@@ -171,6 +171,13 @@
                                                         </div>
                                                     </form>
                                                 </div>
+
+                                                <p style="padding-top:4%;">১।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "এস্টাবলিশমেন্ট অব ডেজিগনেটেড রেফারেন্স
+                                                    ইনস্টিটিউট ফর কেমিক্যাল মেজারমেন্টস" শীর্ষক প্রকল্পে
+                                                    <span style="font-size:large; font-weight: bold; padding: .5% .5%; color: #337AB7;" id="item_span"></span>
+                                                    উদ্দেশ্যে নিম্নবর্ণিত দ্রব্যাদি প্রয়োজন।
+                                                </p>
+
                                                 <!--table-bordered-->
                                                 <table id="rfq_table_non" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                                     <thead>
@@ -195,15 +202,18 @@
                                                 <div class="row">
                                                     <div class="panel panel-default">
                                                         <div class="panel-body">
-                                                            <p>2. Lorem ipsum dolor sit amet, donec etiam sed, justo non sem morbi,
-                                                                ac provident placerat, pede tincidunt nulla quis diamlorem.
+                                                            <p>২।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; এজন্য আনুমানিক
+                                                                <span style="font-size:large; font-weight: bold; padding: .5% .5%; color: #337AB7;" id="taka_fig_span"></span>
+                                                                (কথায়)
+                                                                <span style="font-size:large; font-weight: bold; padding: .5% .5%; color: #337AB7;" id="taka_word_span"></span>
+                                                                টাকা ব্যয় হবে।
                                                             </p>
                                                         </div>
                                                     </div>
                                                     <div class="panel panel-default">
                                                         <div class="panel-body">
-                                                            <p>3. Lorem ipsum dolor sit amet, donec etiam sed, justo non sem morbi,
-                                                                ac provident placerat, pede tincidunt nulla quis diamlorem.
+                                                            <p>৩।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; অতএব উপরোক্ত বর্ণনামতে
+                                                                মালামাল সংগ্রহের অনুমোদনের জন্য বিনীতভাবে অনুরোধ করা যাচ্ছে।
                                                             </p>
                                                         </div>
                                                     </div>
@@ -227,8 +237,9 @@
                                                 <div class="row">
                                                     <div class="panel panel-default">
                                                         <div class="panel-body">
-                                                            <p>4. Lorem ipsum dolor sit amet, donec etiam sed, justo non sem morbi,
-                                                                ac provident placerat, pede tincidunt nulla quis diamlorem.
+                                                            <p>৪।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; উক্ত ব্যয় ডিপিপি
+                                                                এর <span style="font-size:large; font-weight: bold; padding: .5% .5%; color: #337AB7;" id="field_span"></span>
+                                                                খাত হতে নির্বাহ করা যেতে পারে।
                                                             </p>
                                                         </div>
                                                     </div>
@@ -763,7 +774,7 @@
     RFQ_index = document.URL;
     RFQ_index = RFQ_index.slice(0,-1);
     RFQ_index = RFQ_index.substr(RFQ_index.lastIndexOf('/')+1);
-//    console.log(RFQ_index);
+    //    console.log(RFQ_index);
     $.holdReady(true);
     $.ajax({
         type: "GET",
@@ -773,11 +784,10 @@
         console.log(special_data);
         $.holdReady(false);
     });
-
 </script>
 <script type="text/javascript " src="../js/realtime_data.js"></script>
 <script type="text/javascript " src="../js/flow_control.js"></script>
-<!--<script type="text/javascript " src="../js/notifications.js"></script>-->
+<script type="text/javascript " src="../js/notifications.js"></script>
 <script type="text/javascript" src="../js/RFQ_details.js"></script>
 
 
