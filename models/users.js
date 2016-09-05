@@ -30,3 +30,7 @@ module.exports.createUser = function (newUser, callback) {
 module.exports.getUserbyUsername = function (username, callback) {
     User.findOne({username: username}, callback).lean();
 }
+
+module.exports.getbydesignation = function (designation, callback) {
+    User.find({designation: designation}, callback).lean();
+};

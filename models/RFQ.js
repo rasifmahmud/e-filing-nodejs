@@ -95,11 +95,11 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
         if(doc.substep_id==1 && doc.refer_verifier.ID==user_id && doc.refer_verifier.signed==false){
             doc.sign_auth=true;
             doc.forward_to="Accountant";
-            console.log(doc);
+            //console.log(doc);
             User.find({designation: "Accountant"}).lean().exec( function (err, docs) {
                 doc.forward_list=docs;
-                console.log(doc);
-                return done(doc);
+                //console.log(doc);
+                return done(err,doc);
             });
         }
         else if(doc.substep_id==2 && doc.refer_accountant.ID==user_id && doc.refer_accountant.signed==false){
@@ -107,7 +107,7 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
             doc.forward_to="Director";
             User.find({designation: "Director"}).lean().exec(function (err, docs) {
                 doc.forward_list=docs;
-                return done(doc);
+                return done(err,doc);
             });
         }
         else if(doc.substep_id==3 && doc.refer_director.ID==user_id && doc.refer_director.signed==false){
@@ -115,16 +115,15 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
             doc.forward_to="Committee";
             User.find({designation: "Scientific Officer"}).lean().exec( function (err, docs) {
                 doc.forward_list=docs;
-                return done(doc);
+                return done(err,doc);
             });
         }
         else {
-            console.log(doc);
-            return done(doc);
+            console.log("here");
+            return done(err,doc);
         }
     });
 }
-
 module.exports.updateaccountant = function (rfq_id, accountant_id, done) {
     RFQ.findOne({ _id: rfq_id }, function (err, doc){
         //doc.refer_verifier.date = Date.now;

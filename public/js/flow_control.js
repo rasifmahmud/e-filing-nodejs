@@ -101,7 +101,7 @@ $(document).ready(function(){
                                             '<div class="icon">'+
                                                 '<i class="' + icon + '" aria-hidden="true"></i>'+
                                             '</div>'+
-                                '<a class="small-box-footer" href="/rfq_detail/'+ i +'/" id="rfq-more-info">'+
+                                '<a class="small-box-footer" href="/rfq_detail/'+ special_data.RFQ_list[i]._id +'/" id="rfq-more-info">'+
                                 //             '<a class="small-box-footer" href="rfq_list" id="/api/rfq_list/'+ i +'">'+
                                                 'More info <i class="fa fa-arrow-circle-right fa-lg"></i>'+
                                             '</a>'+

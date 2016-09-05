@@ -773,7 +773,23 @@
 
 <script type="text/javascript " src="../js/socket.io.js"></script>
 <script type="text/javascript" src="../js/declare.js"></script>
-<script type="text/javascript " src="../js/data_binder.js"></script>
+<!--<script type="text/javascript " src="../js/data_binder.js"></script>-->
+<script>
+    RFQ_index = document.URL;
+    RFQ_index = RFQ_index.slice(0,-1);
+    RFQ_index = RFQ_index.substr(RFQ_index.lastIndexOf('/')+1);
+
+    $.holdReady(true);
+    $.ajax({
+        type: "GET",
+        url: "/api/rfq_detail/"+RFQ_index,
+    }).done(function (data) {
+        special_data = data;
+        console.log(special_data);
+        $.holdReady(false);
+    });
+
+</script>
 <script type="text/javascript " src="../js/realtime_data.js"></script>
 <script type="text/javascript " src="../js/flow_control.js"></script>
 <script type="text/javascript " src="../js/notifications.js"></script>

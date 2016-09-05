@@ -5,38 +5,41 @@ var io = require('../app');
 var connectedUsers = {};
 var _ = require("lodash");
 // kono user connected hoilei jei ghotona ghotbe
+
+module.exports = io;
 io.sockets.on('connection', function (socket) {
 
     // A new user is currently connected , putting him in connectedusers
-    socket.on('new user', function (username) {
-        socket.username = username;
-        if (username in connectedUsers) {
-            connectedUsers[socket.username].push(socket);
+    socket.on('new user', function (userID) {
+        socket.userID = userID;
+        if (userID in connectedUsers) {
+            connectedUsers[socket.userID].push(socket);
 
         }
         else {
-            connectedUsers[socket.username] = [];
-            connectedUsers[socket.username].push(socket);
+            connectedUsers[socket.userID] = [];
+            connectedUsers[socket.userID].push(socket);
 
         }
-        notifyAll(username);
+        notifyAll(userID);
     });
+
     // if he disconnects himself from any of the sockets they got deleted eventually
     socket.on('disconnect', function () {
-        if (!socket.username) {
+        if (!socket.userID) {
             return;
         }
         else {
-            var array = connectedUsers[socket.username];
+            var array = connectedUsers[socket.userID];
             var newArray = [];
             newArray = _.filter(array, s => s.id !== socket.id);
             if (newArray.length == 0) {
                 socket.broadcast.emit('offline', getOnlineUsernames());
 
-                delete connectedUsers[socket.username];
+                delete connectedUsers[socket.userID];
             }
             else {
-                connectedUsers[socket.username] = newArray;
+                connectedUsers[socket.userID] = newArray;
             }
 
         }
@@ -55,6 +58,14 @@ io.sockets.on('connection', function (socket) {
         var socket_array = connectedUsers[username];
         _.map(socket_array, function (s) {
             s.emit("moga", getOnlineUsernames());
+        });
+
+    }
+    // emitting realtime stuffs through the sockets of a single user
+    module.exports.sendThroughSockets = function sendThroughSockets(username,data) {
+        var socket_array = connectedUsers[username];
+        _.map(socket_array, function (s) {
+            s.emit("tumi_jachaikari", data);
         });
 
     }
