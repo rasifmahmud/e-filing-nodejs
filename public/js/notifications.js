@@ -18,11 +18,11 @@ $(document).ready(function(){
 
         var hour = dt.getUTCHours();
         var time_tag;
-        if(hour==00){
+        if(hour==0){
             hour = "12";
             time_tag = "am";
         }
-        else if(hour>00 && hour<12){
+        else if(hour>0 && hour<12){
             time_tag = "am";
         }
         else{
