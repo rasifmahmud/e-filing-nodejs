@@ -4,26 +4,117 @@
 
 $(document).ready(function () {
 
-    "use strict";
-
-
-    "use strict";
+    // "use strict";
 
     // $("#main-content").html("<h1> thtihththtgthtihtihtthgth </h1>");
     var myDate = new Date().toString().slice(0, 21);
     document.getElementById("date").innerHTML = myDate;
 
+    
+    //SHADMAN'S WORK OF RFQ DETAILS STARTS
+    //RFQ_details.ejs STARTS
+
+   //STEP 1
+   var selected_rfq_id = 0;
+   document.getElementById('rfq-initiator-name').innerHTML = special_data.user.name;
+   document.getElementById('rfq-title').innerHTML = special_data.RFQ_detail.title;
+
+   //STEP 2
+
+   //STEP 3
+   document.getElementById('rfq-title2').innerHTML = special_data.RFQ_detail.title;
+
+   //RFQ_TITLE
+    document.getElementById("rfq_title").value = special_data.RFQ_detail.title;
+
+    //TABLE NON-EDITABLE
+    document.getElementById("rfq_table_non").contentEditable = false;
+
+    //TABLE ENTRY
+    var total_table_entry = special_data.RFQ_detail.details.length;
+    var t = $('#rfq_table_non').DataTable();
+    for(var i=0;i<total_table_entry;i++){
+
+        t.row.add( [
+            special_data.RFQ_detail.details[i].item_no,
+            special_data.RFQ_detail.details[i].desctription,
+            special_data.RFQ_detail.details[i].qty,
+            special_data.RFQ_detail.details[i].price_fig,
+            special_data.RFQ_detail.details[i].total_fig
+        ] ).draw( false );
+    }
+
+
+    //INTERNAL STEP SPAN ENTRIES
+
+    //step1
+    document.getElementById("item_span").innerHTML = special_data.RFQ_detail.title;
+    //step 2
+    document.getElementById("taka_fig_span").innerHTML = special_data.RFQ_detail.total_tt_fig;
+    document.getElementById("taka_word_span").innerHTML = special_data.RFQ_detail.total_tt_words;
+
+    //step4
+    document.getElementById("field_span").innerHTML = "Furniture";
+    
+    //SIGNATURE
+    
+    //INITIATOR
+    document.getElementById("scientist_sig").src = '/api/pic/' + special_data.RFQ_detail.initiator_id.signature;
+    
+   //RFQ_details.ejs ENDS
+    //SHADMAN'S WORK OF RFQ DETAILS ENDS
+
+
+
+
+
+
+
+
 
     var index_step = 7;
 
-    function show_detail(i) {
-        index_step = i;
-    }
 
 
     for (var i= index_step+1 ;i<=16;i++){
         document.getElementById('step' + i + '-panel').style.display = 'none';
     }
+// initially all the panels from 2-16 are hidden
+//     document.getElementById('step2-panel').style.display = 'none';
+//     document.getElementById('step3-panel').style.display = 'none';
+//     document.getElementById('step4-panel').style.display = 'none';
+//     document.getElementById('step5-panel').style.display = 'none';
+//     document.getElementById('step6-panel').style.display = 'none';
+//     document.getElementById('step7-panel').style.display = 'none';
+//     document.getElementById('step8-panel').style.display = 'none';
+//     document.getElementById('step9-panel').style.display = 'none';
+//     document.getElementById('step10-panel').style.display = 'none';
+//     document.getElementById('step11-panel').style.display = 'none';
+
+
+// declared the global variables
+// to keep track of the state of each step
+//     var step2_complete = false;
+//     var step3_complete = false;
+//     var step4_complete = false;
+//     var step5_complete = false;
+//     var step6_complete = false;
+//     var step7_complete = false;
+//     var step8_complete = false;
+//     var step9_complete = false;
+//     var step10_complete = false;
+//     var step11_complete = false;
+//
+//     if (step2_complete === true)  document.getElementById('step3-panel').style.display = 'block';
+//     if (step3_complete === true)  document.getElementById('step4-panel').style.display = 'block';
+//     if (step4_complete === true)  document.getElementById('step5-panel').style.display = 'block';
+//     if (step5_complete === true)  document.getElementById('step6-panel').style.display = 'block';
+//     if (step6_complete === true)  document.getElementById('step7-panel').style.display = 'block';
+//     if (step7_complete === true)  document.getElementById('step8-panel').style.display = 'block';
+//     if (step8_complete === true)  document.getElementById('step9-panel').style.display = 'block';
+//     if (step9_complete === true)  document.getElementById('step10-panel').style.display = 'block';
+//     if (step10_complete === true)  document.getElementById('step11-panel').style.display = 'block';
+//
 
     // step 1  er jonno necessary data start
     var rfq_heading = "";
@@ -74,19 +165,24 @@ $(document).ready(function () {
 
         }
 
-        // $("#rfq-heading").text(rfq_heading.slice(0, -2));
+        $("#rfq-heading").text(rfq_heading.slice(0, -2));
 
-        // $.ajax({
-        //     type: "POST",
-        //     url: "/api/upload",
-        //     data: JSON.stringify(jsonArray),
-        //     contentType: "application/json"
-        //
-        // }).done(function () {
-        //     console.log("Message sent successfully");
-        // });
+        $.ajax({
+            type: "POST",
+            url: "/api/upload",
+            data: JSON.stringify(jsonArray),
+            contentType: "application/json"
+
+        }).done(function () {
+            console.log("Message sent successfully");
+        });
 
 
     });
 });
+
+
+function set_step1() {
+   
+}
 

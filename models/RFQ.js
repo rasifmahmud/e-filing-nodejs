@@ -63,7 +63,7 @@ module.exports.createRFQ = function (newRFQ, callback) {
         });
         notifications.createnotification(newnot, callback);
     });
-    
+
 };
 
 
@@ -87,43 +87,49 @@ module.exports.getAllRFQbyUserID = function(ID, callback) {
 
 
 module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
-    RFQ.findOne({_id: rfq_id}).lean().exec( function (err, doc) {
-        if(!doc)return;
+    RFQ.findOne({_id: rfq_id}).lean()
+        .populate('initiator_id')
+        .populate('refer_verifier.ID')
+        .populate('refer_accountant.ID')
+        .populate('refer_committee.ID')
+        .populate('refer_director.ID')
+        .exec( function (err, doc) {
+            if(!doc)return;
 
-        doc.sign_auth=false;
+            doc.sign_auth=false;
 
-        if(doc.substep_id==1 && doc.refer_verifier.ID==user_id && doc.refer_verifier.signed==false){
-            doc.sign_auth=true;
-            doc.forward_to="Accountant";
-            //console.log(doc);
-            User.find({designation: "Accountant"}).lean().exec( function (err, docs) {
-                doc.forward_list=docs;
+            if(doc.substep_id==1 && doc.refer_verifier.ID==user_id && doc.refer_verifier.signed==false){
+                doc.sign_auth=true;
+                doc.forward_to="Accountant";
                 //console.log(doc);
+                User.find({designation: "Accountant"}).lean().exec( function (err, docs) {
+                    doc.forward_list=docs;
+                    //console.log(doc);
+                    return done(err,doc);
+                });
+            }
+            else if(doc.substep_id==2 && doc.refer_accountant.ID==user_id && doc.refer_accountant.signed==false){
+                doc.sign_auth=true;
+                doc.forward_to="Director";
+                User.find({designation: "Director"}).lean().exec(function (err, docs) {
+                    doc.forward_list=docs;
+                    return done(err,doc);
+                });
+            }
+            else if(doc.substep_id==3 && doc.refer_director.ID==user_id && doc.refer_director.signed==false){
+                doc.sign_auth=true;
+                doc.forward_to="Committee";
+                User.find({designation: "Scientific Officer"}).lean().exec( function (err, docs) {
+                    doc.forward_list=docs;
+                    return done(err,doc);
+                });
+            }
+            else {
                 return done(err,doc);
-            });
-        }
-        else if(doc.substep_id==2 && doc.refer_accountant.ID==user_id && doc.refer_accountant.signed==false){
-            doc.sign_auth=true;
-            doc.forward_to="Director";
-            User.find({designation: "Director"}).lean().exec(function (err, docs) {
-                doc.forward_list=docs;
-                return done(err,doc);
-            });
-        }
-        else if(doc.substep_id==3 && doc.refer_director.ID==user_id && doc.refer_director.signed==false){
-            doc.sign_auth=true;
-            doc.forward_to="Committee";
-            User.find({designation: "Scientific Officer"}).lean().exec( function (err, docs) {
-                doc.forward_list=docs;
-                return done(err,doc);
-            });
-        }
-        else {
-            console.log("here");
-            return done(err,doc);
-        }
-    });
+            }
+        });
 }
+
 module.exports.updateaccountant = function (rfq_id, accountant_id, done) {
     RFQ.findOne({ _id: rfq_id }, function (err, doc){
         //doc.refer_verifier.date = Date.now;
@@ -177,7 +183,7 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
         }
 
         doc.save(function (err, doc2) {
-           notifications.removenotifications(rfq_id, doc2.refer_director.ID, function (err, doc3) {
+            notifications.removenotifications(rfq_id, doc2.refer_director.ID, function (err, doc3) {
                 console.log(doc2.refer_committee.length);
                 for (var i=0;i<doc2.refer_committee.length;i++) {
                     console.log(doc2.refer_committee[i].ID);
@@ -187,7 +193,7 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
                         text: "asked to chair committee"
                     });
                     notifications.createnotification(newnot, function (err, doc4) {
-                        
+
                     });
                 }
                 return done;
@@ -195,4 +201,3 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
         });
     });
 }
-
