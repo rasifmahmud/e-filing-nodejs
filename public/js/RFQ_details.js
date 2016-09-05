@@ -90,3 +90,8 @@ $(document).ready(function () {
     });
 });
 
+
+function set_step1() {
+   
+}
+

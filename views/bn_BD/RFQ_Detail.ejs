@@ -34,6 +34,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
+
     <!------------------------------- chahida_potro   -------------------------------  -->
 
     <link rel="stylesheet" href="../css/requisition_form.css">
@@ -73,7 +74,7 @@
 
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" onload="set_span()">
 <div class="wrapper">
     <!-- Main Header -->
     <% include ../partials/dashBoardHeader.ejs %>
@@ -125,9 +126,10 @@
                     <div class="panel-body">
                         <p>বাংলাদেশ বিজ্ঞান ও শিল্প গবেষণা পরিষদ (বিসিএসআইআর)-এর আওতাধীন ডেজিগনেটেড রেফারেন্স ইনস্টিটিউট ফর
                             কেমিক্যাল মেজারমেন্টস- এর বৈজ্ঞানিক কর্মকর্তা
-                            <b> <span id="rfq-initiator-name" style="color: #337AB7;"> ............</span> </b> এর কাছ থেকে প্রাপ্ত
+                            &nbsp;<b> <span id="rfq-initiator-name" style="color: #337AB7; font-size: large;"> ............</span>
+                            </b>&nbsp; এর কাছ থেকে প্রাপ্ত
                             চাহিদার (কপি সংযুক্ত) আলোকে গবেষণার জন্য
-                            <b><span style="color: #337AB7;" id="rfq-heading">............</span></b> ক্রয় করা প্রয়োজন। কাজটি জরুরী বিধায় স্থানীয় সরবরাহকারী প্রতিষ্ঠানের
+                            &nbsp;<b><span style="color: #337AB7; font-size: large;" id="rfq-title">............</span></b>&nbsp; ক্রয় করা প্রয়োজন। কাজটি জরুরী বিধায় স্থানীয় সরবরাহকারী প্রতিষ্ঠানের
                             সাথে যোগাযোগ করে তুলনামূলক প্রতিযোগী দরদাতা দ্বারা PPR-২০০৮ এর তফসীল-২-এর বিধি ৯(২)(ক) অনুসরণে
                             RFQ পদ্ধতিতে সংগ্রহ করা যেতে পারে।
                         </p>
@@ -357,13 +359,16 @@
                     </div>
                     <div class="panel-body">
                         <p>
-                            নোটানুচ্ছেদ ০১ এর অনুমোদনের আলোকে গবেষণাগারের প্রয়োজনের নিরীখে <span>............</span> এর Specification প্রস্তুত
+                            নোটানুচ্ছেদ ০১ এর অনুমোদনের আলোকে গবেষণাগারের প্রয়োজনের নিরীখে &nbsp;<b><span style="color: #337AB7; font-size: large;" id="rfq-title2">............</span></b>&nbsp; এর Specification প্রস্তুত
                             করার দায়িত্ব বাজারমূল্য নির্ধারন ও স্পেসিফিকেশন প্রস্তুতকরন কমিটিকে দেয়া যেতে পারে।
                         </p>
                         <div id="step3-data-container" style="font-size:28px; ">
                         </div>
                     </div>
                 </div>
+
+
+
                 <!-- --------------------------- step 4 content starts -------------------------------- -->
                 <div class="panel panel-primary" id="step4-panel">
                     <div class="panel-heading">
@@ -778,5 +783,26 @@
 <script type="text/javascript " src="../js/flow_control.js"></script>
 <script type="text/javascript " src="../js/notifications.js"></script>
 <script type="text/javascript" src="../js/RFQ_details.js"></script>
+<script type="text/javascript" src="../js/requisition_form.js"></script>
+
+<script>
+    function set_span() {
+//        //RFQ_details.ejs STARTS
+//
+//        //STEP 1
+//        var selected_rfq_id = 0;
+//        document.getElementById('rfq-initiator-name').innerHTML = special_data.RFQ_list[selected_rfq_id].initiator_id.name;
+//        document.getElementById('rfq-title').innerHTML = special_data.RFQ_list[selected_rfq_id].title;
+//
+//        //STEP 2
+//
+//        //STEP 3
+//        document.getElementById('rfq-title2').innerHTML = special_data.RFQ_list[selected_rfq_id].title;
+//
+//        //STEP 4
+//        //RFQ_details.ejs ENDS
+    }
+</script>
+
 </body>
 </html>
