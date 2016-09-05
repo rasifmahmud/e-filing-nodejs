@@ -32,14 +32,34 @@ $(document).ready(function () {
 
     //TABLE ENTRY
     var total_table_entry = special_data.RFQ_detail.details.length;
+    var t = $('#rfq_table_non').DataTable();
     for(var i=0;i<total_table_entry;i++){
 
+        t.row.add( [
+            special_data.RFQ_detail.details[i].item_no,
+            special_data.RFQ_detail.details[i].desctription,
+            special_data.RFQ_detail.details[i].qty,
+            special_data.RFQ_detail.details[i].price_fig,
+            special_data.RFQ_detail.details[i].total_fig
+        ] ).draw( false );
     }
+
+
+    //INTERNAL STEP SPAN ENTRIES
+
+    //step1
+    document.getElementById("item_span").innerHTML = special_data.RFQ_detail.title;
+    //step 2
+    document.getElementById("taka_fig_span").innerHTML = special_data.RFQ_detail.total_tt_fig;
+    document.getElementById("taka_word_span").innerHTML = special_data.RFQ_detail.total_tt_words;
+
+    //step4
+    document.getElementById("field_span").innerHTML = "Furniture";
     
     //SIGNATURE
     
     //INITIATOR
-    document.getElementById("scientist_sig").src = special_data.RFQ_detail.initiator_id.signature;
+    document.getElementById("scientist_sig").src = '/api/pic/' + special_data.RFQ_detail.initiator_id.signature;
     
    //RFQ_details.ejs ENDS
     //SHADMAN'S WORK OF RFQ DETAILS ENDS
