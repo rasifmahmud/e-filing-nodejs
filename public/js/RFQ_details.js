@@ -57,9 +57,11 @@ $(document).ready(function () {
     document.getElementById("field_span").innerHTML = "Furniture";
     
     //SIGNATURE
-    
-    //INITIATOR
+
     document.getElementById("scientist_sig").src = '/api/pic/' + special_data.RFQ_detail.initiator_id.signature;
+    document.getElementById("verifier_sig").src = '/api/pic/' + special_data.RFQ_detail.refer_verifier.ID.signature;
+    // document.getElementById("accountant_sig").src = '/api/pic/' + special_data.RFQ_detail.refer_accountant.ID.signature;
+    // document.getElementById("director_sig").src = '/api/pic/' + special_data.RFQ_detail.refer_director.ID.signature;
     
    //RFQ_details.ejs ENDS
     //SHADMAN'S WORK OF RFQ DETAILS ENDS
