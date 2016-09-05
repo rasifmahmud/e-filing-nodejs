@@ -31,7 +31,16 @@ $(document).ready(function () {
     document.getElementById("rfq_table_non").contentEditable = false;
 
     //TABLE ENTRY
-    // document.write(special_data.RFQ_list[selected_rfq_id].details.size);
+    var total_table_entry = special_data.RFQ_detail.details.length;
+    for(var i=0;i<total_table_entry;i++){
+
+    }
+    
+    //SIGNATURE
+    
+    //INITIATOR
+    document.getElementById("scientist_sig").src = special_data.RFQ_detail.initiator_id.signature;
+    
    //RFQ_details.ejs ENDS
     //SHADMAN'S WORK OF RFQ DETAILS ENDS
 
