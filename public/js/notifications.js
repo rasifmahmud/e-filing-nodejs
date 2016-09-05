@@ -33,8 +33,7 @@ $(document).ready(function(){
 
 
         // console.log(special_data.notification[i].date);
-        console.log(hour);
-        console.log(minute);
+        
         not+=
             "<li>"+
 
