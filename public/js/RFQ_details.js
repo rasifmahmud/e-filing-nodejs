@@ -36,7 +36,7 @@ $(document).ready(function () {
     for(var i=0;i<total_table_entry;i++){
 
         t.row.add( [
-            special_data.RFQ_detail.details[i].item_no,
+            i+1,
             special_data.RFQ_detail.details[i].desctription,
             special_data.RFQ_detail.details[i].qty,
             special_data.RFQ_detail.details[i].price_fig,

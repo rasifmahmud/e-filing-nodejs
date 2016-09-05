@@ -37,7 +37,7 @@ $(document).ready(function(){
         not+=
             "<li>"+
 
-            '<a href="#">' +
+            '<a href="/rfq_detail/'+ special_data.notification[i].rfq_id +'/">' +
             '<div class="row" style="word-break: break-word;white-space: normal;">'+
             '<div class="col-xs-2" style="margin-top:8px;">'+
             '<img src='+ proPic +'class="img-rounded" height="46" width="44">'+
