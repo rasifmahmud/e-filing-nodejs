@@ -25,8 +25,7 @@ $(document).ready(function(){
     $(".designation").text(designation);
     $(".is-online").text(isOnline);
 
-    console.log(special_data.RFQ_list);
-    console.log(special_data.user);
+    console.log(special_data);
     //window.alert(special_data.RFQ_list.length);
 
 
