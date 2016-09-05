@@ -21,17 +21,27 @@ $(document).ready(function () {
         '</tr>');
 
         $("#forward-to-list").html(function () {
-
             var forward_list = "";
             var forward_list_length = 5;
-            var html_text = '<option>Alaska</option>';
-
+            var html_text = '';
             for(var i=0;i<forward_list_length;i++){
-                html_text += html_text;
+                html_text += '<option>Alaska</option>';
             }
-
             return html_text;
         });
+
+
+    $("#committee-member-list").html(function () {
+        var forward_list = "";
+        var forward_list_length = 5;
+        var html_text = '';
+        for(var i=0;i<forward_list_length;i++){
+            html_text += '<option><img src="" alt="habi jabi"><div>alubana</div></option>';
+        }
+        return html_text;
+    });
+
+
 
 
 
