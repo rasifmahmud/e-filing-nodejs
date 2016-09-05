@@ -20,11 +20,21 @@ $(document).ready(function () {
 
         '</tr>');
 
-    var i = 2;
-    $("#forward-btn").click(function () {
-        $("#step" + i + "-panel").show("slow");
-        i++;
-    });
+        $("#forward-to-list").html(function () {
+
+            var forward_list = "";
+            var forward_list_length = 5;
+            var html_text = '<option>Alaska</option>';
+
+            for(var i=0;i<forward_list_length;i++){
+                html_text += html_text;
+            }
+
+            return html_text;
+        });
+
+
+
 });
 
 
@@ -40,12 +50,38 @@ function addRow(tableID) {
     $("#example > tbody").append('<tr>'+
 
         '<td><input type="checkbox"></td>'+
-        '<td contenteditable="true">a</td>"'+
-        '<td contenteditable="true">b</td>' +
-        '<td contenteditable="true">c</td>' +
-        '<td contenteditable="true">d</td>' +
+        '<td contenteditable="true"></td>"'+
+        '<td contenteditable="true"></td>' +
+        '<td contenteditable="true"></td>' +
+        '<td contenteditable="true"></td>' +
+        '</tr>'
+    );
 
-        '</tr>');
+    // var checkbox = document.createElement('input');
+    // checkbox.type = "checkbox";
+    //
+    //
+    // var counter = 0;
+    // var t = $('#example').DataTable();
+    // t.row.add( [
+    //     checkbox,
+    //     counter +'.2',
+    //     counter +'.3',
+    //     counter +'.4',
+    //     counter +'.5'
+    // ] ).draw( false );
+
+    // $('#addRow').on( 'click', function () {
+    //     t.row.add( [
+    //         counter +'.1',
+    //         counter +'.2',
+    //         counter +'.3',
+    //         counter +'.4',
+    //         counter +'.5'
+    //     ] ).draw( false );
+    //
+    //     counter++;
+    // } );
 
 }
 
@@ -73,3 +109,5 @@ function deleteRow(tableID) {
         alert(e);
     }
 }
+
+

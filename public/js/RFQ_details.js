@@ -11,7 +11,33 @@ $(document).ready(function () {
     document.getElementById("date").innerHTML = myDate;
 
 
-    var index_step = 3;
+
+
+
+   //RFQ_details.ejs STARTS
+
+   //STEP 1
+   var selected_rfq_id = 0;
+   document.getElementById('rfq-initiator-name').innerHTML = special_data.RFQ_list[selected_rfq_id].initiator_id.name;
+   document.getElementById('rfq-title').innerHTML = special_data.RFQ_list[selected_rfq_id].title;
+
+   //STEP 2
+
+   //STEP 3
+   document.getElementById('rfq-title2').innerHTML = special_data.RFQ_list[selected_rfq_id].title;
+
+   //STEP 4
+   //RFQ_details.ejs ENDS
+
+
+
+
+
+
+
+
+
+    var index_step = 7;
 
     function show_detail(i) {
         index_step = i;
@@ -71,19 +97,24 @@ $(document).ready(function () {
 
         }
 
-        // $("#rfq-heading").text(rfq_heading.slice(0, -2));
+        $("#rfq-heading").text(rfq_heading.slice(0, -2));
 
-        // $.ajax({
-        //     type: "POST",
-        //     url: "/api/upload",
-        //     data: JSON.stringify(jsonArray),
-        //     contentType: "application/json"
-        //
-        // }).done(function () {
-        //     console.log("Message sent successfully");
-        // });
+        $.ajax({
+            type: "POST",
+            url: "/api/upload",
+            data: JSON.stringify(jsonArray),
+            contentType: "application/json"
+
+        }).done(function () {
+            console.log("Message sent successfully");
+        });
 
 
     });
 });
+
+
+function set_step1() {
+   
+}
 
