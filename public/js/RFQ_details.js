@@ -4,7 +4,7 @@
 
 $(document).ready(function () {
 
-    "use strict";
+    // "use strict";
 
 
     "use strict";
@@ -12,6 +12,32 @@ $(document).ready(function () {
     // $("#main-content").html("<h1> thtihththtgthtihtihtthgth </h1>");
     var myDate = new Date().toString().slice(0, 21);
     document.getElementById("date").innerHTML = myDate;
+
+
+
+
+
+   //RFQ_details.ejs STARTS
+
+   //STEP 1
+   var selected_rfq_id = 0;
+   document.getElementById('rfq-initiator-name').innerHTML = special_data.RFQ_list[selected_rfq_id].initiator_id.name;
+   document.getElementById('rfq-title').innerHTML = special_data.RFQ_list[selected_rfq_id].title;
+
+   //STEP 2
+
+   //STEP 3
+   document.getElementById('rfq-title2').innerHTML = special_data.RFQ_list[selected_rfq_id].title;
+
+   //STEP 4
+   //RFQ_details.ejs ENDS
+
+
+
+
+
+
+
 
 
     var index_step = 7;
