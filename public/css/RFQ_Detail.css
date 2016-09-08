@@ -85,9 +85,30 @@ div #date{
     text-align: right;
 }
 
+.panel-body{
+    font-size: 20px;
+    /*background-color: #7DD7A2;*/
+}
 
+table {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+}
+th {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #00a65a;
+}
+td {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    color: black;
 
-
+}
 
 
 
