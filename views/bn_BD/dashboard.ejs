@@ -25,7 +25,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../css/custom.css">
-    <link rel="stylesheet" href="../dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
 
@@ -37,6 +37,7 @@
     <!------------------------------- chahida_potro   -------------------------------  -->
 
     <link rel="stylesheet" href="../css/requisition_form.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 
 
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -69,7 +70,7 @@
 
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
     <!-- Main Header -->
     <% include ../partials/dashBoardHeader.ejs %>
@@ -111,10 +112,6 @@
             <% } else if(main_content === "rfq_detailed"){ %>
 
                 <% include ../partials/RFQ_details.ejs %>
-
-            <% } else if(main_content === "test"){ %>
-
-                <% include ../partials/RF_uneditable.ejs %>
 
             <% } %>
         </div>

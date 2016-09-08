@@ -3,13 +3,17 @@ $(document).ready(function () {
     "use strict";
 
     // $("#main-content").html("<h1> thtihththtgthtihtihtthgth </h1>");
-    var myDate = new Date().toString().slice(0, 21);
-    document.getElementById("date").innerHTML = myDate;
     console.log(special_data.forward_list);
 
     var table = document.getElementById("#example");
 
     var rowCount = 1 ;
+
+    // var index_step = 7;
+    //
+    // for (var i= index_step+1 ;i<=16;i++){
+    //     document.getElementById('step' + i + '-panel').style.display = 'none';
+    // }
 
 
     // initially button disabled
