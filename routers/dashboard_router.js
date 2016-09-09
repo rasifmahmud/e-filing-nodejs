@@ -27,10 +27,6 @@ router.route('/rfq_request')
         res.render('bn_BD/dashboard', {main_content: "rfq_request"});
     });
 
-router.route('/rfq_running')
-    .get(function (req, res) {
-        res.render('bn_BD/dashboard', {main_content: "rfq_running"});
-    });
 
 router.route('/rfq_list')
     .get(function (req, res) {
@@ -41,6 +37,9 @@ router.route('/rfq_list')
 
 router.route('/rfq_detail/:id')
     .get(function (req, res) {
+        console.log("DASSSSSSSS");
+        console.log(req.params.id);
+        console.log("DASSSSSSSS");
         res.render('bn_BD/RFQ_Detail', {main_content: "default"});
 
     });
@@ -50,11 +49,5 @@ router.route('/rfq_detail/:id')
         
         res.render('bn_BD/RFQ_Detail',{main_content:"default"});
 
-    });
-
-router.route('/test')
-    .get(function (req, res) {
-        // res.render('bn_BD/RFQ_Running');
-        res.render('bn_BD/dashboard', {main_content: "test"});
     });
 

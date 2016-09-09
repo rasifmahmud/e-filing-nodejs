@@ -8,6 +8,7 @@ function showd(i) {
 
 $(document).ready(function(){
     console.log(RFQ_index);
+
     // console.log($("#target").innerHTML);
     // console.log($("#target").text());
 

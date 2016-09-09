@@ -1,0 +1,132 @@
+.heading{
+    color: #ffffff;
+    font-weight: 400;
+    text-align: center;
+    background-color: #00A65A;
+    min-height: 100px;
+
+    border-color: #337AB7;
+    border-width: 5px;
+
+    /*-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);*/
+    /*-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);*/
+    /*box-shadow: 0 4px 8px rgba(0,0,0,0.5);*/
+}
+.hover-change-panel {
+    transition: all 0.3s ease;
+    border-color: #7DD7A2;
+
+    /*padding: 10px;*/
+}
+.hover-change-panel:hover , .hover-change-panel:visited {
+    -moz-box-shadow: -8px 8px 8px #7DD7A2;
+    -webkit-box-shadow: -8px 8px 8px #7DD7A2;
+    box-shadow: -8px 8px 8px #7DD7A2;
+}
+
+.dropdown-menu{
+    border-color: #7DD7A2;
+    border-width: 2px;
+    border-top: #FFFFFF;
+    -moz-box-shadow: 2px 2px 2px #6d6d6d;
+    -webkit-box-shadow: 2px 2px 2px #6d6d6d;
+    box-shadow: 2px 2px 2px #6d6d6d;
+}
+
+.panel{
+    border-color: #7DD7A2;
+    border-width: 1px;
+}
+
+div#step1-panel.panel div.panel-heading button {
+    border-color: #7DD7A2;
+    border-width: 1px;
+}
+
+.hover-change-btn {
+    transition: all 0.3s ease;
+    background: #3cc374;
+    color: #FFFFFF;
+    font-weight: 200;
+    /*padding: 10px;*/
+}
+.hover-change-btn:hover , .hover-change-btn:visited {
+    background: #ffffff;
+    border-color: #00A65A;
+    border-width: 3px;
+    color: #00A65A;
+    /*padding: 20px;*/
+}
+.modal-header{
+    text-align: center;
+    background-color:#00A65A;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+
+
+
+.small-box{
+    -moz-box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+.modal-footer{
+    border-color: #337AB7;
+}
+div #date{
+    text-align: right;
+}
+
+.div#step1-panel.panel.hover-change-panel div.panel-body{
+    font-size: 20px;
+    /*background-color: #7DD7A2;*/
+}
+
+table {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+}
+th {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #00a65a;
+}
+td {
+    border: 2px solid #4dffa6;
+    border-collapse: collapse;
+    text-align: center;
+    color: black;
+
+}
+
+div#step1-requirement-form-modal.modal {
+    /*background-color: #ecf0f5;*/
+}
+
+input#rfq_title {
+    color : #FFFFFF;
+    font-weight: normal;
+    font-size: larger;
+}
+
+.table-container{
+    border-color: #00A65A;
+}
+
+option{
+    font-weight: normal;
+    font-size: 16px;
+    color: #00a65a;
+}
+
+
+
+
+
+
+

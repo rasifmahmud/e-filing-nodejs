@@ -1,5 +1,6 @@
 <!-- Left side column. contains the logo and sidebar -->
 <aside class="main-sidebar">
+    <link rel="stylesheet" href="../css/left_sidebar.css">   
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
@@ -9,7 +10,14 @@
             </div>
             <div class="pull-left info">
                 <p class="full-name"></p>
-                <a href="#"><span class="is-online"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-circle text-success"></i></a>
+                <a href="#">
+                    <span class="is-online">
+
+                    </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa fa-circle fa-lg text-success">
+
+                    </i>
+                </a>
             </div>
         </div>
         <!-- search form -->
@@ -17,7 +25,7 @@
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search...">
                 <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-lg fa-search icon-col"></i>
                 </button>
               </span>
             </div>
@@ -25,82 +33,76 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" id="sidebar">
-            <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i
-                            class="fa fa-angle-left pull-right"></i>
+                    <i class="fa fa-lg fa-flask"></i><span>Laboratory</span>
+                    <i class="fa fa-lg fa-angle-left icon-col pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> eFile System</a></li>
+                    <li class="icon-col"><a href="#"><i class="fa fa-circle-o icon-col"></i> Solid State Lab</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i> Metal Analysis Lab </a></li>
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i> Particle Synthesis Lab</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i> Resonance Detection Lab </a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-lg fa-user"></i> <span>Staff Information</span> <i
+                            class="fa fa-lg fa-angle-left pull-right icon-col"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i>Scientist</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i>Lab Attendant</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i>Accountant</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i>Manager</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i>Cleaning Staff</a></li>
                 </ul>
             </li>
 
-            <li>
-                <a href="/test">
-                    <i class="fa fa-th"></i> <span>Requests</span>
 
-                </a>
-            </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-pie-chart"></i>
+                    <i class="fa fa-lg fa-cart-plus"></i>
                     <span>RFQ</span>
-                    <small class="label pull-right bg-green"></small>
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <small class="label pull-right"></small>
+                    <i class="fa fa-lg fa-angle-left pull-right icon-col"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/rfq_request"><i class="fa fa-circle-o"></i> RFQ Request </a></li>
-                    <li><a href="/rfq_running"><i class="fa fa-circle-o"></i> RFQ Running </a></li>
-                    <li id="lsb-rfq-list"><a href=""><i class="fa fa-circle-o"></i> RFQ List </a></li>
+                    <li id="lsb-rfq-list"><a href="#"><i class="fa fa-circle-o icon-col"></i> RFQ List </a></li>
+                    <li><a href="/rfq_request"><i class="fa fa-circle-o icon-col"></i> RFQ Request </a></li>
                 </ul>
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-laptop"></i>
+                    <i class="fa fa-lg fa-cart-arrow-down"></i>
                     <span>Tender</span>
-                    <small class="label pull-right bg-green">-</small>
-                    <i class="fa fa-angle-left pull-right"></i>
+                    <small class="label pull-right"></small>
+                    <i class="fa fa-lg fa-angle-left pull-right icon-col"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> Tender Request</a></li>
-                    <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Tender Running</a></li>
-                    <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Tender List</a></li>
-
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i> Tender List</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o icon-col"></i> Tender Request</a></li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-edit"></i> <span>Employees</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Online</a></li>
-                    <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Information</a></li>
-                    <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Profiles</a></li>
-                </ul>
-            </li>
-
             <li>
-                <a href="pages/calendar.html">
-                    <i class="fa fa-calendar"></i> <span>Calendar</span>
-                    <small class="label pull-right bg-red"></small>
+                <a href="#">
+                    <i class="fa fa-lg fa-calendar icon-col"></i> <span>Calendar</span>
+                    <small class="label pull-right"></small>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    <small class="label pull-right bg-yellow"></small>
+                    <i class="fa fa-lg fa-envelope-o icon-col"></i> <span>Mailbox</span>
+                    <small class="label pull-right"></small>
                 </a>
             </li>
 
 
-            <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+            <li><a href="#"><i class="fa fa-lg fa-book icon-col"></i><span>Documentation</span></a></li>
             <li class="header">Activity</li>
-            <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Activity List</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Pending Items
-        </span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Workplace</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o icon-col"></i><span>Activity List</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o icon-col"></i><span>Pending Applications</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o icon-col"></i><span>Received Applications</span></a></li>
         </ul>
     </section>
     <!-- /.sidebar -->

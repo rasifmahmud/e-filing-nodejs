@@ -5,7 +5,6 @@ var notifications= require("./notifications");
 var RFQDetails=require("./RFQ_info");
 
 var rfqSchema = new mongoose.Schema({
-    RFQ_details_id: {type: Schema.ObjectId, ref: 'RFQdetails'},
     initiator_id: {type: Schema.ObjectId, ref: 'User'},
     created: {type: Date, default: Date.now},
     step_id: {type: Number},
@@ -58,7 +57,7 @@ module.exports.createRFQ = function (newRFQ, callback) {
         var newnot= new notifications({
             rfq_id: doc._id,
             from: doc.initiator_id,
-            to: doc.refer_verifier,
+            to: doc.refer_verifier.ID,
             text: "asked for verification"
         });
         notifications.createnotification(newnot, callback);
@@ -89,11 +88,21 @@ module.exports.getAllRFQbyUserID = function(ID, callback) {
 module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
     RFQ.findOne({_id: rfq_id}).lean()
         .populate('initiator_id')
-        .populate('refer_verifier.ID')
-        .populate('refer_accountant.ID')
-        .populate('refer_committee.ID')
-        .populate('refer_director.ID')
-        .exec( function (err, doc) {
+        .populate({
+            path :'refer_verifier.ID',
+            match: {'refer_verifier.signed':false}
+        })
+        .populate({
+            path :'refer_accountant.ID',
+            match: {'refer_accountant.signed':false}
+        }).populate({
+            path :'refer_committee.ID',
+            match: {'refer_committee.signed':false}
+        })
+        .populate({
+            path :'refer_director.ID',
+            match: {'refer_director.signed':false}
+        }).exec( function (err, doc) {
             if(!doc)return;
 
             doc.sign_auth=false;
