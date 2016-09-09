@@ -32,7 +32,7 @@ div#step1-panel.panel div.panel-heading button {
     font-weight: 200;
     /*padding: 10px;*/
 }
-.hover-change-btn:hover , .hover-change-btn:visited {
+.hover-change-btn:hover , .hover-change-btn:visited ,.hover-change-btn:active {
     background: #ffffff;
     border-color: #00A65A;
     border-width: 3px;
