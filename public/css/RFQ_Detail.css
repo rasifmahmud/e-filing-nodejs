@@ -27,16 +27,16 @@ div#step1-panel.panel div.panel-heading button {
 
 .hover-change-btn {
     transition: all 0.3s ease;
-    background: #7DD7A2;
+    background: #3cc374;
     color: #FFFFFF;
     font-weight: 200;
     /*padding: 10px;*/
 }
 .hover-change-btn:hover , .hover-change-btn:visited {
     background: #ffffff;
-    border-color: #7DD7A2;
-    border-width: 2px;
-    color: #7DD7A2;
+    border-color: #00A65A;
+    border-width: 3px;
+    color: #00A65A;
     /*padding: 20px;*/
 }
 
@@ -118,6 +118,14 @@ input#rfq_title {
 }
 
 
+.dropdown-menu{
+    border-color: #7DD7A2;
+    border-width: 2px;
+    border-top: #FFFFFF;
+    -moz-box-shadow: 2px 2px 2px #6d6d6d;
+    -webkit-box-shadow: 2px 2px 2px #6d6d6d;
+    box-shadow: 2px 2px 2px #6d6d6d;
+}
 
 
 
