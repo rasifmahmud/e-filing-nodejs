@@ -23,10 +23,10 @@ $(document).ready(function () {
     $("#example > tbody").append('<tr>'+
 
         '<td><input type="checkbox"></td>'+
-        '<td contenteditable="true"></td>"'+
-        '<td contenteditable="true"></td>' +
-        '<td contenteditable="true"></td>' +
-        '<td contenteditable="true"></td>' +
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>"'+
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
 
         '</tr>');
 
@@ -198,16 +198,15 @@ function addRow(tableID) {
     var rowCount = table.rows.length;
     //var row = table.insertRow(rowCount);
 
-
     $("#example > tbody").append('<tr>'+
 
         '<td><input type="checkbox"></td>'+
-        '<td contenteditable="true"></td>"'+
-        '<td contenteditable="true"></td>' +
-        '<td contenteditable="true"></td>' +
-        '<td contenteditable="true"></td>' +
-        '</tr>'
-    );
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>"'+
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
+
+        '</tr>');
 
     // var checkbox = document.createElement('input');
     // checkbox.type = "checkbox";

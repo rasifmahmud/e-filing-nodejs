@@ -38,17 +38,6 @@ div textarea {
 .panel-body {
 	font-size: 20px;
 }
-
-
-#forward{
-	background-color: #337AB7;
-	min-height: 100px;
-	/*-moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);*/
-	/*-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);*/
-	/*box-shadow: 0 4px 8px rgba(0,0,0,0.5);*/
-	/*justify-content:flex-end;*/
-}
-
 .heading{
 	color: #ffffff;
 	font-weight: 400;

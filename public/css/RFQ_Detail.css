@@ -111,6 +111,11 @@ td {
 }
 
 
+input#rfq_title {
+    color : #FFFFFF;
+    font-weight: normal;
+    font-size: larger;
+}
 
 
 
