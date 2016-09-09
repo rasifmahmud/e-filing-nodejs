@@ -26,7 +26,26 @@ $(document).ready(function () {
         console.log(data);
     })
     socket.on('tumi_jachaikari', function (data) {
-        console.log(data);
+        var proPic = '"'+'/api/pic/'+"razon.jpg"+'"';
+
+        var bal=
+            "<li>"+
+
+            '<a href="#">' +
+            '<div class="row" style="word-break: break-word;white-space: normal;">'+
+            '<div class="col-xs-2" style="margin-top:8px;">'+
+            '<img src='+ proPic +'class="img-rounded" height="46" width="44">'+
+            '</div>'+
+            '<div class="col-xs-10">'+
+            '<p style="margin-left:10px; margin-bottom:2px;">'+ '<b>'+ data + '</b>' +' '+ "chodatext"  +'</p>'+
+            '<span style="margin-left:10px;">'+ "chodadate"  +'</span>'+
+            '</div>'+
+
+            '</div>'+
+            "</a>" +
+            "</li>";
+
+        $("#notifications").append(bal);
     })
 
     // experiment
