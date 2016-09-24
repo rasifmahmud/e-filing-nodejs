@@ -3,3 +3,4 @@
  */
 var special_data = {};
 var RFQ_index="";
+var noti_length = 0;

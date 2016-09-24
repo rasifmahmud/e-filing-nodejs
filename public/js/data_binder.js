@@ -4,7 +4,7 @@ $.ajax({
     url: "/api/data",
 }).done(function (data) {
     special_data = data;
-
+    noti_length = special_data.notification.length;
     
     
     RFQ_index = document.URL;

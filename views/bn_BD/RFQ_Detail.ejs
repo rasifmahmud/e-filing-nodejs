@@ -148,6 +148,7 @@
         url: "/api/rfq_detail/"+RFQ_index,
     }).done(function (data) {
         special_data = data;
+        noti_length = special_data.notification.length;
         console.log(special_data);
         $.holdReady(false);
     });
