@@ -144,6 +144,8 @@ module.exports.updateaccountant = function (rfq_id, accountant_id, done) {
         //doc.refer_verifier.date = Date.now;
         doc.refer_verifier.signed= true;
         doc.refer_accountant.ID= accountant_id;
+        doc.substep_id=2;
+        doc.refer_accountant.date= Date.now();
 
         doc.save(function (err, doc2) {
             var newnot= new notifications({
@@ -164,6 +166,8 @@ module.exports.updatedirector = function (rfq_id, director_id, done) {
         //doc.refer_accountant.date = Date.now;
         doc.refer_accountant.signed= true;
         doc.refer_director.ID= director_id;
+        doc.substep_id=3;
+        doc.refer_accountant.date= Date.now();
 
         doc.save(function (err, doc2) {
             var newnot= new notifications({
@@ -183,6 +187,8 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
     RFQ.findOne({ _id: rfq_id }, function (err, doc){
         //doc.refer_director.date = Date.now;
         doc.refer_director.signed= true;
+        doc.substep_id=2;
+        doc.refer_accountant.date= Date.now();
         for (i = 0; i < committee.length; i++) {
             doc.refer_committee.push({
                 ID: committee[i],
@@ -207,5 +213,17 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
             });
         });
     });
+}
+
+module.exports.updatechahidapotro= function (rfq_id,substep, ID, done) {
+    if(substep==1){
+        RFQ.updateaccountant(rfq_id, ID[0], done);
+    }
+    else if(substep==2){
+        RFQ.updatedirector(rfq_id, ID[0], done);
+    }
+    else if(substep==3){
+        RFQ.updatecommittee(rfq_id, ID, done);
+    }
 }
 
