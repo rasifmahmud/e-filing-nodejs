@@ -59,7 +59,7 @@ router.route('/upload')
         });
         RFQ.createRFQ(newRFQ, function (err, doc) {
             if (err) return console.log(err);
-            real.sendThroughSockets("57b9eaa64a2cc77834c9c7c5", "ore motherchod");
+            real.sendThroughSockets(doc.to, {username:req.user.name, text: doc.text, date: doc.date, proPic: req.user.profilePic,RFQ_ID: doc.rfq_id});
             res.sendStatus(200);
         });
 

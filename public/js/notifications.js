@@ -1,8 +1,8 @@
 $(document).ready(function(){
     // console.log($("#target").html());
     // $("#main-content").html($("#target").html());
-    $("#nothead").empty().append("You have " +special_data.notification.length + " notifications" );
-    $("#notnumber").empty().append(special_data.notification.length);
+    $("#nothead").empty().append("You have " +noti_length + " notifications" );
+    $("#notnumber").empty().append(noti_length);
 
     var not= "";
     for(var i=0; i<special_data.notification.length;i++){

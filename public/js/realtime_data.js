@@ -28,10 +28,10 @@ $(document).ready(function () {
     socket.on('tumi_jachaikari', function (data) {
         console.log("I am here");
         console.log(data);
-        var proPic = '"'+'/api/pic/'+data.user.profilePic+'"';
+        var proPic = '"'+'/api/pic/'+data.proPic+'"';
 
 
-        var dt = new Date(special_data.notification[i].date);
+        var dt = new Date(data.date);
         var year = dt.getFullYear();
         var month = dt.getMonth();
         var monthNames = ["January", "February", "March", "April", "May", "June",
@@ -59,13 +59,13 @@ $(document).ready(function () {
         var bal=
             "<li>"+
 
-            '<a href="/rfq_detail/'+ "RFQ_ID" +'/">' +
+            '<a href="/rfq_detail/'+ data.RFQ_ID +'/">' +
             '<div class="row" style="word-break: break-word;white-space: normal;">'+
             '<div class="col-xs-2" style="margin-top:8px;">'+
             '<img src='+ proPic +'class="img-rounded" height="46" width="44">'+
             '</div>'+
             '<div class="col-xs-10">'+
-            '<p style="margin-left:10px; margin-bottom:2px;">'+ '<b>'+ data.user.name + '</b>' +' '+ "hogatext" +'</p>'+
+            '<p style="margin-left:10px; margin-bottom:2px;">'+ '<b>'+ data.username + '</b>' +' '+ data.text +'</p>'+
             '<span style="margin-left:10px; font-style: italic; color:#999">'+
             day+'&nbsp;'+monthNames[month]+','+year + '&nbsp;&nbsp;&nbsp; at ' +
             hour + ':' + minute + '&nbsp;' + time_tag
@@ -75,6 +75,9 @@ $(document).ready(function () {
         '</div>'+
         "</a>" +
         "</li>";
+        noti_length++;
+        $("#nothead").empty().append("You have " +noti_length + " notifications" );
+        $("#notnumber").empty().append(noti_length);
 
         $("#notifications").append(bal);
     })

@@ -125,13 +125,6 @@ $(document).ready(function () {
 
         var rfq_title = $("#rfq_title").val();
         var forward_to = $("#forward-to-list").val();
-        var propic;
-        for (var i=0; i<forward_list_length; i++){
-            if(forward_to==forward_list[i]._id){
-                propic=forward_list[i].profilePic;
-            }
-        }
-
         //loops through rows
         for (var i = 1; i < rowLength; i++) {
             jsonData={};
@@ -178,7 +171,6 @@ $(document).ready(function () {
             refer_verifier:{
                 ID: forward_to
             },
-            proPic:propic
         };
 
         $.ajax({
