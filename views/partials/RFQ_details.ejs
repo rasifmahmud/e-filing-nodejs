@@ -1,8 +1,7 @@
-
 <!-- Content Wrapper. Contains page content -->
 <div>
     <!-- Content Header (Page header) -->
-    <section class="content-header" id="header">
+    <section class="content-header" id="header" style="padding-top: 5.5%;">
         <div class="container-fluid heading">
             <div>
                 <h2>ডেজিগনেটেড রেফারেন্স ইনস্টিটিউট ফর কেমিক্যাল মেজারমেন্টস</h2>
@@ -14,11 +13,10 @@
     <!-- Main content -->
     <section class="content">
         <!------------------------- step 1 content starts  ---------------------------------- -->
-        <div class="panel panel-primary" id="step1-panel">
+        <!------------------------- step 1 content starts  ---------------------------------- -->
+        <div class="panel hover-change-panel" id="step1-panel">
             <div class="panel-heading">
-                <!--<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step1-modal"><i-->
-                <!--class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>-->
-                <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                <button type="button" class="btn hover-change-btn" data-toggle="modal"
                         data-target="#step1-requirement-form-modal"><i class="fa fa-upload fa-lg"
                                                                        aria-hidden="true"> | চাহিদা পত্র </i>
                 </button>
@@ -26,17 +24,17 @@
             <div class="panel-body">
                 <p>বাংলাদেশ বিজ্ঞান ও শিল্প গবেষণা পরিষদ (বিসিএসআইআর)-এর আওতাধীন ডেজিগনেটেড রেফারেন্স ইনস্টিটিউট ফর
                     কেমিক্যাল মেজারমেন্টস- এর বৈজ্ঞানিক কর্মকর্তা
-                    <b> <span id="rfq-initiator-name" style="color: #337AB7;"> ............</span> </b> এর কাছ থেকে প্রাপ্ত
+                    &nbsp;<b> <span id="rfq-initiator-name" style="color: #337AB7; font-size: large;"> ............</span>
+                    </b>&nbsp; এর কাছ থেকে প্রাপ্ত
                     চাহিদার (কপি সংযুক্ত) আলোকে গবেষণার জন্য
-                    <b><span style="color: #337AB7;" id="rfq-heading">............</span></b> ক্রয় করা প্রয়োজন। কাজটি জরুরী বিধায় স্থানীয় সরবরাহকারী প্রতিষ্ঠানের
+                    &nbsp;<b><span style="color: #337AB7; font-size: large;" id="rfq-title">............</span></b>&nbsp; ক্রয় করা প্রয়োজন। কাজটি জরুরী বিধায় স্থানীয় সরবরাহকারী প্রতিষ্ঠানের
                     সাথে যোগাযোগ করে তুলনামূলক প্রতিযোগী দরদাতা দ্বারা PPR-২০০৮ এর তফসীল-২-এর বিধি ৯(২)(ক) অনুসরণে
                     RFQ পদ্ধতিতে সংগ্রহ করা যেতে পারে।
                 </p>
-                <!-- --------------- Modal for step1 edit end ------------------ -->
                 <div id="step1-data-container" style="font-size:28px;"></div>
 
                 <!-- --------------- Modal for step1 chahida potro start ------------------ -->
-                <div class="modal fade" id="step1-requirement-form-modal" role="dialog" tabindex="1">
+                <div class="modal fade" id="step1-requirement-form-modal" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -44,101 +42,226 @@
                                 <h4>বাংলাদেশ বিজ্ঞান ও শিল্প গবেষণা পরিষদ</h4>
                             </div>
                             <div class="modal-body">
-                                <div class="panel panel-primary">
+                                <div class="panel hover-change-panel">
                                     <div class="panel-heading">
                                         <div class="container-fluid" style="color: #ffffff;">
                                             <div class="row">
-                                                <div class="col-md-6">সূত্র নং : ২০১৪১-১৫ আসবাবপত্র ক্রয়</div>
-                                                <div class="col-md-6" id="date" style="text-align:center;"></div>
-                                            </div>
-                                            <div class="row">
                                                 <div class="col-md-12"
-                                                     style="font-size:25px;text-align:center;font-weight:bold;">
+                                                     style="font-size:25px;text-align:center;font-weight:bold;color: #00A65A;">
                                                     চাহিদা পত্র
                                                 </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-6 col-xs-12" style="font-size:18px;color: #00A65A;text-align:center;">সূত্র নং : ২০১৪১-১৫ আসবাবপত্র ক্রয়</div>
+                                                <div class="col-md-6 col-sm-6 col-xs-12" id="date" style="font-size:18px;color: #00A65A;text-align:center;"></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="panel-body">
-                                        <table id="dataTable" width="100%" align="center">
+                                        <div class="row">
+                                            <form>
+                                                <div class="form-group">
+                                                    <div>
+                                                        <div class="input-group" style="padding-right: 15px;padding-left: 15px;border-color: #border-color: #7DD7A2">
+                                                            <span class="input-group-addon" style="border-color:#00A65A;font-weight:bold; font-size:large;color:#00A65A;">RFQ Title</span>
+                                                            <input style="background-color: #00A65A;color:00A65A;border-color:#00A65A;" type="text" class="form-control" aria-describedby="basic-addon1"
+                                                                   id="rfq_title" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="panel hover-change-panel">
+                                            <div class="panel-heading">
+                                                <p>১।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "এস্টাবলিশমেন্ট অব ডেজিগনেটেড রেফারেন্স
+                                                    ইনস্টিটিউট ফর কেমিক্যাল মেজারমেন্টস" শীর্ষক প্রকল্পে
+                                                    <span style="font-size:large; font-weight: bold; padding: .5% .5%; color: #337AB7;" id="item_span"></span>
+                                                    উদ্দেশ্যে নিম্নবর্ণিত দ্রব্যাদি প্রয়োজন।
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!--table-bordered-->
+                                        <table id="rfq_table_non" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                            <thead>
                                             <tr>
-                                                <th rowspan="2"></th>
-                                                <th rowspan="2">Item No.</th>
-                                                <th rowspan="2">Description of Items</th>
-                                                <th rowspan="2">Unit of Measurement</th>
-                                                <th rowspan="2">Quantity</th>
-                                                <th colspan="2">Unit Rate of Price</th>
-                                                <th colspan="2">Total Amount</th>
+                                                <th style="font-size: 18px; font-weight: normal;">Item No.</th>
+                                                <th style="font-size: 18px; font-weight: normal;">Description of Items</th>
+                                                <th style="font-size: 18px; font-weight: normal;">Quantity</th>
+                                                <th style="font-size: 18px; font-weight: normal;">Unit Rate of Price</th>
+                                                <th style="font-size: 18px; font-weight: normal;">Total Amount</th>
                                             </tr>
-                                            <tr id="unit">
-                                                <th>In Figure</th>
-                                                <th>In Words</th>
-                                                <th>In Figure</th>
-                                                <th>In Words</th>
-                                            </tr>
+                                            </thead>
+                                            <tfoot>
                                             <tr>
-                                                <td height="100px" contenteditable="true"><input type="checkbox"
-                                                                                                 name="chk"/></td>
-                                                <td height="100px" contenteditable="true"
-                                                    style="text-align: center;"> 1
-                                                </td>
-                                                <td height="100px" contenteditable="true"></td>
-                                                <td height="100px" contenteditable="true"></td>
-                                                <td height="100px" contenteditable="true"></td>
-                                                <td height="100px" contenteditable="true"></td>
-                                                <td height="100px" contenteditable="true"></td>
-                                                <td height="100px" contenteditable="true"></td>
-                                                <td height="100px" contenteditable="true"></td>
+                                                <td colspan="4">Total Estimated Amount</td>
+                                                <td>$180</td>
                                             </tr>
+                                            </tfoot>
+                                            <tbody>
+                                            </tbody>
                                         </table>
                                     </div>
-                                    <div class="panel-footer">
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row" style="padding-right: 15px;padding-left: 15px;">
                                         <div class="row">
-                                            <!-- <div class="col-sm-10 col-md-10 col-lg-10"></div>
-                                            <div class="col-sm-2  col-md-2 col-lg-2 pull-right"> -->
-                                            <div class="pull-right">
-                                                <div class="btn-group" style="padding-right:15px;">
-                                                    <button type="button" class="btn btn-sm btn-primary"
-                                                            onclick="addRow('dataTable')"> Add Item
-                                                    </button>
-                                                    <button type="button" class="btn btn-sm btn-danger"
-                                                            onclick="deleteRow('dataTable')">Delete Item
-                                                    </button>
-                                                    <!-- <input type="button" value="Add Item" onclick="addRow('dataTable')" />
-                                                    <input type="button" value="Delete Item" onclick="deleteRow('dataTable')" /> -->
+                                            <div class="panel hover-change-panel">
+                                                <div class="panel-body">
+                                                    <p>২।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; এজন্য আনুমানিক
+                                                        <span style="font-size:large; font-weight: bold; padding: .5% .5%; color: #337AB7;" id="taka_fig_span"></span>
+                                                        (কথায়)
+                                                        <span style="font-size:large; font-weight: bold; padding: .5% .5%; color: #337AB7;" id="taka_word_span"></span>
+                                                        টাকা ব্যয় হবে।
+                                                    </p>
                                                 </div>
+                                            </div>
+                                            <div class="panel hover-change-panel">
+                                                <div class="panel-body">
+                                                    <p>৩।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; অতএব উপরোক্ত বর্ণনামতে
+                                                        মালামাল সংগ্রহের অনুমোদনের জন্য বিনীতভাবে অনুরোধ করা যাচ্ছে।
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="font-size: 12px;padding: 30px 30px;">
+                                            <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                                                <div class="row">
+                                                    <img class="img-rounded" alt="Scientist Signature" width="100" height="60" id="scientist_sig">
+                                                </div>
+                                                <div class="row" style="font-size: 12px;">Scientist Signature</div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                                                <div class="row">
+                                                    <img class="img-rounded" alt="Verifier Signature" width="100" height="60" id="verifier_sig">
+                                                </div>
+                                                <div class="row" style="font-size: 12px;">Verifier Signature</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="padding-right: 15px;padding-left: 15px;">
+                                        <div class="row">
+                                            <div class="panel hover-change-panel">
+                                                <div class="panel-body">
+                                                    <p>৪।&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; উক্ত ব্যয় ডিপিপি
+                                                        এর <span style="font-size:large; font-weight: bold; padding: .5% .5%; color: #337AB7;" id="field_span"></span>
+                                                        খাত হতে নির্বাহ করা যেতে পারে।
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="font-size: 12px;padding: 30px 30px;">
+                                            <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                                                <div class="row">
+                                                    <img class="img-rounded" alt="Accountant Signature" width="100" height="60" id="accountant_sig">
+                                                </div>
+                                                <div class="row" style="font-size: 12px;">Accountant Signature</div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                                                <div class="row">
+                                                    <img class="img-rounded" alt="Director Signature" width="100" height="60" id="director_sig">
+                                                </div>
+                                                <div class="row" style="font-size: 12px;">Director Signature</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="panel hover-change-panel" style="font-weight: normal; background-color: #00a65a;">
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label style="font-weight: normal;font-size: 18px;color: #FFFFFF;"> Forward to </label>
+                                                            <select class="form-control select2" style="width: 100%;padding: 0px 0px; font-weight: normal;font-size: 16px;" id="forward-to-list">
+                                                                <option value="">1</option>
+                                                                <option value="">2</option>
+                                                                <option value="">3</option>
+                                                                <option value="">4</option>
+                                                                <option value="">5</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- /.form-group -->
+                                                    </div>
+                                                    <!-- /.col -->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label style="font-weight: normal;font-size: 18px;color: #FFFFFF;">Select Committee Member</label>
+                                                            <select id="committee-member-list" class="form-control select2" multiple="multiple" data-placeholder="Select Committee Member" style="width: 100%;font-weight: normal;">
+                                                                <!--<option value="">1</option>-->
+                                                                <!--<option value="">2</option>-->
+                                                                <!--<option value="">3</option>-->
+                                                                <!--<option value="">4</option>-->
+                                                                <!--<option value="">5</option>-->
+                                                            </select>
+                                                        </div>
+                                                        <!-- /.form-group -->
+                                                    </div>
+                                                    <!-- /.col -->
+                                                </div>
+                                                <div class="row" align="center">
+                                                    <h4 style="font-weight: bold;font-size: 25px;color: #FFFFFF;">Authenticate</h4>
+                                                </div>
+
+                                                <div class="container">
+                                                    <form class="form-horizontal">
+                                                        <div class="form-group" align="center">
+                                                            <label class="control-label col-sm-2" for="username" style="font-weight: normal;font-size: 18px;color: #FFFFFF;">Username:</label>
+                                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                <input type="username" class="form-control" id="username" placeholder="Enter username">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-offset-2 form-group" align="center">
+                                                            <label class="control-label col-sm-2" for="password" style="font-weight: normal;font-size: 18px;color: #FFFFFF;">Password:</label>
+                                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                                <input type="password" class="form-control" id="password" placeholder="Enter password">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="col-sm-offset-2 col-sm-10">
+                                                                <button id="authenticate" type="submit" class="btn btn-default">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <div class="row">
-                                    <div class="pull-right">
-                                        <div class="btn-group" style="padding-right:30px;">
-                                            <button type="button" class="btn btn-success"
-                                                    id="submit-requisition-form" data-dismiss="modal"> Submit
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
-                <!-- --------------- Modal for step1 chahida potro start ------------------ -->
+                <!-- --------------- Modal for step1 chahida potro ends ------------------ -->
             </div>
         </div>
         <!-- --------------------------- step 2 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step2-panel">
+        <div class="panel hover-change-panel" id="step2-panel">
             <div class="panel-heading">
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
-                <p>
-                    ২। সদয় অনুমোদনের জন্য নথি উপস্থাপন করা হলো।
-                </p>
+                <div>
+                    <p>
+                        ২। সদয় অনুমোদনের জন্য নথি উপস্থাপন করা হলো।
+                    </p>
+                </div>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Scientist's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Scientist's Signature</div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Director's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Director's Signature</div>
+                    </div>
+                </div>
                 <div id="step2-data-container" style="font-size:28px; ">
                 </div>
             </div>
@@ -146,92 +269,165 @@
 
 
         <!-- --------------------------- step 3 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step3-panel">
+        <div class="panel hover-change-panel" id="step3-panel">
             <div class="panel-heading">
                 <!--<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step3-modal"><i-->
                 <!--class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>-->
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
                 <p>
-                    নোটানুচ্ছেদ ০১ এর অনুমোদনের আলোকে গবেষণাগারের প্রয়োজনের নিরীখে <span>............</span> এর Specification প্রস্তুত
+                    ৩। নোটানুচ্ছেদ ০১ এর অনুমোদনের আলোকে গবেষণাগারের প্রয়োজনের নিরীখে &nbsp;<b><span style="color: #337AB7; font-size: large;" id="rfq-title2">............</span></b>&nbsp; এর Specification প্রস্তুত
                     করার দায়িত্ব বাজারমূল্য নির্ধারন ও স্পেসিফিকেশন প্রস্তুতকরন কমিটিকে দেয়া যেতে পারে।
                 </p>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Scientist's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Scientist's Signature</div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Director's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Director's Signature</div>
+                    </div>
+                </div>
                 <div id="step3-data-container" style="font-size:28px; ">
                 </div>
             </div>
         </div>
+
+
+
         <!-- --------------------------- step 4 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step4-panel">
+        <div class="panel hover-change-panel" id="step4-panel">
             <div class="panel-heading">
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
                 <p>
-                    নোটানুচ্ছেদ ০৩ এর মাধ্যমে প্রাপ্ত আদেশের আলোকে প্রয়োজনীয় <span>............</span> সমূহের Specification ও বাজারমূল্য নির্ধারনকৃত
+                    ৪ । নোটানুচ্ছেদ ০৩ এর মাধ্যমে প্রাপ্ত আদেশের আলোকে প্রয়োজনীয় <span>............</span> সমূহের Specification ও বাজারমূল্য নির্ধারনকৃত
                     হয়েছে(কপি সংযুক্ত)। প্রস্তুতকৃত Specification ও বাজারমূল্যের আলোকে প্রয়োজনীয় <span>............</span> ক্রয় করা যেতে পারে।
                 </p>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Scientist's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Scientist's Signature</div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Director's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Director's Signature</div>
+                    </div>
+                </div>
                 <div id="step4-data-container" style="font-size:28px; ">
                 </div>
             </div>
         </div>
 
         <!-- --------------------------- step 5 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step5-panel">
+        <div class="panel hover-change-panel" id="step5-panel">
             <div class="panel-heading">
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
                 <p>
-                    নোটানুচ্ছেদ ০১ এর অনুমোদনের আলোকে <span>............</span> সরবরাহকারী প্রতিষ্ঠানের নিকট হতে দরপত্র
+                    ৫ । নোটানুচ্ছেদ ০১ এর অনুমোদনের আলোকে <span>............</span> সরবরাহকারী প্রতিষ্ঠানের নিকট হতে দরপত্র
                     আহ্বানের লক্ষ্যে নোটিশ বোর্ডে বিজ্ঞপ্তি প্রকাশ এবং চিঠির মাধ্যমে অবগত করার ব্যাপারে অনুমোদনের
                     জন্য নথি উপস্থাপন করা হলো।
                 </p>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Scientist's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Scientist's Signature</div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Director's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Director's Signature</div>
+                    </div>
+                </div>
                 <div id="step5-data-container" style="font-size:28px; ">
                 </div>
             </div>
         </div>
 
         <!-- --------------------------- step 6 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step6-panel">
+        <div class="panel hover-change-panel" id="step6-panel">
             <div class="panel-heading">
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
                 <p>
-                    নোটানুচ্ছেদ ০৫ এর অনুমোদনের আলোকে স্বচ্ছপত্র স্বাক্ষরের জন্য উপস্থাপন করা হলো।
+                    ৬ । নোটানুচ্ছেদ ০৫ এর অনুমোদনের আলোকে স্বচ্ছপত্র স্বাক্ষরের জন্য উপস্থাপন করা হলো।
                 </p>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Scientist's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Scientist's Signature</div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Director's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Director's Signature</div>
+                    </div>
+                </div>
                 <div id="step6-data-container" style="font-size:28px; ">
                 </div>
             </div>
         </div>
         <!-- --------------------------- step 7 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step7-panel">
+        <div class="panel hover-change-panel" id="step7-panel">
             <div class="panel-heading">
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
                 <p>
-                    <span>............</span> তারিখে দরপত্র আহ্বানের প্রেক্ষিতে মোট ০৩ (তিন) টি দরপত্র পাওয়া গিয়েছে।
+                    ৭ । <span>............</span> তারিখে দরপত্র আহ্বানের প্রেক্ষিতে মোট ০৩ (তিন) টি দরপত্র পাওয়া গিয়েছে।
                     দরপত্রগুলো যাচাই-বাছাই করার জন্য স্বল্পমূল্যের ক্রয়ের জন্য দরপত্র ও প্রস্তাব মূল্যায়ন কমিটির
                     সভা আহ্বান করা যেতে পারে।
                 </p>
+                <div class="row" style="font-size: 12px;">
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Scientist's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Scientist's Signature</div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6" align="center">
+                        <div class="row">
+                            <img class="img-rounded" alt="Director's Signature" width="100" height="60">
+                        </div>
+                        <div class="row" style="font-size: 12px;">Director's Signature</div>
+                    </div>
+                </div>
                 <div id="step7-data-container" style="font-size:28px; ">
                 </div>
             </div>
         </div>
         <!-- --------------------------- step 8 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step8-panel">
+        <div class="panel hover-change-panel" id="step8-panel">
             <div class="panel-heading">
                 <!--<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step8-modal"><i-->
                 <!--class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>-->
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
                 <p>
@@ -241,12 +437,12 @@
             </div>
         </div>
         <!-- --------------------------- step 9 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step9-panel">
+        <div class="panel " id="step9-panel">
             <div class="panel-heading">
-                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step9-modal"><i
-                            class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step9-modal"><i-->
+                <!--class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>-->
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
                 <!-- Modal -->
@@ -275,12 +471,12 @@
             </div>
         </div>
         <!-- --------------------------- step 10 content starts -------------------------------- -->
-        <div class="panel panel-primary" id="step10-panel">
+        <div class="panel " id="step10-panel">
             <div class="panel-heading">
-                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step10-modal"><i
-                            class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>
-                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">
-                        | Upload </i></button>
+                <!--<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step10-modal"><i-->
+                <!--class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>-->
+                <!--<button type="button" class="btn btn-info btn-sm"><i class="fa fa-upload fa-lg" aria-hidden="true">-->
+                <!--| Upload </i></button>-->
             </div>
             <div class="panel-body">
                 <!-- Modal -->
@@ -310,7 +506,7 @@
         </div>
 
         <!------------------------- step 11 content starts  ---------------------------------- -->
-        <div class="panel panel-primary" id="step11-panel">
+        <div class="panel " id="step11-panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step11-modal"><i
                             class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>
@@ -346,7 +542,7 @@
         </div>
 
         <!------------------------- step 12 content starts  ---------------------------------- -->
-        <div class="panel panel-primary" id="step12-panel">
+        <div class="panel " id="step12-panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step12-modal"><i
                             class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>
@@ -382,7 +578,7 @@
         </div>
 
         <!------------------------- step 13 content starts  ---------------------------------- -->
-        <div class="panel panel-primary" id="step13-panel">
+        <div class="panel " id="step13-panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step13-modal"><i
                             class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>
@@ -418,7 +614,7 @@
         </div>
 
         <!------------------------- step 14 content starts  ---------------------------------- -->
-        <div class="panel panel-primary" id="step14-panel">
+        <div class="panel " id="step14-panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step14-modal"><i
                             class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>
@@ -454,7 +650,7 @@
         </div>
 
         <!------------------------- step 15 content starts  ---------------------------------- -->
-        <div class="panel panel-primary" id="step15-panel">
+        <div class="panel " id="step15-panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step15-modal"><i
                             class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>
@@ -490,7 +686,7 @@
         </div>
 
         <!------------------------- step 16 content starts  ---------------------------------- -->
-        <div class="panel panel-primary" id="step16-panel">
+        <div class="panel " id="step16-panel">
             <div class="panel-heading">
                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#step16-modal"><i
                             class="fa fa-pencil fa-lg" aria-hidden="true"> | Edit </i></button>
@@ -524,19 +720,7 @@
                 </div>
             </div>
         </div>
-
-        <!------------------------- steps complete  ---------------------------------- -->
-        <div id="forward" class="container-fluid">
-            <div class="row">
-                <div class="col-md-offset-10 col-md-2">
-                    <button type="button" class="btn btn-info btn-sm" id="forward-btn"><i class="fa fa-upload fa-lg" aria-hidden="true"> |
-                            Forward </i></button>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-<script type="text/javascript" src="../js/RFQ_details.js"></script>

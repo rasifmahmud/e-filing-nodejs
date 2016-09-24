@@ -20,6 +20,7 @@ $(document).ready(function () {
     $("#submit-requisition-form").prop("disabled",true);
 
 
+
     $("#example > tbody").append('<tr>'+
 
         '<td><input type="checkbox"></td>'+
@@ -29,7 +30,6 @@ $(document).ready(function () {
         '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
 
         '</tr>');
-
 
 
     var forward_list = special_data.forward_list;
@@ -70,7 +70,7 @@ $(document).ready(function () {
         var forward_list_length = 5;
         var html_text = '';
         for(var i=0;i<forward_list_length;i++){
-            html_text += '<option><img src="" alt="habi jabi"><div>alubana</div></option>';
+            html_text += '<option>alubana</option>';
         }
         return html_text;
     });
