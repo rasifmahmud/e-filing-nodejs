@@ -135,63 +135,63 @@ $(document).ready(function(){
     //$("td").required = true;
     var jsonArray = [];
     var jsonData = {};
-    $("#submit-requisition-form").click(function () {
-        var requsitionFormTable = document.getElementById('dataTable');
-
-        //gets rows of table
-        var rowLength = requsitionFormTable.rows.length;
-
-        //loops through rows
-        for (i = 2; i < rowLength; i++) {
-            jsonData={};
-            //gets cells of current row
-            var oCells = requsitionFormTable.rows.item(i).cells;
-            //gets amount of cells of current row
-            var cellLength = oCells.length;
-            //loops through each cell in current row
-            // for(var j = 2; j < cellLength; j++){
-            //
-            //     // get your cell info here
-            //     var cellVal = requsitionFormTable.rows[i].cells[j].innerHTML;   //oCells.item(j).childNodes[0].innerHTML;
-            //     alert(j + " --> " + cellVal);
-            // }
-
-            var itemNo = requsitionFormTable.rows[i].cells[1].innerHTML;
-            var descriptionOfItems = requsitionFormTable.rows[i].cells[2].innerHTML;
-            var unitOfMeasurement = requsitionFormTable.rows[i].cells[3].innerHTML;
-            var quantity = requsitionFormTable.rows[i].cells[4].innerHTML;
-            var URPInFigure = requsitionFormTable.rows[i].cells[5].innerHTML;
-            var URPInWords = requsitionFormTable.rows[i].cells[6].innerHTML;
-            var totalAmountInFigure = requsitionFormTable.rows[i].cells[7].innerHTML;
-            var totalAmountInWords = requsitionFormTable.rows[i].cells[8].innerHTML;
-
-            rfq_heading += descriptionOfItems + " , ";
-            jsonData["itemNo"]  = $.trim(itemNo);
-            jsonData["descriptionOfItems"] = descriptionOfItems;
-            jsonData["unitOfMeasurement"] = unitOfMeasurement;
-            jsonData["quantity"] = quantity;
-            jsonData["URPInFigure"] = URPInFigure;
-            jsonData["URPInWords"] = URPInWords;
-            jsonData["totalAmountInFigure"] = totalAmountInFigure;
-            jsonData["totalAmountInWords"] = totalAmountInWords;
-            jsonArray.push(jsonData);
-
-        }
-
-        $("#rfq-heading").text(rfq_heading.slice(0, -2));
-
-        $.ajax({
-            type: "POST",
-            url: "/api/upload",
-            data: JSON.stringify(jsonArray),
-            contentType: "application/json"
-
-        }).done(function () {
-            console.log("Message sent successfully");
-        });
-
-
-    });
+    // $("#submit-requisition-form").click(function () {
+    //     var requsitionFormTable = document.getElementById('dataTable');
+    //
+    //     //gets rows of table
+    //     var rowLength = requsitionFormTable.rows.length;
+    //
+    //     //loops through rows
+    //     for (i = 2; i < rowLength; i++) {
+    //         jsonData={};
+    //         //gets cells of current row
+    //         var oCells = requsitionFormTable.rows.item(i).cells;
+    //         //gets amount of cells of current row
+    //         var cellLength = oCells.length;
+    //         //loops through each cell in current row
+    //         // for(var j = 2; j < cellLength; j++){
+    //         //
+    //         //     // get your cell info here
+    //         //     var cellVal = requsitionFormTable.rows[i].cells[j].innerHTML;   //oCells.item(j).childNodes[0].innerHTML;
+    //         //     alert(j + " --> " + cellVal);
+    //         // }
+    //
+    //         var itemNo = requsitionFormTable.rows[i].cells[1].innerHTML;
+    //         var descriptionOfItems = requsitionFormTable.rows[i].cells[2].innerHTML;
+    //         var unitOfMeasurement = requsitionFormTable.rows[i].cells[3].innerHTML;
+    //         var quantity = requsitionFormTable.rows[i].cells[4].innerHTML;
+    //         var URPInFigure = requsitionFormTable.rows[i].cells[5].innerHTML;
+    //         var URPInWords = requsitionFormTable.rows[i].cells[6].innerHTML;
+    //         var totalAmountInFigure = requsitionFormTable.rows[i].cells[7].innerHTML;
+    //         var totalAmountInWords = requsitionFormTable.rows[i].cells[8].innerHTML;
+    //
+    //         rfq_heading += descriptionOfItems + " , ";
+    //         jsonData["itemNo"]  = $.trim(itemNo);
+    //         jsonData["descriptionOfItems"] = descriptionOfItems;
+    //         jsonData["unitOfMeasurement"] = unitOfMeasurement;
+    //         jsonData["quantity"] = quantity;
+    //         jsonData["URPInFigure"] = URPInFigure;
+    //         jsonData["URPInWords"] = URPInWords;
+    //         jsonData["totalAmountInFigure"] = totalAmountInFigure;
+    //         jsonData["totalAmountInWords"] = totalAmountInWords;
+    //         jsonArray.push(jsonData);
+    //
+    //     }
+    //
+    //     $("#rfq-heading").text(rfq_heading.slice(0, -2));
+    //
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "/api/upload",
+    //         data: JSON.stringify(jsonArray),
+    //         contentType: "application/json"
+    //
+    //     }).done(function () {
+    //         console.log("Message sent successfully");
+    //     });
+    //
+    //
+    // });
 
     // for(var i=0;i<5;i++){
     //     var id = "#rfq-more-info" + i;

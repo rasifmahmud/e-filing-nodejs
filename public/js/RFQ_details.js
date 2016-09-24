@@ -183,6 +183,24 @@ $(document).ready(function () {
     }
 
 
+    //SHADMAN'S WORK
+
+    var forward_list = special_data.forward_list;
+
+    var forward_list_length = forward_list.length;
+
+    document.getElementById("to-whom").innerHTML = special_data.RFQ_detail.forward_to;
+    document.getElementById("select2-forward-to-list-2-container").style.marginTop = "-7px";
+    ;
+
+    for(var i=0;i<forward_list_length;i++){
+        $('#forward-to-list-2').append($('<option>', {
+            value: forward_list[i]._id,
+            text: forward_list[i].name
+        }));
+    }
+
+
 
 
     $("#committee-member-list").html(function () {
