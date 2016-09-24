@@ -20,7 +20,6 @@ router.route('/data')
                 if (err2) return console.log(err2);
                 user.getbydesignation("Scientific Officer", function (err3, result3) {
                     if (err3) return console.log(err3);
-                    console.log(result3);
                     res.json({user: req.user, RFQ_list: result, notification: result2, forward_list: result3});
 
                 });
@@ -37,7 +36,6 @@ router.route('/rfq_detail/:id')
         var user_ID = req.user._id;
         RFQ.getRFQdetailsbyID(RFQ_ID, user_ID, function (err, result) {
             if (err) return console.log(err);
-            console.log(result);
             notification.getnotificationsbyuserid(user_ID, function (err2, result2) {
                 if (err2) return console.log(err2);
                 user.getbydesignation("Scientific Officer", function (err3, result3) {
@@ -51,7 +49,6 @@ router.route('/rfq_detail/:id')
 
 router.route('/upload')
     .post(function (req, res) {
-        console.log(req.body);
         var newRFQ= new RFQ({
             title: req.body.title,
             details: req.body.details,
@@ -61,18 +58,17 @@ router.route('/upload')
         });
         RFQ.createRFQ(newRFQ, function (err, doc) {
             if (err) return console.log(err);
-            console.log("inserted...............")
-            console.log(doc);
+            real.sendThroughSockets("57b9eaa64a2cc77834c9c7c5", "ore motherchod");
             res.sendStatus(200);
         });
 
     });
-router.route('/upload_jachaikari')
-    .post(function (req, res) {
-
-        console.log(req.body);
-        real.sendThroughSockets("57b9eaa64a2cc77834c9c7c5", "ore motherchod");
-    });
+// router.route('/upload_jachaikari')
+//     .post(function (req, res) {
+//
+//         console.log(req.body);
+//         real.sendThroughSockets("57b9eaa64a2cc77834c9c7c5", "ore motherchod");
+//     });
 
 router.route('/pic')
     .get(function (req, res) {

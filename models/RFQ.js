@@ -61,7 +61,7 @@ module.exports.createRFQ = function (newRFQ, callback) {
             text: "asked for verification"
         });
         notifications.createnotification(newnot, function (err, doc2) {
-            return callback(err, doc);
+            return callback(err, doc2);
         });
 
     });
