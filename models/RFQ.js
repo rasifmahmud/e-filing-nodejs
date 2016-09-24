@@ -110,10 +110,8 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
             if(doc.substep_id==1 && doc.refer_verifier.ID==user_id && doc.refer_verifier.signed==false){
                 doc.sign_auth=true;
                 doc.forward_to="Accountant";
-                //console.log(doc);
                 User.find({designation: "Accountant"}).lean().exec( function (err, docs) {
                     doc.forward_list=docs;
-                    //console.log(doc);
                     return done(err,doc);
                 });
             }
@@ -192,9 +190,7 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
 
         doc.save(function (err, doc2) {
             notifications.removenotifications(rfq_id, doc2.refer_director.ID, function (err, doc3) {
-                console.log(doc2.refer_committee.length);
                 for (var i=0;i<doc2.refer_committee.length;i++) {
-                    console.log(doc2.refer_committee[i].ID);
                     var newnot = new notifications({
                         from: doc2.refer_director.ID,
                         to: doc2.refer_committee[i].ID,

@@ -20,7 +20,6 @@ router.route('/data')
                 if (err2) return console.log(err2);
                 user.getbydesignation("Scientific Officer", function (err3, result3) {
                     if (err3) return console.log(err3);
-                    console.log(result3);
                     res.json({user: req.user, RFQ_list: result, notification: result2, forward_list: result3});
 
                 });
@@ -50,7 +49,6 @@ router.route('/rfq_detail/:id')
 
 router.route('/upload')
     .post(function (req, res) {
-        console.log(req.body);
         var newRFQ= new RFQ({
             title: req.body.title,
             details: req.body.details,
@@ -58,16 +56,18 @@ router.route('/upload')
             bidhi_niti: req.body.bidhi_niti,
             refer_verifier: req.body.refer_verifier
         });
-        RFQ.createRFQ(newRFQ, function (err, doc) {
-            if (err) return console.log(err);
-            res.sendStatus(200);
-        });
+        // RFQ.createRFQ(newRFQ, function (err, doc) {
+        //     if (err) return console.log(err);
+        //     console.log(req.body.refer_verifier.ID);
+        // });
+        console.log(req.body.refer_verifier.ID);
+        real.sendThroughSockets(req.body.refer_verifier.ID,{magic_data:req.body,user:req.user});
+        res.sendStatus(200);
 
     });
 router.route('/upload_jachaikari')
     .post(function (req, res) {
 
-        console.log(req.body);
         real.sendThroughSockets("57b9eaa64a2cc77834c9c7c5", "ore motherchod");
     });
 

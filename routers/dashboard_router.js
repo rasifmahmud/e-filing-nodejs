@@ -35,14 +35,6 @@ router.route('/rfq_list')
 
     });
 
-router.route('/rfq_detail/:id')
-    .get(function (req, res) {
-        console.log("DASSSSSSSS");
-        console.log(req.params.id);
-        console.log("DASSSSSSSS");
-        res.render('bn_BD/RFQ_Detail', {main_content: "default"});
-
-    });
 
 router.route('/rfq_detail/:id')
     .get(function (req, res) {
