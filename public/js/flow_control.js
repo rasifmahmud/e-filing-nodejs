@@ -135,6 +135,7 @@ $(document).ready(function(){
     var jsonArray = [];
     var jsonData = {};
 
+
     // for(var i=0;i<5;i++){
     //     var id = "#rfq-more-info" + i;
 

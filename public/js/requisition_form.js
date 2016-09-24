@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+
+
+
+
+
+
     "use strict";
 
     // $("#main-content").html("<h1> thtihththtgthtihtihtthgth </h1>");
@@ -187,6 +193,10 @@ $(document).ready(function () {
 
 
     });
+
+
+
+
 
 
 

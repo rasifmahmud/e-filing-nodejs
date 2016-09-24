@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+<<<<<<< HEAD
+=======
+    <file url="file://$PROJECT_DIR$" libraries="{e-filing-nodejs-master/node_modules}" />
+>>>>>>> c20f2ba7c1c422baa70a4e78d1a904ddb3574804
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>
