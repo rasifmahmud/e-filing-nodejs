@@ -30,10 +30,10 @@ $(document).ready(function () {
     $("#example > tbody").append('<tr>'+
 
         '<td><input type="checkbox"></td>'+
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>"'+
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style="word-wrap: break-word;"></td>'+
+        '<td contenteditable="true" style="word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style="word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style="word-wrap: break-word;"></td>' +
 
         '</tr>');
 
@@ -146,12 +146,9 @@ $(document).ready(function () {
 
             // var itemNo = requsitionFormTable.rows[i].cells[1].innerHTML;
             var descriptionOfItems = requsitionFormTable.rows[i].cells[1].innerHTML;
-            // var unitOfMeasurement = requsitionFormTable.rows[i].cells[3].innerHTML;
             var quantity = requsitionFormTable.rows[i].cells[2].innerHTML;
             var URP = requsitionFormTable.rows[i].cells[3].innerHTML;
-            // var URPInWords = requsitionFormTable.rows[i].cells[6].innerHTML;
             var totalAmountInFigure = requsitionFormTable.rows[i].cells[4].innerHTML;
-            // var totalAmountInWords = requsitionFormTable.rows[i].cells[4].innerHTML;
 
             rfq_heading += descriptionOfItems + " , ";
             // jsonData["itemNo"]  = $.trim(itemNo);
@@ -211,7 +208,7 @@ function addRow(tableID) {
     $("#example > tbody").append('<tr>'+
 
         '<td><input type="checkbox"></td>'+
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>"'+
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>'+
         '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
         '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
         '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +

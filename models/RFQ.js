@@ -104,8 +104,11 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
             match: {'refer_director.signed':false}
         }).exec( function (err, doc) {
             if(!doc)return;
+            console.log("first..............................");
+            console.log(doc);
+            console.log("second..............................");
 
-            doc.sign_auth=false;
+        doc.sign_auth=false;
 
             if(doc.substep_id==1 && doc.refer_verifier.ID==user_id && doc.refer_verifier.signed==false){
                 doc.sign_auth=true;
