@@ -15,20 +15,12 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!--<link rel="stylesheet" href="/css/custom.css">-->
-
-    <style>
-        .panel-login {
-            -moz-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            -webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-        }
-
-    </style>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 <div class="row">
     <div>
-        <div class="panel panel-primary" >
+        <div class="panel" >
             <div class="panel-heading">
                 <div style="text-align: center;" id="headline">
                     <h2>Designated Reference Institute For Chemical Measurement</h2>
@@ -39,18 +31,18 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                        <div class="panel panel-login panel-primary" >
+                        <div class="panel hover-change-panel" >
                             <div class="panel-heading" style="padding-top: 2px;">
-                                <h2> Login </h2>
+                                <h2 align="center"> Login </h2>
                             </div>
                             <div class="panel-body">
                                 <form action="/login" method="post" id="login">
                                     <div class="form-group">
-                                        <label style="color: #337AB7;">Username:</label>
+                                        <label>Username:</label>
                                         <input type="text" name="username" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label style="color: #337AB7;">Password:</label>
+                                        <label>Password:</label>
                                         <input type="password" name="password" class="form-control">
                                     </div>
                                 </form>
