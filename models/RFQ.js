@@ -7,8 +7,8 @@ var RFQDetails=require("./RFQ_info");
 var rfqSchema = new mongoose.Schema({
     initiator_id: {type: Schema.ObjectId, ref: 'User'},
     created: {type: Date, default: Date.now},
-    step_id: {type: Number},
-    substep_id: {type: Number},
+    step_id: {type: Number, default: 1},
+    substep_id: {type: Number, default: 1},
     state: {type: String , default: "running"},
     title: {type: String, default: "............"},
     bidhi_niti: {type: String},
@@ -91,21 +91,17 @@ module.exports.getAllRFQbyUserID = function(ID, callback) {
 module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
     RFQ.findOne({_id: rfq_id}).lean()
         .populate('initiator_id')
-        .populate({
-            path :'refer_verifier.ID',
-            match: {'refer_verifier.signed':false}
-        })
-        .populate({
-            path :'refer_accountant.ID',
-            match: {'refer_accountant.signed':false}
-        }).populate({
-            path :'refer_committee.ID',
-            match: {'refer_committee.signed':false}
-        })
-        .populate({
-            path :'refer_director.ID',
-            match: {'refer_director.signed':false}
-        }).exec( function (err, doc) {
+        .populate(
+            'refer_verifier.ID'
+        )
+        .populate(
+            'refer_accountant.ID'
+        ).populate(
+            'refer_committee.ID'
+        )
+        .populate(
+            'refer_director.ID'
+        ).exec( function (err, doc) {
             if(!doc)return;
             console.log("first..............................");
             console.log(doc);
@@ -113,7 +109,8 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
 
         doc.sign_auth=false;
 
-            if(doc.substep_id==1 && doc.refer_verifier.ID==user_id && doc.refer_verifier.signed==false){
+            if(doc.substep_id==1 && doc.refer_verifier.ID._id==user_id && doc.refer_verifier.signed==false){
+
                 doc.sign_auth=true;
                 doc.forward_to="Accountant";
                 User.find({designation: "Accountant"}).lean().exec( function (err, docs) {
@@ -121,7 +118,7 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
                     return done(err,doc);
                 });
             }
-            else if(doc.substep_id==2 && doc.refer_accountant.ID==user_id && doc.refer_accountant.signed==false){
+            else if(doc.substep_id==2 && doc.refer_accountant.ID._id==user_id && doc.refer_accountant.signed==false){
                 doc.sign_auth=true;
                 doc.forward_to="Director";
                 User.find({designation: "Director"}).lean().exec(function (err, docs) {
@@ -129,7 +126,7 @@ module.exports.getRFQdetailsbyID= function (rfq_id, user_id, done) {
                     return done(err,doc);
                 });
             }
-            else if(doc.substep_id==3 && doc.refer_director.ID==user_id && doc.refer_director.signed==false){
+            else if(doc.substep_id==3 && doc.refer_director.ID._id==user_id && doc.refer_director.signed==false){
                 doc.sign_auth=true;
                 doc.forward_to="Committee";
                 User.find({designation: "Scientific Officer"}).lean().exec( function (err, docs) {

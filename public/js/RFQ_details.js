@@ -4,6 +4,10 @@
 
 $(document).ready(function () {
 
+    if(special_data.RFQ_detail.sign_auth==false){
+        document.getElementById("green-box").style.display = "none";
+    }
+
     "use strict";
 
     // $("#main-content").html("<h1> thtihththtgthtihtihtthgth </h1>");
@@ -185,20 +189,22 @@ $(document).ready(function () {
 
     //SHADMAN'S WORK
 
-    var forward_list = special_data.forward_list;
+    if(special_data.RFQ_detail.sign_auth==true){
+        var forward_list = special_data.RFQ_detail.forward_list;
+        var forward_list_length = forward_list.length;
 
-    var forward_list_length = forward_list.length;
+        document.getElementById("to-whom").innerHTML = special_data.RFQ_detail.forward_to;
+        document.getElementById("select2-forward-to-list-2-container").style.marginTop = "-7px";
 
-    document.getElementById("to-whom").innerHTML = special_data.RFQ_detail.forward_to;
-    document.getElementById("select2-forward-to-list-2-container").style.marginTop = "-7px";
-    ;
 
-    for(var i=0;i<forward_list_length;i++){
-        $('#forward-to-list-2').append($('<option>', {
-            value: forward_list[i]._id,
-            text: forward_list[i].name
-        }));
+        for(var i=0;i<forward_list_length;i++){
+            $('#forward-to-list-2').append($('<option>', {
+                value: forward_list[i]._id,
+                text: forward_list[i].name
+            }));
+        }
     }
+
 
 
 
