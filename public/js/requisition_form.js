@@ -24,10 +24,10 @@ $(document).ready(function () {
     $("#example > tbody").append('<tr>'+
 
         '<td><input type="checkbox"></td>'+
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>"'+
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style="word-wrap: break-word;"></td>'+
+        '<td contenteditable="true" style="word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style="word-wrap: break-word;"></td>' +
+        '<td contenteditable="true" style="word-wrap: break-word;"></td>' +
 
         '</tr>');
 
@@ -51,18 +51,18 @@ $(document).ready(function () {
     //     }));
     // });
 
-        //
-        // $("#forward-to-list").html(function () {
-        //
-        //     var forward_list = special_data.forward_list;
-        //
-        //     var forward_list_length = forward_list.length;
-        //     var html_text = '';
-        //     for(var i=0;i<forward_list_length;i++){
-        //         html_text += '<option>'+ forward_list[i].name +'</option>';
-        //     }
-        //     return html_text;
-        // });
+    //
+    // $("#forward-to-list").html(function () {
+    //
+    //     var forward_list = special_data.forward_list;
+    //
+    //     var forward_list_length = forward_list.length;
+    //     var html_text = '';
+    //     for(var i=0;i<forward_list_length;i++){
+    //         html_text += '<option>'+ forward_list[i].name +'</option>';
+    //     }
+    //     return html_text;
+    // });
 
 
     $("#committee-member-list").html(function () {
@@ -140,12 +140,9 @@ $(document).ready(function () {
 
             // var itemNo = requsitionFormTable.rows[i].cells[1].innerHTML;
             var descriptionOfItems = requsitionFormTable.rows[i].cells[1].innerHTML;
-            // var unitOfMeasurement = requsitionFormTable.rows[i].cells[3].innerHTML;
-            var quantity = "khh";//requsitionFormTable.rows[i].cells[2].innerHTML;
+            var quantity = requsitionFormTable.rows[i].cells[2].innerHTML;
             var URP = requsitionFormTable.rows[i].cells[3].innerHTML;
-            // var URPInWords = requsitionFormTable.rows[i].cells[6].innerHTML;
             var totalAmountInFigure = requsitionFormTable.rows[i].cells[4].innerHTML;
-            // var totalAmountInWords = requsitionFormTable.rows[i].cells[4].innerHTML;
 
             rfq_heading += descriptionOfItems + " , ";
             // jsonData["itemNo"]  = $.trim(itemNo);
@@ -201,7 +198,7 @@ function addRow(tableID) {
     $("#example > tbody").append('<tr>'+
 
         '<td><input type="checkbox"></td>'+
-        '<td contenteditable="true" style=" word-wrap: break-word;"></td>"'+
+        '<td contenteditable="true" style=" word-wrap: break-word;"></td>'+
         '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
         '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
         '<td contenteditable="true" style=" word-wrap: break-word;"></td>' +
@@ -260,5 +257,3 @@ function deleteRow(tableID) {
         alert(e);
     }
 }
-
-

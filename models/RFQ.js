@@ -73,15 +73,15 @@ module.exports.getAllRFQbyUserID = function(ID, callback) {
     RFQ
         .find({
             $or: [{'initiator_id': ID},
-                {'refer_jachai.ID': ID},
-                {'refer_hishab.ID': ID},
+                {'refer_verifier.ID': ID},
+                {'refer_accountant.ID': ID},
                 {'refer_committee.ID': ID},
                 {'refer_director.ID': ID}
             ]
         })
         .populate('initiator_id')
-        .populate('refer_jachai.ID')
-        .populate('refer_hishab.ID')
+        .populate('refer_verifier.ID')
+        .populate('refer_accountant.ID')
         .populate('refer_committee.ID')
         .populate('refer_director.ID')
         .exec(callback);
