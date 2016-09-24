@@ -56,20 +56,22 @@ router.route('/upload')
             bidhi_niti: req.body.bidhi_niti,
             refer_verifier: req.body.refer_verifier
         });
-        // RFQ.createRFQ(newRFQ, function (err, doc) {
-        //     if (err) return console.log(err);
-        //     console.log(req.body.refer_verifier.ID);
-        // });
+        RFQ.createRFQ(newRFQ, function (err, doc) {
+            if (err) return console.log(err);
+            console.log(doc._id);
+            console.log(doc.created);
+
+        });
         console.log(req.body.refer_verifier.ID);
         real.sendThroughSockets(req.body.refer_verifier.ID,{magic_data:req.body,user:req.user});
         res.sendStatus(200);
 
     });
-router.route('/upload_jachaikari')
-    .post(function (req, res) {
-
-        real.sendThroughSockets("57b9eaa64a2cc77834c9c7c5", "ore motherchod");
-    });
+// router.route('/upload_jachaikari')
+//     .post(function (req, res) {
+//
+//         real.sendThroughSockets("57b9eaa64a2cc77834c9c7c5", "ore motherchod");
+//     });
 
 router.route('/pic')
     .get(function (req, res) {

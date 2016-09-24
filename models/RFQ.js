@@ -60,7 +60,10 @@ module.exports.createRFQ = function (newRFQ, callback) {
             to: doc.refer_verifier.ID,
             text: "asked for verification"
         });
-        notifications.createnotification(newnot, callback);
+        notifications.createnotification(newnot, function (err, doc2) {
+            return callback(err, doc);
+        });
+
     });
 
 };

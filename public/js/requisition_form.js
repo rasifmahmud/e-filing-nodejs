@@ -141,7 +141,7 @@ $(document).ready(function () {
             // var itemNo = requsitionFormTable.rows[i].cells[1].innerHTML;
             var descriptionOfItems = requsitionFormTable.rows[i].cells[1].innerHTML;
             // var unitOfMeasurement = requsitionFormTable.rows[i].cells[3].innerHTML;
-            var quantity = requsitionFormTable.rows[i].cells[2].innerHTML;
+            var quantity = "khh";//requsitionFormTable.rows[i].cells[2].innerHTML;
             var URP = requsitionFormTable.rows[i].cells[3].innerHTML;
             // var URPInWords = requsitionFormTable.rows[i].cells[6].innerHTML;
             var totalAmountInFigure = requsitionFormTable.rows[i].cells[4].innerHTML;
