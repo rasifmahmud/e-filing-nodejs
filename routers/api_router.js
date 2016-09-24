@@ -37,6 +37,7 @@ router.route('/rfq_detail/:id')
         var user_ID = req.user._id;
         RFQ.getRFQdetailsbyID(RFQ_ID, user_ID, function (err, result) {
             if (err) return console.log(err);
+            console.log(result);
             notification.getnotificationsbyuserid(user_ID, function (err2, result2) {
                 if (err2) return console.log(err2);
                 user.getbydesignation("Scientific Officer", function (err3, result3) {
@@ -60,6 +61,8 @@ router.route('/upload')
         });
         RFQ.createRFQ(newRFQ, function (err, doc) {
             if (err) return console.log(err);
+            console.log("inserted...............")
+            console.log(doc);
             res.sendStatus(200);
         });
 
