@@ -1,0 +1,19 @@
+.hover-change-panel {
+    transition: all 0.3s ease;
+    border-color: #3cc374;
+    border-width: 1px;
+
+    /*padding: 10px;*/
+}
+.hover-change-panel:hover , .hover-change-panel:visited {
+    -moz-box-shadow: -8px 8px 8px #7DD7A2;
+    -webkit-box-shadow: -8px 8px 8px #7DD7A2;
+    box-shadow: -8px 8px 8px #7DD7A2;
+}
+
+
+label{
+    color: #3cc374;
+    border-color: #3cc374;
+    border-width: 1px;
+}
