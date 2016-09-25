@@ -190,18 +190,23 @@ $(document).ready(function () {
     //SHADMAN'S WORK
 
     if(special_data.RFQ_detail.sign_auth==true){
-        var forward_list = special_data.RFQ_detail.forward_list;
-        var forward_list_length = forward_list.length;
+        if(special_data.RFQ_detail.forward_to!="Director") {
+            var forward_list = special_data.RFQ_detail.forward_list;
+            var forward_list_length = forward_list.length;
 
-        document.getElementById("to-whom").innerHTML = special_data.RFQ_detail.forward_to;
-        document.getElementById("select2-forward-to-list-2-container").style.marginTop = "-7px";
+            document.getElementById("to-whom").innerHTML = special_data.RFQ_detail.forward_to;
+            document.getElementById("select2-forward-to-list-2-container").style.marginTop = "-7px";
 
 
-        for(var i=0;i<forward_list_length;i++){
-            $('#forward-to-list-2').append($('<option>', {
-                value: forward_list[i]._id,
-                text: forward_list[i].name
-            }));
+            for (var i = 0; i < forward_list_length; i++) {
+                $('#forward-to-list-2').append($('<option>', {
+                    value: forward_list[i]._id,
+                    text: forward_list[i].name
+                }));
+            }
+        }
+        else{
+            document.getElementById("forward-to").style.display = "none";
         }
     }
 
@@ -209,12 +214,25 @@ $(document).ready(function () {
 
 
 
+
+
     $("#committee-member-list").html(function () {
-        var forward_list = "";
-        var forward_list_length = 5;
         var html_text = '';
-        for(var i=0;i<forward_list_length;i++){
-            html_text += '<option>alubana</option>';
+        if(special_data.RFQ_detail.sign_auth==true) {
+            if(special_data.RFQ_detail.forward_to=="Director") {
+                var forward_list = special_data.RFQ_detail.forward_list;
+                var forward_list_length = forward_list.length;
+
+                for (var i = 0; i < forward_list_length; i++) {
+                    $('#forward-to-list-2').append($('<option>', {
+                        value: forward_list[i]._id,
+                        text: forward_list[i].name
+                    }));
+                }
+            }
+            else{
+                document.getElementById("committee-select").style.display = "none";
+            }
         }
         return html_text;
     });
