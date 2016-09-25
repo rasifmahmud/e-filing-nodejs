@@ -79,6 +79,7 @@ var apiRouter = require('./routers/api_router');
 app.use('/api', apiRouter);
 
 
+
 // Running the server on port 3000
 server.listen(3000, function () {
     console.log("Server is running on port 3000");

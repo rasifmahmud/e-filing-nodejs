@@ -154,8 +154,11 @@ module.exports.updateaccountant = function (rfq_id, accountant_id, done) {
                 text: "asked for accounts verification"
             });
             notifications.createnotification(newnot, function (err, doc3) {
-                notifications.removenotifications(rfq_id, doc2.refer_verifier.ID, done);
+                notifications.removenotifications(rfq_id, doc2.refer_verifier.ID, function (err) {
+
+                });
             });
+            return done(err, "asked for accounts verification", Date.now());
         });
     });
 }
@@ -176,8 +179,11 @@ module.exports.updatedirector = function (rfq_id, director_id, done) {
                 text: "asked for authentication"
             });
             notifications.createnotification(newnot, function (err, doc3) {
-                notifications.removenotifications(rfq_id, doc2.refer_accountant.ID, done);
+                notifications.removenotifications(rfq_id, doc2.refer_accountant.ID, function (err) {
+
+                });
             });
+            return done(err, "asked for authentication", Date.now());
         });
     });
 }
@@ -187,7 +193,7 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
     RFQ.findOne({ _id: rfq_id }, function (err, doc){
         //doc.refer_director.date = Date.now;
         doc.refer_director.signed= true;
-        doc.substep_id=2;
+        doc.substep_id=4;
         doc.refer_accountant.date= Date.now();
         for (i = 0; i < committee.length; i++) {
             doc.refer_committee.push({
@@ -209,9 +215,10 @@ module.exports.updatecommittee = function (rfq_id, committee, done) {
 
                     });
                 }
-                return done;
+
             });
         });
+        return done(err, "asked to chair committee", Date.now());
     });
 }
 
